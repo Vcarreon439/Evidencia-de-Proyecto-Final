@@ -1,7 +1,7 @@
 ﻿
 namespace Login
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,39 +30,96 @@ namespace Login
         private void InitializeComponent()
         {
             this.pnlFondo = new System.Windows.Forms.Panel();
-            this.icnPctBxLogo = new FontAwesome.Sharp.IconPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnCerrar = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTittle = new System.Windows.Forms.Label();
+            this.icnPctBxLogo = new FontAwesome.Sharp.IconPictureBox();
             this.pnlFondo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icnPctBxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFondo
             // 
+            this.pnlFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.pnlFondo.Controls.Add(this.label2);
+            this.pnlFondo.Controls.Add(this.textBox2);
+            this.pnlFondo.Controls.Add(this.btnLogin);
+            this.pnlFondo.Controls.Add(this.btnCerrar);
+            this.pnlFondo.Controls.Add(this.label1);
+            this.pnlFondo.Controls.Add(this.textBox1);
             this.pnlFondo.Controls.Add(this.lblTittle);
             this.pnlFondo.Controls.Add(this.icnPctBxLogo);
             this.pnlFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFondo.Location = new System.Drawing.Point(0, 0);
             this.pnlFondo.Name = "pnlFondo";
-            this.pnlFondo.Size = new System.Drawing.Size(384, 561);
+            this.pnlFondo.Size = new System.Drawing.Size(300, 500);
             this.pnlFondo.TabIndex = 0;
             // 
-            // icnPctBxLogo
+            // label2
             // 
-            this.icnPctBxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.icnPctBxLogo.BackColor = System.Drawing.Color.Transparent;
-            this.icnPctBxLogo.ForeColor = System.Drawing.Color.Tan;
-            this.icnPctBxLogo.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.icnPctBxLogo.IconColor = System.Drawing.Color.Tan;
-            this.icnPctBxLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icnPctBxLogo.IconSize = 191;
-            this.icnPctBxLogo.Location = new System.Drawing.Point(12, 59);
-            this.icnPctBxLogo.Name = "icnPctBxLogo";
-            this.icnPctBxLogo.Size = new System.Drawing.Size(360, 191);
-            this.icnPctBxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.icnPctBxLogo.TabIndex = 0;
-            this.icnPctBxLogo.TabStop = false;
+            this.label2.Location = new System.Drawing.Point(12, 295);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(276, 23);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Contraseña";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(15, 321);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(273, 20);
+            this.textBox2.TabIndex = 8;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(90, 385);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(128, 51);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Iniciar Sesión";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Red;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Red;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.Location = new System.Drawing.Point(256, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(32, 32);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.DoubleClick += new System.EventHandler(this.btnCerrar_DoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(276, 23);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Nombre de Usuario";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 258);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(273, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTittle
             // 
@@ -71,22 +128,44 @@ namespace Login
             this.lblTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTittle.Location = new System.Drawing.Point(0, 0);
             this.lblTittle.Name = "lblTittle";
-            this.lblTittle.Size = new System.Drawing.Size(384, 44);
+            this.lblTittle.Size = new System.Drawing.Size(300, 68);
             this.lblTittle.TabIndex = 1;
             this.lblTittle.Text = "Iniciar Sesion";
-            this.lblTittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTittle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // Form1
+            // icnPctBxLogo
+            // 
+            this.icnPctBxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.icnPctBxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.icnPctBxLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(132)))), ((int)(((byte)(103)))));
+            this.icnPctBxLogo.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.icnPctBxLogo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(132)))), ((int)(((byte)(103)))));
+            this.icnPctBxLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnPctBxLogo.IconSize = 130;
+            this.icnPctBxLogo.Location = new System.Drawing.Point(12, 88);
+            this.icnPctBxLogo.Name = "icnPctBxLogo";
+            this.icnPctBxLogo.Size = new System.Drawing.Size(276, 130);
+            this.icnPctBxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.icnPctBxLogo.TabIndex = 0;
+            this.icnPctBxLogo.TabStop = false;
+            // 
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 561);
+            this.ClientSize = new System.Drawing.Size(300, 500);
             this.Controls.Add(this.pnlFondo);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlFondo.ResumeLayout(false);
+            this.pnlFondo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icnPctBxLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,6 +176,12 @@ namespace Login
         private System.Windows.Forms.Panel pnlFondo;
         private FontAwesome.Sharp.IconPictureBox icnPctBxLogo;
         private System.Windows.Forms.Label lblTittle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconPictureBox btnCerrar;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
