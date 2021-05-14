@@ -59,6 +59,7 @@ namespace Login
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(300, 500);
             this.pnlFondo.TabIndex = 0;
+            this.pnlFondo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFondo_MouseMove);
             // 
             // label2
             // 
@@ -123,12 +124,12 @@ namespace Login
             // 
             // lblTittle
             // 
+            this.lblTittle.AutoSize = true;
             this.lblTittle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTittle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTittle.Location = new System.Drawing.Point(0, 0);
+            this.lblTittle.Location = new System.Drawing.Point(83, 53);
             this.lblTittle.Name = "lblTittle";
-            this.lblTittle.Size = new System.Drawing.Size(300, 68);
+            this.lblTittle.Size = new System.Drawing.Size(141, 25);
             this.lblTittle.TabIndex = 1;
             this.lblTittle.Text = "Iniciar Sesion";
             this.lblTittle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -157,7 +158,6 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 500);
             this.Controls.Add(this.pnlFondo);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
