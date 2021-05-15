@@ -100,6 +100,10 @@
       <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
       <Name>Funcionalidad_Formularios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
+      <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
+      <Name>Autenticacion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionAutores\GestionAutores.csproj">
       <Project>{e5bd4f30-a24b-49b7-ad47-abdc01663af9}</Project>
       <Name>GestionAutores</Name>

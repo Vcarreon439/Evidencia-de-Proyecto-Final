@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using Autenticacion;
 using System.Text;
 using Funcionalidad_Formularios;
 using System.Threading.Tasks;
@@ -15,19 +16,11 @@ namespace Forma_Principal
 
     public partial class frmPrincipal : Form
     {
-        public enum TypeUser 
-        {
-            Admin,
-            Manager,
-            User,
-            Invitado
-        }
-
-        private TypeUser intern = TypeUser.Invitado;
+        TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Invitado;
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            if (intern == TypeUser.Invitado)
+            if (intern == TipoUsuario.TypeUser.Invitado)
             {
                 MessageBox.Show("Usted no tiene permiso de abrir este formulario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
@@ -36,7 +29,7 @@ namespace Forma_Principal
 
 
 
-        public frmPrincipal(TypeUser type)
+        public frmPrincipal(TipoUsuario.TypeUser type)
         {
             InitializeComponent();
             this.intern = type;
@@ -45,7 +38,6 @@ namespace Forma_Principal
         public frmPrincipal()
         {
             InitializeComponent();
-            this.intern = TypeUser.Invitado;
         }
 
         private void btnGeneros_Click(object sender, EventArgs e)
