@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using Dominio;
+using Forma_Principal;
 
 
 namespace Login
@@ -41,21 +43,31 @@ namespace Login
             ModeloDUsuario usuario = new ModeloDUsuario();
             bool valido = usuario.LoginUsuario(txtUsuario.Text, txtContra.Text);
 
-            if (valido==true)
+            if (valido == true)
+            {
                 MessageBox.Show("Inicio Correcto");
+                frmPrincipal obj = new frmPrincipal();
+                this.Hide();
+                obj.ShowDialog();
+            }
             else
-                MessageBox.Show("Inicio Inorrecto");
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            
+            { MessageBox.Show("Inicio Incorrecto"); }
         }
 
         private void pnlFondo_MouseMove(object sender, MouseEventArgs e)
         {
             Funcionalidad_Formularios.Arrastre_Formularios.Llama_ReleaseCapture();
             Funcionalidad_Formularios.Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrar_MouseHover(object sender, EventArgs e)
+        {
+            btnCerrar.ForeColor = Color.Black;
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.ForeColor = Color.Red;
         }
     }
 }

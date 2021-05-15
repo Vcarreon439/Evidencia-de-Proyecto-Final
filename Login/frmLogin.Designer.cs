@@ -104,6 +104,8 @@ namespace Login
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.DoubleClick += new System.EventHandler(this.btnCerrar_DoubleClick);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            this.btnCerrar.MouseHover += new System.EventHandler(this.btnCerrar_MouseHover);
             // 
             // label1
             // 
@@ -165,7 +167,6 @@ namespace Login
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlFondo.ResumeLayout(false);
             this.pnlFondo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
