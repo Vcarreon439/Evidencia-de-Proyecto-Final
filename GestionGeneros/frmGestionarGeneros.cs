@@ -23,5 +23,18 @@ namespace GestionGeneros
             Arrastre_Formularios.Llama_ReleaseCapture();
             Arrastre_Formularios.Llama_SendMessage(ParentForm.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

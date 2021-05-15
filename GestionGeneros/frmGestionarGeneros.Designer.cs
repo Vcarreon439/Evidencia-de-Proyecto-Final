@@ -32,7 +32,7 @@ namespace GestionGeneros
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,7 +47,7 @@ namespace GestionGeneros
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.pnlContenedor.Controls.Add(this.button3);
             this.pnlContenedor.Controls.Add(this.button2);
-            this.pnlContenedor.Controls.Add(this.button1);
+            this.pnlContenedor.Controls.Add(this.btnAgregar);
             this.pnlContenedor.Controls.Add(this.label2);
             this.pnlContenedor.Controls.Add(this.label1);
             this.pnlContenedor.Controls.Add(this.dataGridView1);
@@ -78,14 +78,15 @@ namespace GestionGeneros
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(18, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 47);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(18, 177);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(165, 47);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label2
             // 
@@ -153,7 +154,7 @@ namespace GestionGeneros
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

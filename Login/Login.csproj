@@ -106,6 +106,10 @@
       <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
       <Name>Funcionalidad_Formularios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
+      <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
+      <Name>Autenticacion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{275c59e3-3f7e-4c80-9963-8e3e4b2a0bcc}</Project>
       <Name>CustomControls</Name>

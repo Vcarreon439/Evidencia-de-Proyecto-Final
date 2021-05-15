@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Autenticacion;
 using System.Runtime.InteropServices;
 using Dominio;
 using Forma_Principal;
@@ -40,13 +41,11 @@ namespace Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ModeloDUsuario usuario = new ModeloDUsuario();
-            bool valido = usuario.LoginUsuario(txtUsuario.Text, txtContra.Text);
-            frmPrincipal.TypeUser type = frmPrincipal.TypeUser.Admin;
 
-            if (valido == true)
+            if (usuario.LoginUsuario(txtUsuario.Text, txtContra.Text))
             {
                 MessageBox.Show("Inicio Correcto");
-                frmPrincipal obj = new frmPrincipal(type);
+                frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text));
                 this.Hide();
                 obj.ShowDialog();
             }
