@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Managers]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Nombre] VARCHAR(50) NOT NULL, 
+    [Contraseña] VARCHAR(50) NOT NULL, 
+    [Rol] VARCHAR(20) NOT NULL
+)
