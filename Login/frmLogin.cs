@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 using Dominio;
 using Forma_Principal;
 
-
 namespace Login
 {
     public partial class frmLogin : Form

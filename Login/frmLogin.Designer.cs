@@ -76,7 +76,7 @@ namespace Login
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(273, 20);
-            this.txtContra.TabIndex = 8;
+            this.txtContra.TabIndex = 2;
             this.txtContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLogin
@@ -84,7 +84,7 @@ namespace Login
             this.btnLogin.Location = new System.Drawing.Point(90, 385);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(128, 51);
-            this.btnLogin.TabIndex = 7;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -121,7 +121,7 @@ namespace Login
             this.txtUsuario.Location = new System.Drawing.Point(15, 258);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(273, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTittle
