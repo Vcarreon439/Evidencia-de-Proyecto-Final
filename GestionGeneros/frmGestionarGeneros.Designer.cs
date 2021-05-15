@@ -30,14 +30,14 @@ namespace GestionGeneros
         private void InitializeComponent()
         {
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pnlContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,23 +60,50 @@ namespace GestionGeneros
             this.pnlContenedor.TabIndex = 0;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(18, 283);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(165, 47);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(18, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 47);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Editar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 177);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 47);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 45);
+            this.label2.Location = new System.Drawing.Point(12, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Descripción";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ID";
+            this.label1.Text = "Codigo del Tema:";
             // 
             // dataGridView1
             // 
@@ -88,45 +115,17 @@ namespace GestionGeneros
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(39, 13);
+            this.textBox2.Location = new System.Drawing.Point(15, 32);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
+            this.textBox2.Size = new System.Drawing.Size(168, 20);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 45);
-            this.textBox1.Multiline = true;
+            this.textBox1.Location = new System.Drawing.Point(15, 81);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 102);
+            this.textBox1.Size = new System.Drawing.Size(168, 20);
             this.textBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(18, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 47);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(18, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 47);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(18, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 47);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // frmGestionarGeneros
             // 
