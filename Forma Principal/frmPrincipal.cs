@@ -11,11 +11,41 @@ using System.Windows.Forms;
 
 namespace Forma_Principal
 {
+    
+
     public partial class frmPrincipal : Form
     {
+        public enum TypeUser 
+        {
+            Admin,
+            Manager,
+            User,
+            Invitado
+        }
+
+        private TypeUser intern = TypeUser.Invitado;
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            if (intern == TypeUser.Invitado)
+            {
+                MessageBox.Show("Usted no tiene permiso de abrir este formulario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+        }
+
+
+
+        public frmPrincipal(TypeUser type)
+        {
+            InitializeComponent();
+            this.intern = type;
+        }
+        
         public frmPrincipal()
         {
             InitializeComponent();
+            this.intern = TypeUser.Invitado;
         }
 
         private void btnGeneros_Click(object sender, EventArgs e)
@@ -77,5 +107,7 @@ namespace Forma_Principal
         {
             FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
         }
+
+        
     }
 }

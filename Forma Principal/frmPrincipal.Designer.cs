@@ -415,6 +415,7 @@ namespace Forma_Principal
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlSubMenu4.ResumeLayout(false);
             this.pnlSubMenu3.ResumeLayout(false);
