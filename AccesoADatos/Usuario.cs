@@ -18,7 +18,7 @@ namespace AccesoADatos
                 using (SqlCommand cmd  = new SqlCommand()) 
                 {
                     cmd.Connection = conexion;
-                    cmd.CommandText = "select * from Usuarios where Nombre=@usuario and Contraseña=@pass";
+                    cmd.CommandText = "select * from Managers where Nombre=@usuario and Contraseña=@pass";
                     cmd.Parameters.AddWithValue("@usuario", usuario);
                     cmd.Parameters.AddWithValue("@pass", contra);
                     cmd.CommandType = CommandType.Text;
