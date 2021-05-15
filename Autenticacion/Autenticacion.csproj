@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{30443BE9-B99C-4C8F-B041-774E0A0B577C}</ProjectGuid>
+    <ProjectGuid>{CB0E25F9-D419-4FB2-8C69-4B537806B89A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AccesoADatos</RootNamespace>
-    <AssemblyName>AccesoADatos</AssemblyName>
+    <RootNamespace>Autenticacion</RootNamespace>
+    <AssemblyName>Autenticacion</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,15 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionSQL.cs" />
+    <Compile Include="TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
-      <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
-      <Name>Autenticacion</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

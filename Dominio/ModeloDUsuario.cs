@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Autenticacion;
 using System.Threading.Tasks;
 using AccesoADatos;
 
@@ -16,5 +17,9 @@ namespace Dominio
             return usuario.Login(nombre, contra);
         }
 
+        public TipoUsuario.TypeUser Autenticacion(string nombre) 
+        {
+            return usuario.Autenticacion(nombre);
+        }
     }
 }

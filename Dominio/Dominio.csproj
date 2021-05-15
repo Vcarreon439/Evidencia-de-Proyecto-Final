@@ -49,6 +49,10 @@
       <Project>{30443be9-b99c-4c8f-b041-774e0a0b577c}</Project>
       <Name>AccesoADatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
+      <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
+      <Name>Autenticacion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

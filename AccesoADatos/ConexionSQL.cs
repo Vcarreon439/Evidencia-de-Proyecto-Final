@@ -1,10 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
+using Autenticacion;
 using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccesoADatos
 {
