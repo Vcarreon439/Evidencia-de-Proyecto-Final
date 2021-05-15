@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Funcionalidad_Formularios;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,8 +24,6 @@ namespace Forma_Principal
                 pnlSubMenu1.Visible = true;
             else
                 pnlSubMenu1.Visible = false;
-
-            
         }
 
         private void btnAutores_Click(object sender, EventArgs e)
@@ -49,6 +48,34 @@ namespace Forma_Principal
                 pnlSubMenu4.Visible = true;
             else
                 pnlSubMenu4.Visible = false;
+        }
+
+        private void btnGestionGeneros_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
+        }
+
+        private void pnlContenedor_MouseMove(object sender, MouseEventArgs e)
+        {
+            Arrastre_Formularios.Llama_ReleaseCapture();
+            Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pnlEncabezadoMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            Arrastre_Formularios.Llama_ReleaseCapture();
+            Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pnlMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            Arrastre_Formularios.Llama_ReleaseCapture();
+            Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnGestionarAutores_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
         }
     }
 }
