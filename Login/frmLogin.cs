@@ -41,11 +41,12 @@ namespace Login
         {
             ModeloDUsuario usuario = new ModeloDUsuario();
             bool valido = usuario.LoginUsuario(txtUsuario.Text, txtContra.Text);
+            frmPrincipal.TypeUser type = frmPrincipal.TypeUser.Admin;
 
             if (valido == true)
             {
                 MessageBox.Show("Inicio Correcto");
-                frmPrincipal obj = new frmPrincipal();
+                frmPrincipal obj = new frmPrincipal(type);
                 this.Hide();
                 obj.ShowDialog();
             }
