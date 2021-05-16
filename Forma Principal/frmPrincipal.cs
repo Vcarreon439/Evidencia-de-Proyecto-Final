@@ -12,11 +12,60 @@ using System.Windows.Forms;
 
 namespace Forma_Principal
 {
-    
-
     public partial class frmPrincipal : Form
     {
         TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Invitado;
+
+        private void Opciones(TipoUsuario.TypeUser selector) 
+        {
+            switch (selector)
+            {
+                case TipoUsuario.TypeUser.Invitado:
+
+                    break;
+
+                case TipoUsuario.TypeUser.Usuario:
+                    desEleminar();
+                    break;
+
+                case TipoUsuario.TypeUser.Maganer:
+                    actTodo();
+                    break;
+
+                case TipoUsuario.TypeUser.Admin:
+                    actTodo();
+                    break;
+
+                default:
+
+                    break;
+            }
+        }
+
+        private void desEleminar() 
+        {
+            btnDeleteLibro.Enabled = false;
+            btnDeleteMember.Enabled = false;
+        }
+
+        private void actTodo() 
+        {
+            btnAgregarLibro.Enabled = true;
+            btnAgregarMiembro.Enabled = true;
+            btnAutores.Enabled = true;
+            btnDeleteLibro.Enabled = true;
+            btnDeleteMember.Enabled = true;
+            btnGeneros.Enabled = true;
+            btnGestionarAutor.Enabled = true;
+            btnGestionGeneros.Enabled = true;
+            btnLibros.Enabled = true;
+            btnListaLibros.Enabled = true;
+            btnListaMiembros.Enabled = true;
+            btnMiembros.Enabled = true;
+            btnUpdateLibro.Enabled = true;
+            btnUpdateMiembro.Enabled = true;
+        }
+
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -25,6 +74,8 @@ namespace Forma_Principal
                 MessageBox.Show("Usted no tiene permiso de abrir este formulario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
+
+            Opciones(intern);
         }
 
 

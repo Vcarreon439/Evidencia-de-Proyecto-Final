@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dominio;
 using Funcionalidad_Formularios;
 using System.Windows.Forms;
 
@@ -28,12 +22,69 @@ namespace GestionGeneros
         {
             try
             {
+                if (txtCodigo.Text!=""&&txtDescripcion.Text!="")
+                {
+                    ModeloDUsuario OBJ = new ModeloDUsuario();
+                    if (OBJ.InsercionTema(txtCodigo.Text, txtDescripcion.Text))
+                        MessageBox.Show("Correcto");
+                    else
+                        MessageBox.Show("Incorrecto");
+                }
+                else
+                {
+                    MessageBox.Show("Los campos codigo y descripcion no pueden ir vacios", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                ActualizarData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ActualizarData() 
+        {
+            try
+            {
+                ModeloDUsuario OBJ = new ModeloDUsuario();
+                dgvGeneros.DataSource = OBJ.MostrarGeneros();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void frmGestionarGeneros_Load(object sender, EventArgs e)
+        {
+            ActualizarData();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ModeloDUsuario Obj = new ModeloDUsuario();
+
+                if (txtCodigo.Text != "" && txtDescripcion.Text != "")
+                {
+                    ModeloDUsuario OBJ = new ModeloDUsuario();
+                    if (OBJ.ActualizarGenero(txtCodigo.Text, txtDescripcion.Text))
+                        MessageBox.Show("Los cambios se realizaron correctamente");
+                    else
+                        MessageBox.Show("Incorrecto");
+                }
+                else
+                {
+                    MessageBox.Show("Los campos codigo y descripcion no pueden ir vacios", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }

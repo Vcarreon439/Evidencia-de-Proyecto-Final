@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,21 @@ namespace Dominio
         {
             return usuario.Autenticacion(nombre);
         }
+
+        public bool InsercionTema(string codigo, string descripcion) 
+        {
+            return usuario.InsertarGenero(codigo, descripcion);
+        }
+
+        public DataTable MostrarGeneros()
+        {
+            return usuario.MostrarGeneros();
+        }
+
+        public bool ActualizarGenero(string cod, string descripcion = null ) 
+        {
+            return usuario.ActualizarGenero(cod, descripcion);
+        }
+
     }
 }

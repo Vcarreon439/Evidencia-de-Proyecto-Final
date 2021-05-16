@@ -30,29 +30,29 @@ namespace GestionGeneros
         private void InitializeComponent()
         {
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvGeneros = new System.Windows.Forms.DataGridView();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pnlContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.pnlContenedor.Controls.Add(this.button3);
-            this.pnlContenedor.Controls.Add(this.button2);
+            this.pnlContenedor.Controls.Add(this.btnEliminar);
+            this.pnlContenedor.Controls.Add(this.btnEditar);
             this.pnlContenedor.Controls.Add(this.btnAgregar);
             this.pnlContenedor.Controls.Add(this.label2);
             this.pnlContenedor.Controls.Add(this.label1);
-            this.pnlContenedor.Controls.Add(this.dataGridView1);
-            this.pnlContenedor.Controls.Add(this.textBox2);
-            this.pnlContenedor.Controls.Add(this.textBox1);
+            this.pnlContenedor.Controls.Add(this.dgvGeneros);
+            this.pnlContenedor.Controls.Add(this.txtCodigo);
+            this.pnlContenedor.Controls.Add(this.txtDescripcion);
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(0, 0);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -60,23 +60,24 @@ namespace GestionGeneros
             this.pnlContenedor.TabIndex = 0;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
             // 
-            // button3
+            // btnEliminar
             // 
-            this.button3.Location = new System.Drawing.Point(18, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 47);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(18, 283);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(165, 47);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(18, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 47);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(18, 230);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(165, 47);
+            this.btnEditar.TabIndex = 6;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -106,27 +107,29 @@ namespace GestionGeneros
             this.label1.TabIndex = 3;
             this.label1.Text = "Codigo del Tema:";
             // 
-            // dataGridView1
+            // dgvGeneros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(200, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(388, 476);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvGeneros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGeneros.Location = new System.Drawing.Point(200, 12);
+            this.dgvGeneros.Name = "dgvGeneros";
+            this.dgvGeneros.Size = new System.Drawing.Size(388, 476);
+            this.dgvGeneros.TabIndex = 2;
             // 
-            // textBox2
+            // txtCodigo
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(15, 32);
+            this.txtCodigo.MaxLength = 10;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(168, 20);
+            this.txtCodigo.TabIndex = 1;
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtDescripcion.Location = new System.Drawing.Point(15, 81);
+            this.txtDescripcion.MaxLength = 35;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(168, 20);
+            this.txtDescripcion.TabIndex = 0;
             // 
             // frmGestionarGeneros
             // 
@@ -137,9 +140,10 @@ namespace GestionGeneros
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarGeneros";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmGestionarGeneros_Load);
             this.pnlContenedor.ResumeLayout(false);
             this.pnlContenedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,11 +153,11 @@ namespace GestionGeneros
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvGeneros;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
     }
 }
