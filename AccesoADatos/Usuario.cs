@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Autenticacion;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace AccesoADatos
 {
@@ -29,7 +30,7 @@ namespace AccesoADatos
             }
         }
 
-        public TipoUsuario.TypeUser Autenticacion(string usuario)
+        public TipoUsuario.TypeUser Autenticacion(string usuario, string contraseña)
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
@@ -38,8 +39,9 @@ namespace AccesoADatos
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexion;
-                    cmd.CommandText = "select Rol from Managers where Nombre=@usuario";
+                    cmd.CommandText = "select Rol from Managers where Nombre=@usuario and Contraseña=@pass";
                     cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@pass", contraseña);
                     cmd.CommandType = CommandType.Text;
 
                     switch ((string)cmd.ExecuteScalar())
@@ -87,6 +89,31 @@ namespace AccesoADatos
             }
         }
 
+
+        public bool InsertarAutor(List<string> informacion)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("InsertarAutor", conexion))
+                {
+                    List<string> param = new List<string>{ "@cod", "@nombre","@apellidos","@pais", "@ciudad", "@comentarios", "@foto"};
+
+                    cmd.Connection = conexion;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    for (int i = 0; i < 7; i++)
+                        cmd.Parameters.Add(param[i], informacion[i]);
+
+                    if (cmd.ExecuteNonQuery() != 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
         public DataTable MostrarGeneros()
         {
             using (SqlConnection conexion = ObtenerConexion())
@@ -94,6 +121,23 @@ namespace AccesoADatos
                 conexion.Open();
 
                 using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarTemas", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+            }
+        }
+        
+        public DataTable MostrarAutor()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutor", conexion))
                 {
                     adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
                     DataTable tabla = new DataTable();
