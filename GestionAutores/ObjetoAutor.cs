@@ -29,11 +29,6 @@ namespace GestionAutores
         private void ObtenerInfo() 
         {
             ModeloDUsuario OBJ = new ModeloDUsuario();
-            OBJ.ActualizarGenero();
-
-
-        
-        
         }
 
     }
