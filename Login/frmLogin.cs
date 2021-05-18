@@ -45,7 +45,7 @@ namespace Login
             if (usuario.LoginUsuario(txtUsuario.Text, txtContra.Text))
             {
                 MessageBox.Show("Inicio Correcto");
-                frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text));
+                frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text, txtContra.Text));
                 this.Hide();
                 obj.ShowDialog();
             }

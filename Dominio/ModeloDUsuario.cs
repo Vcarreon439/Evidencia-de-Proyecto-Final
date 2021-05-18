@@ -18,9 +18,9 @@ namespace Dominio
             return usuario.Login(nombre, contra);
         }
 
-        public TipoUsuario.TypeUser Autenticacion(string nombre) 
+        public TipoUsuario.TypeUser Autenticacion(string nombre, string contraseña) 
         {
-            return usuario.Autenticacion(nombre);
+            return usuario.Autenticacion(nombre, contraseña);
         }
 
         public bool InsercionTema(string codigo, string descripcion) 
@@ -32,10 +32,20 @@ namespace Dominio
         {
             return usuario.MostrarGeneros();
         }
+        
+        public DataTable MostrarAutor()
+        {
+            return usuario.MostrarAutor();
+        }
 
-        public bool ActualizarGenero(string cod, string descripcion = null ) 
+        public bool ActualizarGenero(string cod, string descripcion = null)
         {
             return usuario.ActualizarGenero(cod, descripcion);
+        }
+
+        public bool InsertarAutor(List<string> lista) 
+        {
+            return usuario.InsertarAutor(lista);
         }
 
     }

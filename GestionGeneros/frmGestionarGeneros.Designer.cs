@@ -68,6 +68,7 @@ namespace GestionGeneros
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -118,7 +119,7 @@ namespace GestionGeneros
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(15, 32);
-            this.txtCodigo.MaxLength = 10;
+            this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(168, 20);
             this.txtCodigo.TabIndex = 1;

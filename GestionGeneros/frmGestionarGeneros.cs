@@ -86,6 +86,13 @@ namespace GestionGeneros
             {
                 MessageBox.Show(ex.Message);
             }
+
+            ActualizarData();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
