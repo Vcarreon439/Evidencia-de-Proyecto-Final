@@ -21,12 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAutores", "GestionAu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticacion", "Autenticacion\Autenticacion.csproj", "{CB0E25F9-D419-4FB2-8C69-4B537806B89A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{41106B45-1CCD-4641-BA66-B00B6A43EE1C}"
-	ProjectSection(SolutionItems) = preProject
-		SQLQuery\SQLQuery1.sql = SQLQuery\SQLQuery1.sql
-		SQLQuery\SQLQuery2(Managers).sql = SQLQuery\SQLQuery2(Managers).sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
