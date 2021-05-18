@@ -78,8 +78,6 @@ namespace Forma_Principal
             Opciones(intern);
         }
 
-
-
         public frmPrincipal(TipoUsuario.TypeUser type)
         {
             InitializeComponent();
