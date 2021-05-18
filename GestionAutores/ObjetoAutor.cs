@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GestionAutores
 {
-    class ObjetoAutor
+    public class ObjetoAutor
     {
         private string codigo;
         private string nombres;

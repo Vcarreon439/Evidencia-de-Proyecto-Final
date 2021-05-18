@@ -12,12 +12,15 @@ namespace GestionAutores
 {
     public partial class fichaAutor : Form
     {
+        ObjetoAutor Autor;
+
         public fichaAutor(ObjetoAutor autor)
         {
             InitializeComponent();
+            this.Autor = autor;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void fichaAutor_Load(object sender, EventArgs e)
         {
 
         }

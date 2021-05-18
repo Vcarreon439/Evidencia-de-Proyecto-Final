@@ -51,9 +51,11 @@ namespace GestionAutores
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GestionAutores.Properties.Resources._85622928_icono_de_perfil_de_avatar_predeterminado_marcador_de_posición_de_foto_gris_vectores_de_ilustraciones;
             this.pictureBox1.Location = new System.Drawing.Point(75, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -76,7 +78,6 @@ namespace GestionAutores
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 522);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -428,6 +429,7 @@ namespace GestionAutores
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fichaAutor";
             this.Text = "fichaAutor";
+            this.Load += new System.EventHandler(this.fichaAutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
