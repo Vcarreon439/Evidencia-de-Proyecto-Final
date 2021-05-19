@@ -28,6 +28,7 @@ namespace Dominio
             return usuario.InsertarGenero(codigo, descripcion);
         }
 
+        #region MostrarDatos
         public DataTable MostrarGeneros()
         {
             return usuario.MostrarGeneros();
@@ -37,6 +38,23 @@ namespace Dominio
         {
             return usuario.MostrarAutor();
         }
+        
+        public DataTable MostrarUsuarios()
+        {
+            return usuario.MostrarUsuarios();
+        }
+
+        /// <summary>
+        /// Metodo de acceso a procedimiento almacenado MostrarAutor_5
+        /// </summary>
+        /// <param name="valores">Codigo, nombre, apellidos, pais, ciudad</param>
+        /// <returns></returns>
+        public DataTable MostrarAutor_5(List<string> valores)
+        {
+            return usuario.MostrarAutor_5(valores);
+        }
+        #endregion
+
 
         public bool ActualizarGenero(string cod, string descripcion = null)
         {
