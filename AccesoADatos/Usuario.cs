@@ -147,6 +147,53 @@ namespace AccesoADatos
                 }
             }
         }
+        
+        public DataTable MostrarUsuarios()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarUsuarios", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo de acceso a procedimiento almacenado MostrarAutor_5 de la base de datos
+        /// </summary>
+        /// <param name="elementos">Codigo, nombre, apellidos, pais, ciudad</param>
+        /// <returns>Retorna una tabla de los datos (Codigo, nombre, apellidos, pais, ciudad) del autor)</returns>
+        public DataTable MostrarAutor_5(List<string> elementos)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutor_5", conexion))
+                {
+                    adaptador.SelectCommand.Parameters.AddWithValue("@cod", elementos[0]);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@nombre", elementos[1]);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@apellidos", elementos[2]);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@pais", elementos[3]);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@ciudad", elementos[4]);
+
+
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+            }
+        }
 
         public bool ActualizarGenero(string cod, string descripcion)
         {
