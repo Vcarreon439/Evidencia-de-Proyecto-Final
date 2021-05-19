@@ -63,10 +63,9 @@ namespace GestionAutores.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _85622928_icono_de_perfil_de_avatar_predeterminado_marcador_de_posición_de_foto_gris_vectores_de_ilustraciones {
+        internal static System.Drawing.Bitmap predeterminada {
             get {
-                object obj = ResourceManager.GetObject("85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posición-de-foto-gr" +
-                        "is-vectores-de-ilustraciones", resourceCulture);
+                object obj = ResourceManager.GetObject("predeterminada", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

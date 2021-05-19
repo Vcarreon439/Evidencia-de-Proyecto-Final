@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		SQLQuery\SQLQuery2(Managers).sql = SQLQuery\SQLQuery2(Managers).sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionUsuarios", "GestionUsuarios\GestionUsuarios.csproj", "{F2002812-3A91-45DF-A04A-5DD8288CF47F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{CB0E25F9-D419-4FB2-8C69-4B537806B89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB0E25F9-D419-4FB2-8C69-4B537806B89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB0E25F9-D419-4FB2-8C69-4B537806B89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2002812-3A91-45DF-A04A-5DD8288CF47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2002812-3A91-45DF-A04A-5DD8288CF47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2002812-3A91-45DF-A04A-5DD8288CF47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2002812-3A91-45DF-A04A-5DD8288CF47F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

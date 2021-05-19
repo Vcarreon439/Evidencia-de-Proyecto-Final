@@ -81,6 +81,7 @@ namespace GestionAutores
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // btnImagen
             // 
@@ -453,12 +454,14 @@ namespace GestionAutores
             // 
             // dgvAutores
             // 
+            this.dgvAutores.AllowUserToAddRows = false;
+            this.dgvAutores.AllowUserToDeleteRows = false;
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAutores.Location = new System.Drawing.Point(12, 278);
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.Size = new System.Drawing.Size(576, 210);
             this.dgvAutores.TabIndex = 5;
-            this.dgvAutores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutores_CellContentDoubleClick);
+            this.dgvAutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutores_CellClick);
             // 
             // txtComentarios
             // 
