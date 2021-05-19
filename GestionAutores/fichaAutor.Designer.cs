@@ -30,54 +30,56 @@ namespace GestionAutores
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fichaAutor));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtComentarios = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBoxCountrySelect1 = new FlagsISO.ComboBoxCountrySelect();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.cboPais = new FlagsISO.ComboBoxCountrySelect();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::GestionAutores.Properties.Resources._85622928_icono_de_perfil_de_avatar_predeterminado_marcador_de_posición_de_foto_gris_vectores_de_ilustraciones;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txtComentarios);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.comboBoxCountrySelect1);
+            this.panel1.Controls.Add(this.txtCiudad);
+            this.panel1.Controls.Add(this.cboPais);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtApellidos);
+            this.panel1.Controls.Add(this.txtNombres);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 522);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionAutores.Properties.Resources.predeterminada;
+            this.pictureBox1.Location = new System.Drawing.Point(86, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 125);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -97,13 +99,13 @@ namespace GestionAutores
             this.label5.TabIndex = 21;
             this.label5.Text = "Acerca del autor:";
             // 
-            // textBox5
+            // txtComentarios
             // 
-            this.textBox5.Location = new System.Drawing.Point(32, 372);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(237, 92);
-            this.textBox5.TabIndex = 20;
+            this.txtComentarios.Location = new System.Drawing.Point(32, 372);
+            this.txtComentarios.Multiline = true;
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Size = new System.Drawing.Size(237, 92);
+            this.txtComentarios.TabIndex = 20;
             // 
             // label7
             // 
@@ -114,262 +116,262 @@ namespace GestionAutores
             this.label7.TabIndex = 19;
             this.label7.Text = "Ciudad:";
             // 
-            // textBox6
+            // txtCiudad
             // 
-            this.textBox6.Location = new System.Drawing.Point(32, 319);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(237, 20);
-            this.textBox6.TabIndex = 18;
+            this.txtCiudad.Location = new System.Drawing.Point(32, 319);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(237, 20);
+            this.txtCiudad.TabIndex = 18;
             // 
-            // comboBoxCountrySelect1
+            // cboPais
             // 
-            this.comboBoxCountrySelect1.DontGetShiny = false;
-            this.comboBoxCountrySelect1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxCountrySelect1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCountrySelect1.FlagSize = FlagsISO.ComboBoxCountrySelect.FlagSizeType.Size16;
-            this.comboBoxCountrySelect1.IntegralHeight = false;
-            this.comboBoxCountrySelect1.ItemHeight = 15;
-            this.comboBoxCountrySelect1.Items.AddRange(new object[] {
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items1"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items2"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items3"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items4"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items5"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items6"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items7"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items8"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items9"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items10"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items11"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items12"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items13"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items14"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items15"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items16"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items17"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items18"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items19"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items20"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items21"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items22"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items23"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items24"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items25"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items26"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items27"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items28"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items29"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items30"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items31"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items32"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items33"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items34"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items35"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items36"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items37"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items38"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items39"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items40"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items41"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items42"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items43"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items44"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items45"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items46"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items47"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items48"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items49"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items50"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items51"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items52"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items53"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items54"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items55"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items56"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items57"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items58"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items59"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items60"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items61"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items62"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items63"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items64"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items65"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items66"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items67"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items68"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items69"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items70"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items71"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items72"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items73"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items74"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items75"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items76"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items77"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items78"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items79"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items80"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items81"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items82"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items83"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items84"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items85"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items86"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items87"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items88"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items89"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items90"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items91"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items92"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items93"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items94"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items95"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items96"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items97"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items98"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items99"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items100"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items101"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items102"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items103"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items104"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items105"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items106"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items107"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items108"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items109"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items110"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items111"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items112"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items113"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items114"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items115"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items116"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items117"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items118"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items119"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items120"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items121"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items122"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items123"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items124"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items125"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items126"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items127"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items128"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items129"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items130"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items131"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items132"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items133"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items134"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items135"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items136"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items137"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items138"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items139"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items140"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items141"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items142"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items143"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items144"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items145"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items146"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items147"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items148"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items149"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items150"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items151"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items152"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items153"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items154"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items155"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items156"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items157"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items158"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items159"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items160"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items161"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items162"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items163"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items164"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items165"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items166"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items167"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items168"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items169"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items170"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items171"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items172"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items173"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items174"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items175"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items176"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items177"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items178"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items179"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items180"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items181"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items182"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items183"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items184"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items185"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items186"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items187"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items188"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items189"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items190"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items191"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items192"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items193"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items194"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items195"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items196"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items197"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items198"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items199"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items200"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items201"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items202"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items203"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items204"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items205"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items206"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items207"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items208"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items209"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items210"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items211"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items212"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items213"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items214"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items215"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items216"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items217"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items218"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items219"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items220"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items221"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items222"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items223"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items224"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items225"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items226"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items227"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items228"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items229"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items230"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items231"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items232"))),
-            ((object)(resources.GetObject("comboBoxCountrySelect1.Items233")))});
-            this.comboBoxCountrySelect1.Location = new System.Drawing.Point(152, 287);
-            this.comboBoxCountrySelect1.Name = "comboBoxCountrySelect1";
-            this.comboBoxCountrySelect1.SelectedRegion = ((System.Globalization.RegionInfo)(resources.GetObject("comboBoxCountrySelect1.SelectedRegion")));
-            this.comboBoxCountrySelect1.Size = new System.Drawing.Size(117, 21);
-            this.comboBoxCountrySelect1.TabIndex = 16;
-            this.comboBoxCountrySelect1.UseNativeName = false;
+            this.cboPais.DontGetShiny = false;
+            this.cboPais.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPais.FlagSize = FlagsISO.ComboBoxCountrySelect.FlagSizeType.Size16;
+            this.cboPais.IntegralHeight = false;
+            this.cboPais.ItemHeight = 15;
+            this.cboPais.Items.AddRange(new object[] {
+            ((object)(resources.GetObject("cboPais.Items"))),
+            ((object)(resources.GetObject("cboPais.Items1"))),
+            ((object)(resources.GetObject("cboPais.Items2"))),
+            ((object)(resources.GetObject("cboPais.Items3"))),
+            ((object)(resources.GetObject("cboPais.Items4"))),
+            ((object)(resources.GetObject("cboPais.Items5"))),
+            ((object)(resources.GetObject("cboPais.Items6"))),
+            ((object)(resources.GetObject("cboPais.Items7"))),
+            ((object)(resources.GetObject("cboPais.Items8"))),
+            ((object)(resources.GetObject("cboPais.Items9"))),
+            ((object)(resources.GetObject("cboPais.Items10"))),
+            ((object)(resources.GetObject("cboPais.Items11"))),
+            ((object)(resources.GetObject("cboPais.Items12"))),
+            ((object)(resources.GetObject("cboPais.Items13"))),
+            ((object)(resources.GetObject("cboPais.Items14"))),
+            ((object)(resources.GetObject("cboPais.Items15"))),
+            ((object)(resources.GetObject("cboPais.Items16"))),
+            ((object)(resources.GetObject("cboPais.Items17"))),
+            ((object)(resources.GetObject("cboPais.Items18"))),
+            ((object)(resources.GetObject("cboPais.Items19"))),
+            ((object)(resources.GetObject("cboPais.Items20"))),
+            ((object)(resources.GetObject("cboPais.Items21"))),
+            ((object)(resources.GetObject("cboPais.Items22"))),
+            ((object)(resources.GetObject("cboPais.Items23"))),
+            ((object)(resources.GetObject("cboPais.Items24"))),
+            ((object)(resources.GetObject("cboPais.Items25"))),
+            ((object)(resources.GetObject("cboPais.Items26"))),
+            ((object)(resources.GetObject("cboPais.Items27"))),
+            ((object)(resources.GetObject("cboPais.Items28"))),
+            ((object)(resources.GetObject("cboPais.Items29"))),
+            ((object)(resources.GetObject("cboPais.Items30"))),
+            ((object)(resources.GetObject("cboPais.Items31"))),
+            ((object)(resources.GetObject("cboPais.Items32"))),
+            ((object)(resources.GetObject("cboPais.Items33"))),
+            ((object)(resources.GetObject("cboPais.Items34"))),
+            ((object)(resources.GetObject("cboPais.Items35"))),
+            ((object)(resources.GetObject("cboPais.Items36"))),
+            ((object)(resources.GetObject("cboPais.Items37"))),
+            ((object)(resources.GetObject("cboPais.Items38"))),
+            ((object)(resources.GetObject("cboPais.Items39"))),
+            ((object)(resources.GetObject("cboPais.Items40"))),
+            ((object)(resources.GetObject("cboPais.Items41"))),
+            ((object)(resources.GetObject("cboPais.Items42"))),
+            ((object)(resources.GetObject("cboPais.Items43"))),
+            ((object)(resources.GetObject("cboPais.Items44"))),
+            ((object)(resources.GetObject("cboPais.Items45"))),
+            ((object)(resources.GetObject("cboPais.Items46"))),
+            ((object)(resources.GetObject("cboPais.Items47"))),
+            ((object)(resources.GetObject("cboPais.Items48"))),
+            ((object)(resources.GetObject("cboPais.Items49"))),
+            ((object)(resources.GetObject("cboPais.Items50"))),
+            ((object)(resources.GetObject("cboPais.Items51"))),
+            ((object)(resources.GetObject("cboPais.Items52"))),
+            ((object)(resources.GetObject("cboPais.Items53"))),
+            ((object)(resources.GetObject("cboPais.Items54"))),
+            ((object)(resources.GetObject("cboPais.Items55"))),
+            ((object)(resources.GetObject("cboPais.Items56"))),
+            ((object)(resources.GetObject("cboPais.Items57"))),
+            ((object)(resources.GetObject("cboPais.Items58"))),
+            ((object)(resources.GetObject("cboPais.Items59"))),
+            ((object)(resources.GetObject("cboPais.Items60"))),
+            ((object)(resources.GetObject("cboPais.Items61"))),
+            ((object)(resources.GetObject("cboPais.Items62"))),
+            ((object)(resources.GetObject("cboPais.Items63"))),
+            ((object)(resources.GetObject("cboPais.Items64"))),
+            ((object)(resources.GetObject("cboPais.Items65"))),
+            ((object)(resources.GetObject("cboPais.Items66"))),
+            ((object)(resources.GetObject("cboPais.Items67"))),
+            ((object)(resources.GetObject("cboPais.Items68"))),
+            ((object)(resources.GetObject("cboPais.Items69"))),
+            ((object)(resources.GetObject("cboPais.Items70"))),
+            ((object)(resources.GetObject("cboPais.Items71"))),
+            ((object)(resources.GetObject("cboPais.Items72"))),
+            ((object)(resources.GetObject("cboPais.Items73"))),
+            ((object)(resources.GetObject("cboPais.Items74"))),
+            ((object)(resources.GetObject("cboPais.Items75"))),
+            ((object)(resources.GetObject("cboPais.Items76"))),
+            ((object)(resources.GetObject("cboPais.Items77"))),
+            ((object)(resources.GetObject("cboPais.Items78"))),
+            ((object)(resources.GetObject("cboPais.Items79"))),
+            ((object)(resources.GetObject("cboPais.Items80"))),
+            ((object)(resources.GetObject("cboPais.Items81"))),
+            ((object)(resources.GetObject("cboPais.Items82"))),
+            ((object)(resources.GetObject("cboPais.Items83"))),
+            ((object)(resources.GetObject("cboPais.Items84"))),
+            ((object)(resources.GetObject("cboPais.Items85"))),
+            ((object)(resources.GetObject("cboPais.Items86"))),
+            ((object)(resources.GetObject("cboPais.Items87"))),
+            ((object)(resources.GetObject("cboPais.Items88"))),
+            ((object)(resources.GetObject("cboPais.Items89"))),
+            ((object)(resources.GetObject("cboPais.Items90"))),
+            ((object)(resources.GetObject("cboPais.Items91"))),
+            ((object)(resources.GetObject("cboPais.Items92"))),
+            ((object)(resources.GetObject("cboPais.Items93"))),
+            ((object)(resources.GetObject("cboPais.Items94"))),
+            ((object)(resources.GetObject("cboPais.Items95"))),
+            ((object)(resources.GetObject("cboPais.Items96"))),
+            ((object)(resources.GetObject("cboPais.Items97"))),
+            ((object)(resources.GetObject("cboPais.Items98"))),
+            ((object)(resources.GetObject("cboPais.Items99"))),
+            ((object)(resources.GetObject("cboPais.Items100"))),
+            ((object)(resources.GetObject("cboPais.Items101"))),
+            ((object)(resources.GetObject("cboPais.Items102"))),
+            ((object)(resources.GetObject("cboPais.Items103"))),
+            ((object)(resources.GetObject("cboPais.Items104"))),
+            ((object)(resources.GetObject("cboPais.Items105"))),
+            ((object)(resources.GetObject("cboPais.Items106"))),
+            ((object)(resources.GetObject("cboPais.Items107"))),
+            ((object)(resources.GetObject("cboPais.Items108"))),
+            ((object)(resources.GetObject("cboPais.Items109"))),
+            ((object)(resources.GetObject("cboPais.Items110"))),
+            ((object)(resources.GetObject("cboPais.Items111"))),
+            ((object)(resources.GetObject("cboPais.Items112"))),
+            ((object)(resources.GetObject("cboPais.Items113"))),
+            ((object)(resources.GetObject("cboPais.Items114"))),
+            ((object)(resources.GetObject("cboPais.Items115"))),
+            ((object)(resources.GetObject("cboPais.Items116"))),
+            ((object)(resources.GetObject("cboPais.Items117"))),
+            ((object)(resources.GetObject("cboPais.Items118"))),
+            ((object)(resources.GetObject("cboPais.Items119"))),
+            ((object)(resources.GetObject("cboPais.Items120"))),
+            ((object)(resources.GetObject("cboPais.Items121"))),
+            ((object)(resources.GetObject("cboPais.Items122"))),
+            ((object)(resources.GetObject("cboPais.Items123"))),
+            ((object)(resources.GetObject("cboPais.Items124"))),
+            ((object)(resources.GetObject("cboPais.Items125"))),
+            ((object)(resources.GetObject("cboPais.Items126"))),
+            ((object)(resources.GetObject("cboPais.Items127"))),
+            ((object)(resources.GetObject("cboPais.Items128"))),
+            ((object)(resources.GetObject("cboPais.Items129"))),
+            ((object)(resources.GetObject("cboPais.Items130"))),
+            ((object)(resources.GetObject("cboPais.Items131"))),
+            ((object)(resources.GetObject("cboPais.Items132"))),
+            ((object)(resources.GetObject("cboPais.Items133"))),
+            ((object)(resources.GetObject("cboPais.Items134"))),
+            ((object)(resources.GetObject("cboPais.Items135"))),
+            ((object)(resources.GetObject("cboPais.Items136"))),
+            ((object)(resources.GetObject("cboPais.Items137"))),
+            ((object)(resources.GetObject("cboPais.Items138"))),
+            ((object)(resources.GetObject("cboPais.Items139"))),
+            ((object)(resources.GetObject("cboPais.Items140"))),
+            ((object)(resources.GetObject("cboPais.Items141"))),
+            ((object)(resources.GetObject("cboPais.Items142"))),
+            ((object)(resources.GetObject("cboPais.Items143"))),
+            ((object)(resources.GetObject("cboPais.Items144"))),
+            ((object)(resources.GetObject("cboPais.Items145"))),
+            ((object)(resources.GetObject("cboPais.Items146"))),
+            ((object)(resources.GetObject("cboPais.Items147"))),
+            ((object)(resources.GetObject("cboPais.Items148"))),
+            ((object)(resources.GetObject("cboPais.Items149"))),
+            ((object)(resources.GetObject("cboPais.Items150"))),
+            ((object)(resources.GetObject("cboPais.Items151"))),
+            ((object)(resources.GetObject("cboPais.Items152"))),
+            ((object)(resources.GetObject("cboPais.Items153"))),
+            ((object)(resources.GetObject("cboPais.Items154"))),
+            ((object)(resources.GetObject("cboPais.Items155"))),
+            ((object)(resources.GetObject("cboPais.Items156"))),
+            ((object)(resources.GetObject("cboPais.Items157"))),
+            ((object)(resources.GetObject("cboPais.Items158"))),
+            ((object)(resources.GetObject("cboPais.Items159"))),
+            ((object)(resources.GetObject("cboPais.Items160"))),
+            ((object)(resources.GetObject("cboPais.Items161"))),
+            ((object)(resources.GetObject("cboPais.Items162"))),
+            ((object)(resources.GetObject("cboPais.Items163"))),
+            ((object)(resources.GetObject("cboPais.Items164"))),
+            ((object)(resources.GetObject("cboPais.Items165"))),
+            ((object)(resources.GetObject("cboPais.Items166"))),
+            ((object)(resources.GetObject("cboPais.Items167"))),
+            ((object)(resources.GetObject("cboPais.Items168"))),
+            ((object)(resources.GetObject("cboPais.Items169"))),
+            ((object)(resources.GetObject("cboPais.Items170"))),
+            ((object)(resources.GetObject("cboPais.Items171"))),
+            ((object)(resources.GetObject("cboPais.Items172"))),
+            ((object)(resources.GetObject("cboPais.Items173"))),
+            ((object)(resources.GetObject("cboPais.Items174"))),
+            ((object)(resources.GetObject("cboPais.Items175"))),
+            ((object)(resources.GetObject("cboPais.Items176"))),
+            ((object)(resources.GetObject("cboPais.Items177"))),
+            ((object)(resources.GetObject("cboPais.Items178"))),
+            ((object)(resources.GetObject("cboPais.Items179"))),
+            ((object)(resources.GetObject("cboPais.Items180"))),
+            ((object)(resources.GetObject("cboPais.Items181"))),
+            ((object)(resources.GetObject("cboPais.Items182"))),
+            ((object)(resources.GetObject("cboPais.Items183"))),
+            ((object)(resources.GetObject("cboPais.Items184"))),
+            ((object)(resources.GetObject("cboPais.Items185"))),
+            ((object)(resources.GetObject("cboPais.Items186"))),
+            ((object)(resources.GetObject("cboPais.Items187"))),
+            ((object)(resources.GetObject("cboPais.Items188"))),
+            ((object)(resources.GetObject("cboPais.Items189"))),
+            ((object)(resources.GetObject("cboPais.Items190"))),
+            ((object)(resources.GetObject("cboPais.Items191"))),
+            ((object)(resources.GetObject("cboPais.Items192"))),
+            ((object)(resources.GetObject("cboPais.Items193"))),
+            ((object)(resources.GetObject("cboPais.Items194"))),
+            ((object)(resources.GetObject("cboPais.Items195"))),
+            ((object)(resources.GetObject("cboPais.Items196"))),
+            ((object)(resources.GetObject("cboPais.Items197"))),
+            ((object)(resources.GetObject("cboPais.Items198"))),
+            ((object)(resources.GetObject("cboPais.Items199"))),
+            ((object)(resources.GetObject("cboPais.Items200"))),
+            ((object)(resources.GetObject("cboPais.Items201"))),
+            ((object)(resources.GetObject("cboPais.Items202"))),
+            ((object)(resources.GetObject("cboPais.Items203"))),
+            ((object)(resources.GetObject("cboPais.Items204"))),
+            ((object)(resources.GetObject("cboPais.Items205"))),
+            ((object)(resources.GetObject("cboPais.Items206"))),
+            ((object)(resources.GetObject("cboPais.Items207"))),
+            ((object)(resources.GetObject("cboPais.Items208"))),
+            ((object)(resources.GetObject("cboPais.Items209"))),
+            ((object)(resources.GetObject("cboPais.Items210"))),
+            ((object)(resources.GetObject("cboPais.Items211"))),
+            ((object)(resources.GetObject("cboPais.Items212"))),
+            ((object)(resources.GetObject("cboPais.Items213"))),
+            ((object)(resources.GetObject("cboPais.Items214"))),
+            ((object)(resources.GetObject("cboPais.Items215"))),
+            ((object)(resources.GetObject("cboPais.Items216"))),
+            ((object)(resources.GetObject("cboPais.Items217"))),
+            ((object)(resources.GetObject("cboPais.Items218"))),
+            ((object)(resources.GetObject("cboPais.Items219"))),
+            ((object)(resources.GetObject("cboPais.Items220"))),
+            ((object)(resources.GetObject("cboPais.Items221"))),
+            ((object)(resources.GetObject("cboPais.Items222"))),
+            ((object)(resources.GetObject("cboPais.Items223"))),
+            ((object)(resources.GetObject("cboPais.Items224"))),
+            ((object)(resources.GetObject("cboPais.Items225"))),
+            ((object)(resources.GetObject("cboPais.Items226"))),
+            ((object)(resources.GetObject("cboPais.Items227"))),
+            ((object)(resources.GetObject("cboPais.Items228"))),
+            ((object)(resources.GetObject("cboPais.Items229"))),
+            ((object)(resources.GetObject("cboPais.Items230"))),
+            ((object)(resources.GetObject("cboPais.Items231"))),
+            ((object)(resources.GetObject("cboPais.Items232"))),
+            ((object)(resources.GetObject("cboPais.Items233")))});
+            this.cboPais.Location = new System.Drawing.Point(152, 287);
+            this.cboPais.Name = "cboPais";
+            this.cboPais.SelectedRegion = ((System.Globalization.RegionInfo)(resources.GetObject("cboPais.SelectedRegion")));
+            this.cboPais.Size = new System.Drawing.Size(117, 21);
+            this.cboPais.TabIndex = 16;
+            this.cboPais.UseNativeName = false;
             // 
             // label3
             // 
@@ -389,19 +391,19 @@ namespace GestionAutores
             this.label2.TabIndex = 14;
             this.label2.Text = "Nombres:";
             // 
-            // textBox3
+            // txtApellidos
             // 
-            this.textBox3.Location = new System.Drawing.Point(32, 252);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(237, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtApellidos.Location = new System.Drawing.Point(32, 252);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(237, 20);
+            this.txtApellidos.TabIndex = 13;
             // 
-            // textBox2
+            // txtNombres
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtNombres.Location = new System.Drawing.Point(32, 205);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(237, 20);
+            this.txtNombres.TabIndex = 12;
             // 
             // label1
             // 
@@ -412,46 +414,44 @@ namespace GestionAutores
             this.label1.TabIndex = 11;
             this.label1.Text = "ID:";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtID.Location = new System.Drawing.Point(125, 168);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 10;
             // 
             // fichaAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 522);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fichaAutor";
             this.Text = "fichaAutor";
             this.Load += new System.EventHandler(this.fichaAutor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private FlagsISO.ComboBoxCountrySelect comboBoxCountrySelect1;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombres;
+        private FlagsISO.ComboBoxCountrySelect cboPais;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtComentarios;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
