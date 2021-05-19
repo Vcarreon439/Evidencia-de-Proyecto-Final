@@ -112,6 +112,10 @@
       <Project>{523a8aed-2a96-42c9-90fc-216e5517384b}</Project>
       <Name>GestionGeneros</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GestionUsuarios\GestionUsuarios.csproj">
+      <Project>{f2002812-3a91-45df-a04a-5dd8288cf47f}</Project>
+      <Name>GestionUsuarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

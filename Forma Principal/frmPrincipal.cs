@@ -44,8 +44,8 @@ namespace Forma_Principal
 
         private void desEleminar() 
         {
-            btnDeleteLibro.Enabled = false;
-            btnDeleteMember.Enabled = false;
+            //btnDeleteLibro.Enabled = false;
+            //btnDeleteMember.Enabled = false;
         }
 
         private void actTodo() 
@@ -53,8 +53,8 @@ namespace Forma_Principal
             btnAgregarLibro.Enabled = true;
             btnAgregarMiembro.Enabled = true;
             btnAutores.Enabled = true;
-            btnDeleteLibro.Enabled = true;
-            btnDeleteMember.Enabled = true;
+            //btnDeleteLibro.Enabled = true;
+            //btnDeleteMember.Enabled = true;
             btnGeneros.Enabled = true;
             btnGestionarAutor.Enabled = true;
             btnGestionGeneros.Enabled = true;
@@ -62,8 +62,8 @@ namespace Forma_Principal
             btnListaLibros.Enabled = true;
             btnListaMiembros.Enabled = true;
             btnMiembros.Enabled = true;
-            btnUpdateLibro.Enabled = true;
-            btnUpdateMiembro.Enabled = true;
+            //btnUpdateLibro.Enabled = true;
+            //btnUpdateMiembro.Enabled = true;
         }
 
 
@@ -149,6 +149,14 @@ namespace Forma_Principal
             FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
         }
 
-        
+        private void btnListaMiembros_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+        }
+
+        private void btnAgregarMiembro_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
+        }
     }
 }

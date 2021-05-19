@@ -32,14 +32,10 @@ namespace Forma_Principal
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlSubMenu4 = new System.Windows.Forms.Panel();
             this.btnListaLibros = new System.Windows.Forms.Button();
-            this.btnDeleteLibro = new System.Windows.Forms.Button();
-            this.btnUpdateLibro = new System.Windows.Forms.Button();
             this.btnAgregarLibro = new System.Windows.Forms.Button();
             this.btnLibros = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu3 = new System.Windows.Forms.Panel();
             this.btnListaMiembros = new System.Windows.Forms.Button();
-            this.btnDeleteMember = new System.Windows.Forms.Button();
-            this.btnUpdateMiembro = new System.Windows.Forms.Button();
             this.btnAgregarMiembro = new System.Windows.Forms.Button();
             this.btnMiembros = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu2 = new System.Windows.Forms.Panel();
@@ -81,13 +77,11 @@ namespace Forma_Principal
             // pnlSubMenu4
             // 
             this.pnlSubMenu4.Controls.Add(this.btnListaLibros);
-            this.pnlSubMenu4.Controls.Add(this.btnDeleteLibro);
-            this.pnlSubMenu4.Controls.Add(this.btnUpdateLibro);
             this.pnlSubMenu4.Controls.Add(this.btnAgregarLibro);
             this.pnlSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 457);
+            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 377);
             this.pnlSubMenu4.Name = "pnlSubMenu4";
-            this.pnlSubMenu4.Size = new System.Drawing.Size(183, 160);
+            this.pnlSubMenu4.Size = new System.Drawing.Size(200, 80);
             this.pnlSubMenu4.TabIndex = 0;
             this.pnlSubMenu4.Visible = false;
             // 
@@ -98,46 +92,14 @@ namespace Forma_Principal
             this.btnListaLibros.FlatAppearance.BorderSize = 0;
             this.btnListaLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListaLibros.ForeColor = System.Drawing.Color.White;
-            this.btnListaLibros.Location = new System.Drawing.Point(0, 120);
+            this.btnListaLibros.Location = new System.Drawing.Point(0, 40);
             this.btnListaLibros.Name = "btnListaLibros";
             this.btnListaLibros.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnListaLibros.Size = new System.Drawing.Size(183, 40);
+            this.btnListaLibros.Size = new System.Drawing.Size(200, 40);
             this.btnListaLibros.TabIndex = 6;
             this.btnListaLibros.Text = "Lista de Libros";
             this.btnListaLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaLibros.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteLibro
-            // 
-            this.btnDeleteLibro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnDeleteLibro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteLibro.FlatAppearance.BorderSize = 0;
-            this.btnDeleteLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteLibro.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteLibro.Location = new System.Drawing.Point(0, 80);
-            this.btnDeleteLibro.Name = "btnDeleteLibro";
-            this.btnDeleteLibro.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnDeleteLibro.Size = new System.Drawing.Size(183, 40);
-            this.btnDeleteLibro.TabIndex = 5;
-            this.btnDeleteLibro.Text = "Eliminar Libro";
-            this.btnDeleteLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteLibro.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateLibro
-            // 
-            this.btnUpdateLibro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnUpdateLibro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateLibro.FlatAppearance.BorderSize = 0;
-            this.btnUpdateLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateLibro.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateLibro.Location = new System.Drawing.Point(0, 40);
-            this.btnUpdateLibro.Name = "btnUpdateLibro";
-            this.btnUpdateLibro.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnUpdateLibro.Size = new System.Drawing.Size(183, 40);
-            this.btnUpdateLibro.TabIndex = 4;
-            this.btnUpdateLibro.Text = "Actualizar libro";
-            this.btnUpdateLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateLibro.UseVisualStyleBackColor = false;
             // 
             // btnAgregarLibro
             // 
@@ -149,7 +111,7 @@ namespace Forma_Principal
             this.btnAgregarLibro.Location = new System.Drawing.Point(0, 0);
             this.btnAgregarLibro.Name = "btnAgregarLibro";
             this.btnAgregarLibro.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnAgregarLibro.Size = new System.Drawing.Size(183, 40);
+            this.btnAgregarLibro.Size = new System.Drawing.Size(200, 40);
             this.btnAgregarLibro.TabIndex = 3;
             this.btnAgregarLibro.Text = "Agregar libro";
             this.btnAgregarLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,10 +128,10 @@ namespace Forma_Principal
             this.btnLibros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLibros.IconSize = 30;
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnLibros.Location = new System.Drawing.Point(0, 417);
+            this.btnLibros.Location = new System.Drawing.Point(0, 337);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLibros.Size = new System.Drawing.Size(183, 40);
+            this.btnLibros.Size = new System.Drawing.Size(200, 40);
             this.btnLibros.TabIndex = 1;
             this.btnLibros.Text = "Libros";
             this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,13 +142,11 @@ namespace Forma_Principal
             // pnlSubMenu3
             // 
             this.pnlSubMenu3.Controls.Add(this.btnListaMiembros);
-            this.pnlSubMenu3.Controls.Add(this.btnDeleteMember);
-            this.pnlSubMenu3.Controls.Add(this.btnUpdateMiembro);
             this.pnlSubMenu3.Controls.Add(this.btnAgregarMiembro);
             this.pnlSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenu3.Location = new System.Drawing.Point(0, 257);
             this.pnlSubMenu3.Name = "pnlSubMenu3";
-            this.pnlSubMenu3.Size = new System.Drawing.Size(183, 160);
+            this.pnlSubMenu3.Size = new System.Drawing.Size(200, 80);
             this.pnlSubMenu3.TabIndex = 0;
             this.pnlSubMenu3.Visible = false;
             // 
@@ -197,46 +157,15 @@ namespace Forma_Principal
             this.btnListaMiembros.FlatAppearance.BorderSize = 0;
             this.btnListaMiembros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListaMiembros.ForeColor = System.Drawing.Color.White;
-            this.btnListaMiembros.Location = new System.Drawing.Point(0, 120);
+            this.btnListaMiembros.Location = new System.Drawing.Point(0, 40);
             this.btnListaMiembros.Name = "btnListaMiembros";
             this.btnListaMiembros.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnListaMiembros.Size = new System.Drawing.Size(183, 40);
+            this.btnListaMiembros.Size = new System.Drawing.Size(200, 40);
             this.btnListaMiembros.TabIndex = 5;
             this.btnListaMiembros.Text = "Lista de miembros";
             this.btnListaMiembros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaMiembros.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteMember
-            // 
-            this.btnDeleteMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnDeleteMember.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteMember.FlatAppearance.BorderSize = 0;
-            this.btnDeleteMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMember.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMember.Location = new System.Drawing.Point(0, 80);
-            this.btnDeleteMember.Name = "btnDeleteMember";
-            this.btnDeleteMember.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnDeleteMember.Size = new System.Drawing.Size(183, 40);
-            this.btnDeleteMember.TabIndex = 4;
-            this.btnDeleteMember.Text = "Eliminar miembro";
-            this.btnDeleteMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteMember.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateMiembro
-            // 
-            this.btnUpdateMiembro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnUpdateMiembro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateMiembro.FlatAppearance.BorderSize = 0;
-            this.btnUpdateMiembro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateMiembro.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateMiembro.Location = new System.Drawing.Point(0, 40);
-            this.btnUpdateMiembro.Name = "btnUpdateMiembro";
-            this.btnUpdateMiembro.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnUpdateMiembro.Size = new System.Drawing.Size(183, 40);
-            this.btnUpdateMiembro.TabIndex = 3;
-            this.btnUpdateMiembro.Text = "Actualizar miembro";
-            this.btnUpdateMiembro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateMiembro.UseVisualStyleBackColor = false;
+            this.btnListaMiembros.Click += new System.EventHandler(this.btnListaMiembros_Click);
             // 
             // btnAgregarMiembro
             // 
@@ -248,11 +177,12 @@ namespace Forma_Principal
             this.btnAgregarMiembro.Location = new System.Drawing.Point(0, 0);
             this.btnAgregarMiembro.Name = "btnAgregarMiembro";
             this.btnAgregarMiembro.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnAgregarMiembro.Size = new System.Drawing.Size(183, 40);
+            this.btnAgregarMiembro.Size = new System.Drawing.Size(200, 40);
             this.btnAgregarMiembro.TabIndex = 2;
             this.btnAgregarMiembro.Text = "Agregar miembro";
             this.btnAgregarMiembro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarMiembro.UseVisualStyleBackColor = false;
+            this.btnAgregarMiembro.Click += new System.EventHandler(this.btnAgregarMiembro_Click);
             // 
             // btnMiembros
             // 
@@ -268,7 +198,7 @@ namespace Forma_Principal
             this.btnMiembros.Location = new System.Drawing.Point(0, 217);
             this.btnMiembros.Name = "btnMiembros";
             this.btnMiembros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMiembros.Size = new System.Drawing.Size(183, 40);
+            this.btnMiembros.Size = new System.Drawing.Size(200, 40);
             this.btnMiembros.TabIndex = 0;
             this.btnMiembros.Text = "Miembros";
             this.btnMiembros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,7 +213,7 @@ namespace Forma_Principal
             this.pnlSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenu2.Location = new System.Drawing.Point(0, 177);
             this.pnlSubMenu2.Name = "pnlSubMenu2";
-            this.pnlSubMenu2.Size = new System.Drawing.Size(183, 40);
+            this.pnlSubMenu2.Size = new System.Drawing.Size(200, 40);
             this.pnlSubMenu2.TabIndex = 0;
             this.pnlSubMenu2.Visible = false;
             // 
@@ -297,7 +227,7 @@ namespace Forma_Principal
             this.btnGestionarAutores.Location = new System.Drawing.Point(0, 0);
             this.btnGestionarAutores.Name = "btnGestionarAutores";
             this.btnGestionarAutores.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnGestionarAutores.Size = new System.Drawing.Size(183, 40);
+            this.btnGestionarAutores.Size = new System.Drawing.Size(200, 40);
             this.btnGestionarAutores.TabIndex = 1;
             this.btnGestionarAutores.Text = "Gestionar Autores";
             this.btnGestionarAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -309,7 +239,7 @@ namespace Forma_Principal
             this.btnGestionarAutor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGestionarAutor.Location = new System.Drawing.Point(0, 0);
             this.btnGestionarAutor.Name = "btnGestionarAutor";
-            this.btnGestionarAutor.Size = new System.Drawing.Size(183, 40);
+            this.btnGestionarAutor.Size = new System.Drawing.Size(200, 40);
             this.btnGestionarAutor.TabIndex = 0;
             this.btnGestionarAutor.Text = "Gestionar Autores";
             this.btnGestionarAutor.UseVisualStyleBackColor = true;
@@ -328,7 +258,7 @@ namespace Forma_Principal
             this.btnAutores.Location = new System.Drawing.Point(0, 137);
             this.btnAutores.Name = "btnAutores";
             this.btnAutores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAutores.Size = new System.Drawing.Size(183, 40);
+            this.btnAutores.Size = new System.Drawing.Size(200, 40);
             this.btnAutores.TabIndex = 3;
             this.btnAutores.Text = "Autores";
             this.btnAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +272,7 @@ namespace Forma_Principal
             this.pnlSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenu1.Location = new System.Drawing.Point(0, 97);
             this.pnlSubMenu1.Name = "pnlSubMenu1";
-            this.pnlSubMenu1.Size = new System.Drawing.Size(183, 40);
+            this.pnlSubMenu1.Size = new System.Drawing.Size(200, 40);
             this.pnlSubMenu1.TabIndex = 0;
             this.pnlSubMenu1.Visible = false;
             // 
@@ -356,7 +286,7 @@ namespace Forma_Principal
             this.btnGestionGeneros.Location = new System.Drawing.Point(0, 0);
             this.btnGestionGeneros.Name = "btnGestionGeneros";
             this.btnGestionGeneros.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnGestionGeneros.Size = new System.Drawing.Size(183, 40);
+            this.btnGestionGeneros.Size = new System.Drawing.Size(200, 40);
             this.btnGestionGeneros.TabIndex = 0;
             this.btnGestionGeneros.Text = "Gestionar Generos";
             this.btnGestionGeneros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,7 +307,7 @@ namespace Forma_Principal
             this.btnGeneros.Location = new System.Drawing.Point(0, 57);
             this.btnGeneros.Name = "btnGeneros";
             this.btnGeneros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGeneros.Size = new System.Drawing.Size(183, 40);
+            this.btnGeneros.Size = new System.Drawing.Size(200, 40);
             this.btnGeneros.TabIndex = 2;
             this.btnGeneros.Text = "Generos";
             this.btnGeneros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,7 +321,7 @@ namespace Forma_Principal
             this.pnlEncabezadoMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezadoMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlEncabezadoMenu.Name = "pnlEncabezadoMenu";
-            this.pnlEncabezadoMenu.Size = new System.Drawing.Size(183, 57);
+            this.pnlEncabezadoMenu.Size = new System.Drawing.Size(200, 57);
             this.pnlEncabezadoMenu.TabIndex = 1;
             this.pnlEncabezadoMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlEncabezadoMenu_MouseMove);
             // 
@@ -437,13 +367,9 @@ namespace Forma_Principal
         private System.Windows.Forms.Button btnGestionarAutor;
         private System.Windows.Forms.Panel pnlSubMenu3;
         private System.Windows.Forms.Button btnListaMiembros;
-        private System.Windows.Forms.Button btnDeleteMember;
-        private System.Windows.Forms.Button btnUpdateMiembro;
         private System.Windows.Forms.Button btnAgregarMiembro;
         private System.Windows.Forms.Panel pnlSubMenu4;
         private System.Windows.Forms.Button btnListaLibros;
-        private System.Windows.Forms.Button btnDeleteLibro;
-        private System.Windows.Forms.Button btnUpdateLibro;
         private System.Windows.Forms.Button btnAgregarLibro;
         private FontAwesome.Sharp.IconButton btnMiembros;
         private FontAwesome.Sharp.IconButton btnLibros;
