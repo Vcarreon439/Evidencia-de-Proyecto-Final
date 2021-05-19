@@ -1,14 +1,9 @@
 ﻿using System;
 using Dominio;
 using System.IO;
+using Funcionalidad_Formularios;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -23,8 +18,8 @@ namespace GestionAutores
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fichaAutor frm = new fichaAutor();
-            frm.Show();
+            //fichaAutor frm = new fichaAutor();
+            //frm.Show();
         }
 
         private void chkDesconocido_CheckedChanged(object sender, EventArgs e)
@@ -47,7 +42,7 @@ namespace GestionAutores
 
         private void dgvAutores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            List<string> elementos = new List<string>(7);
         }
 
         private void btnImagen_Click(object sender, EventArgs e)
@@ -113,7 +108,7 @@ namespace GestionAutores
             if (chkDesconocido.Checked == true)
                 lista.Add("Desconocido");
             else
-                lista.Add(cboCountry.Text.Split(' ')[1].Replace("]",""));
+                lista.Add(cboCountry.Text);
 
             //Ciudad
             if (txtCiudad.Text != "")
@@ -145,7 +140,9 @@ namespace GestionAutores
                 var tabla = OBJ.MostrarAutor();
 
                 if (tabla.Rows.Count!=0)
-                    dgvAutores.DataSource = OBJ.MostrarAutor();
+                    dgvAutores.DataSource = tabla;
+
+                //dgvAutores.Ed
 
             }
             catch (Exception ex)
@@ -157,6 +154,36 @@ namespace GestionAutores
         private void frmGestionAutores_Load(object sender, EventArgs e)
         {
             ActualizarData();
+        }
+
+        private void dgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("Hola");
+        }
+
+        private void dgvAutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex!=-1)
+            {
+                List<string> message = new List<string>(5);
+
+                DataGridViewRow reciever = dgvAutores.Rows[e.RowIndex];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    message.Add(reciever.Cells[i].Value.ToString());
+                }
+
+                ObjetoAutor Obj = new ObjetoAutor(message);
+                fichaAutor ficha = new fichaAutor(Obj);
+                ficha.ShowDialog();
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Arrastre_Formularios.Llama_ReleaseCapture();
+            Arrastre_Formularios.Llama_SendMessage(ParentForm.Handle, 0x112, 0xf012, 0);
         }
     }
 }
