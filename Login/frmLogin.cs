@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Autenticacion;
+using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using Dominio;
 using Forma_Principal;
@@ -17,19 +17,20 @@ namespace Login
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-       (
-           int nLeftRect,     // x-coordinate of upper-left corner
-           int nTopRect,      // y-coordinate of upper-left corner
-           int nRightRect,    // x-coordinate of lower-right corner
-           int nBottomRect,   // y-coordinate of lower-right corner
-           int nWidthEllipse, // width of ellipse
-           int nHeightEllipse // height of ellipse
-       );
+        (
+            int nLeftRect, // x-coordinate of upper-left corner
+            int nTopRect, // y-coordinate of upper-left corner
+            int nRightRect, // x-coordinate of lower-right corner
+            int nBottomRect, // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
         public frmLogin()
         {
             InitializeComponent();
-            interno = new SqlConnection($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path.GetFullPath("./LibreriaBD.mdf")};Integrated Security = True");
+            interno = new SqlConnection(
+                $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path.GetFullPath("./LibreriaBD.mdf")};Integrated Security = True");
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -50,7 +51,9 @@ namespace Login
                 obj.ShowDialog();
             }
             else
-            { MessageBox.Show("Inicio Incorrecto"); }
+            {
+                MessageBox.Show("Inicio Incorrecto");
+            }
         }
 
         private void pnlFondo_MouseMove(object sender, MouseEventArgs e)
@@ -67,6 +70,12 @@ namespace Login
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
             btnCerrar.ForeColor = Color.Red;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.LightSlateGray;
+            this.TransparencyKey = Color.LightSlateGray;
         }
     }
 }
