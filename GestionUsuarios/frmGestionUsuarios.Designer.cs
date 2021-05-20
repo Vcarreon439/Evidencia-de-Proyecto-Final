@@ -29,21 +29,17 @@ namespace GestionUsuarios
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label apellidosLabel;
             System.Windows.Forms.Label domicilioLabel;
             System.Windows.Forms.Label entidadLabel;
             System.Windows.Forms.Label nacimientoLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label situacionLabel;
             System.Windows.Forms.Label cURPLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.cURPTextBox = new System.Windows.Forms.TextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.situacionComboBox = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctUsuario = new System.Windows.Forms.PictureBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
             this.domicilioTextBox = new System.Windows.Forms.TextBox();
             this.entidadComboBox = new System.Windows.Forms.ComboBox();
@@ -54,17 +50,15 @@ namespace GestionUsuarios
             entidadLabel = new System.Windows.Forms.Label();
             nacimientoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
-            situacionLabel = new System.Windows.Forms.Label();
             cURPLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
             // 
             apellidosLabel.AutoSize = true;
-            apellidosLabel.Location = new System.Drawing.Point(268, 152);
+            apellidosLabel.Location = new System.Drawing.Point(262, 154);
             apellidosLabel.Name = "apellidosLabel";
             apellidosLabel.Size = new System.Drawing.Size(52, 13);
             apellidosLabel.TabIndex = 0;
@@ -82,7 +76,7 @@ namespace GestionUsuarios
             // entidadLabel
             // 
             entidadLabel.AutoSize = true;
-            entidadLabel.Location = new System.Drawing.Point(388, 61);
+            entidadLabel.Location = new System.Drawing.Point(349, 63);
             entidadLabel.Name = "entidadLabel";
             entidadLabel.Size = new System.Drawing.Size(46, 13);
             entidadLabel.TabIndex = 6;
@@ -91,7 +85,7 @@ namespace GestionUsuarios
             // nacimientoLabel
             // 
             nacimientoLabel.AutoSize = true;
-            nacimientoLabel.Location = new System.Drawing.Point(301, 215);
+            nacimientoLabel.Location = new System.Drawing.Point(262, 224);
             nacimientoLabel.Name = "nacimientoLabel";
             nacimientoLabel.Size = new System.Drawing.Size(111, 13);
             nacimientoLabel.TabIndex = 8;
@@ -100,25 +94,16 @@ namespace GestionUsuarios
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(268, 98);
+            nombreLabel.Location = new System.Drawing.Point(262, 99);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 10;
             nombreLabel.Text = "Nombre:";
             // 
-            // situacionLabel
-            // 
-            situacionLabel.AutoSize = true;
-            situacionLabel.Location = new System.Drawing.Point(99, 279);
-            situacionLabel.Name = "situacionLabel";
-            situacionLabel.Size = new System.Drawing.Size(54, 13);
-            situacionLabel.TabIndex = 14;
-            situacionLabel.Text = "Situacion:";
-            // 
             // cURPLabel
             // 
             cURPLabel.AutoSize = true;
-            cURPLabel.Location = new System.Drawing.Point(379, 29);
+            cURPLabel.Location = new System.Drawing.Point(433, 35);
             cURPLabel.Name = "cURPLabel";
             cURPLabel.Size = new System.Drawing.Size(40, 13);
             cURPLabel.TabIndex = 19;
@@ -130,9 +115,7 @@ namespace GestionUsuarios
             this.panel1.Controls.Add(this.cURPTextBox);
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.btnInsertar);
-            this.panel1.Controls.Add(situacionLabel);
-            this.panel1.Controls.Add(this.situacionComboBox);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pctUsuario);
             this.panel1.Controls.Add(apellidosLabel);
             this.panel1.Controls.Add(this.apellidosTextBox);
             this.panel1.Controls.Add(domicilioLabel);
@@ -146,114 +129,97 @@ namespace GestionUsuarios
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 509);
+            this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // cURPTextBox
             // 
-            this.cURPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CURP", true));
-            this.cURPTextBox.Location = new System.Drawing.Point(425, 26);
+            this.cURPTextBox.Location = new System.Drawing.Point(479, 32);
             this.cURPTextBox.Name = "cURPTextBox";
             this.cURPTextBox.Size = new System.Drawing.Size(100, 20);
             this.cURPTextBox.TabIndex = 20;
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(GestionUsuarios.Usuario);
-            // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(474, 339);
+            this.btnNuevo.Location = new System.Drawing.Point(456, 338);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(144, 42);
+            this.btnNuevo.Size = new System.Drawing.Size(132, 43);
             this.btnNuevo.TabIndex = 18;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(474, 387);
+            this.btnInsertar.Location = new System.Drawing.Point(456, 387);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(144, 42);
+            this.btnInsertar.Size = new System.Drawing.Size(132, 45);
             this.btnInsertar.TabIndex = 16;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             // 
-            // situacionComboBox
+            // pctUsuario
             // 
-            this.situacionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Situacion", true));
-            this.situacionComboBox.FormattingEnabled = true;
-            this.situacionComboBox.Location = new System.Drawing.Point(159, 271);
-            this.situacionComboBox.Name = "situacionComboBox";
-            this.situacionComboBox.Size = new System.Drawing.Size(121, 21);
-            this.situacionComboBox.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 230);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pctUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctUsuario.Location = new System.Drawing.Point(12, 13);
+            this.pctUsuario.Name = "pctUsuario";
+            this.pctUsuario.Size = new System.Drawing.Size(230, 230);
+            this.pctUsuario.TabIndex = 14;
+            this.pctUsuario.TabStop = false;
             // 
             // apellidosTextBox
             // 
-            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellidos", true));
-            this.apellidosTextBox.Location = new System.Drawing.Point(271, 173);
+            this.apellidosTextBox.Location = new System.Drawing.Point(265, 176);
             this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(347, 20);
+            this.apellidosTextBox.Size = new System.Drawing.Size(314, 20);
             this.apellidosTextBox.TabIndex = 1;
             // 
             // domicilioTextBox
             // 
-            this.domicilioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Domicilio", true));
-            this.domicilioTextBox.Location = new System.Drawing.Point(15, 339);
+            this.domicilioTextBox.Location = new System.Drawing.Point(12, 338);
             this.domicilioTextBox.Multiline = true;
             this.domicilioTextBox.Name = "domicilioTextBox";
-            this.domicilioTextBox.Size = new System.Drawing.Size(453, 150);
+            this.domicilioTextBox.Size = new System.Drawing.Size(429, 150);
             this.domicilioTextBox.TabIndex = 5;
             // 
             // entidadComboBox
             // 
-            this.entidadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Entidad", true));
             this.entidadComboBox.FormattingEnabled = true;
             this.entidadComboBox.Items.AddRange(new object[] {
             "Coahuila de Zaragoza",
             "Durango"});
-            this.entidadComboBox.Location = new System.Drawing.Point(440, 58);
+            this.entidadComboBox.Location = new System.Drawing.Point(401, 60);
             this.entidadComboBox.Name = "entidadComboBox";
             this.entidadComboBox.Size = new System.Drawing.Size(178, 21);
             this.entidadComboBox.TabIndex = 7;
             // 
             // nacimientoDateTimePicker
             // 
-            this.nacimientoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.usuarioBindingSource, "Nacimiento", true));
-            this.nacimientoDateTimePicker.Location = new System.Drawing.Point(418, 211);
+            this.nacimientoDateTimePicker.Location = new System.Drawing.Point(379, 218);
             this.nacimientoDateTimePicker.Name = "nacimientoDateTimePicker";
             this.nacimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.nacimientoDateTimePicker.TabIndex = 9;
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(271, 122);
+            this.nombreTextBox.Location = new System.Drawing.Point(265, 120);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(347, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(314, 20);
             this.nombreTextBox.TabIndex = 11;
             // 
             // frmGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 509);
+            this.ClientSize = new System.Drawing.Size(600, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionUsuarios";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,9 +228,7 @@ namespace GestionUsuarios
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.ComboBox situacionComboBox;
-        private System.Windows.Forms.BindingSource usuarioBindingSource;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctUsuario;
         private System.Windows.Forms.TextBox apellidosTextBox;
         private System.Windows.Forms.TextBox domicilioTextBox;
         private System.Windows.Forms.ComboBox entidadComboBox;
