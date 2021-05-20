@@ -94,7 +94,7 @@ namespace GestionAutores
             this.btnImagen.IconColor = System.Drawing.Color.Black;
             this.btnImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImagen.IconSize = 35;
-            this.btnImagen.Location = new System.Drawing.Point(210, 45);
+            this.btnImagen.Location = new System.Drawing.Point(210, 39);
             this.btnImagen.Name = "btnImagen";
             this.btnImagen.Size = new System.Drawing.Size(41, 41);
             this.btnImagen.TabIndex = 22;
@@ -116,7 +116,7 @@ namespace GestionAutores
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Location = new System.Drawing.Point(12, 58);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 54);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(192, 13);
             this.linkLabel1.TabIndex = 20;
