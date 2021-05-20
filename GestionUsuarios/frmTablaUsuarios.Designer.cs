@@ -30,9 +30,9 @@ namespace GestionUsuarios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,17 @@ namespace GestionUsuarios
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // btnMostrarTodo
+            // 
+            this.btnMostrarTodo.Location = new System.Drawing.Point(286, 62);
+            this.btnMostrarTodo.Name = "btnMostrarTodo";
+            this.btnMostrarTodo.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrarTodo.TabIndex = 21;
+            this.btnMostrarTodo.Text = "All";
+            this.btnMostrarTodo.UseVisualStyleBackColor = true;
+            this.btnMostrarTodo.Click += new System.EventHandler(this.btnMostrarTodo_Click);
             // 
             // label8
             // 
@@ -66,16 +77,6 @@ namespace GestionUsuarios
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(576, 340);
             this.dgvUsuarios.TabIndex = 19;
-            // 
-            // btnMostrarTodo
-            // 
-            this.btnMostrarTodo.Location = new System.Drawing.Point(286, 62);
-            this.btnMostrarTodo.Name = "btnMostrarTodo";
-            this.btnMostrarTodo.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrarTodo.TabIndex = 21;
-            this.btnMostrarTodo.Text = "All";
-            this.btnMostrarTodo.UseVisualStyleBackColor = true;
-            this.btnMostrarTodo.Click += new System.EventHandler(this.btnMostrarTodo_Click);
             // 
             // frmTablaUsuarios
             // 

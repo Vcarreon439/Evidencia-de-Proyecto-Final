@@ -37,7 +37,6 @@
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Proyecto_Contabilidad\Funcionalidad_Formularios\Funcionalidad_Formularios\Funcionalidad_Formularios.csproj">
+      <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
+      <Name>Funcionalidad_Formularios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{275c59e3-3f7e-4c80-9963-8e3e4b2a0bcc}</Project>
       <Name>CustomControls</Name>
