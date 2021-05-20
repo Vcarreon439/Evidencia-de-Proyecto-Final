@@ -48,22 +48,19 @@ namespace AccesoADatos
                     {
                         case "ADMIN":
                             return TipoUsuario.TypeUser.Admin;
-                            break;
 
                         case "USER":
                             return TipoUsuario.TypeUser.Usuario;
-                            break;
 
                         case "MANAGER":
                             return TipoUsuario.TypeUser.Maganer;
-                            break;
 
                         case "GUEST":
                             return TipoUsuario.TypeUser.Invitado;
-                            break;
-                    }
 
-                    return TipoUsuario.TypeUser.Invitado;
+                        default:
+                            return TipoUsuario.TypeUser.Invitado;
+                    }
                 }
             }
         }
@@ -80,6 +77,26 @@ namespace AccesoADatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@cod", codigo));
                     cmd.Parameters.Add(new SqlParameter("@tipo", definicion));
+
+                    if (cmd.ExecuteNonQuery() != 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+
+        public bool EliminarTema(string codigo)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("EliminarTema", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codTema", codigo);
 
                     if (cmd.ExecuteNonQuery() != 0)
                         return true;
