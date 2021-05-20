@@ -115,6 +115,7 @@ namespace GestionGeneros
             this.dgvGeneros.Name = "dgvGeneros";
             this.dgvGeneros.Size = new System.Drawing.Size(388, 476);
             this.dgvGeneros.TabIndex = 2;
+            this.dgvGeneros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGeneros_CellClick);
             // 
             // txtCodigo
             // 

@@ -2,6 +2,7 @@
 using Dominio;
 using Funcionalidad_Formularios;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace GestionGeneros
 {
@@ -93,6 +94,23 @@ namespace GestionGeneros
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvGeneros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex!=-1)
+            {
+                List<string> message = new List<string>(2);
+                DataGridViewRow reciever = dgvGeneros.Rows[e.RowIndex];
+
+                for (int i = 0; i < 2; i++)
+                {
+                    message.Add(reciever.Cells[i].Value.ToString());
+                }
+
+                txtCodigo.Text = message[0];
+                txtDescripcion.Text = message[1];
+            }
         }
     }
 }
