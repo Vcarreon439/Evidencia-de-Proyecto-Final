@@ -25,47 +25,75 @@ namespace Forma_Principal
                     break;
 
                 case TipoUsuario.TypeUser.Usuario:
-                    desEleminar();
+                    UserMode();
                     break;
 
                 case TipoUsuario.TypeUser.Maganer:
-                    actTodo();
+                    ManagerMode();
                     break;
 
                 case TipoUsuario.TypeUser.Admin:
-                    actTodo();
-                    break;
-
-                default:
-
+                    AdminMode();
                     break;
             }
         }
 
-        private void desEleminar() 
+        private void AdminMode()
         {
-            //btnDeleteLibro.Enabled = false;
-            //btnDeleteMember.Enabled = false;
-        }
-
-        private void actTodo() 
-        {
-            btnAgregarLibro.Enabled = true;
-            btnAgregarMiembro.Enabled = true;
-            btnAutores.Enabled = true;
-            //btnDeleteLibro.Enabled = true;
-            //btnDeleteMember.Enabled = true;
-            btnGeneros.Enabled = true;
-            btnGestionarAutor.Enabled = true;
             btnGestionGeneros.Enabled = true;
-            btnLibros.Enabled = true;
-            btnListaLibros.Enabled = true;
+            btnGestionarAutor.Enabled = true;
+            btnGestionarMiembro.Enabled = true;
+            btnGestionLibro.Enabled = true;
+
+            btnGestionGeneros.Visible = true;
+            btnGestionarAutor.Visible = true;
+            btnGestionarMiembro.Visible = true;
+            btnGestionLibro.Visible = true;
+
+            btnListaGeneros.Enabled = true;
+            btnListaAutores.Enabled = true;
             btnListaMiembros.Enabled = true;
-            btnMiembros.Enabled = true;
-            //btnUpdateLibro.Enabled = true;
-            //btnUpdateMiembro.Enabled = true;
+            btnListaAutores.Enabled = true;
+
+            cboTipoUsuario.Enabled = true;
+            cboTipoUsuario.Visible = true;
         }
 
+        private void ManagerMode()
+        {
+            btnGestionGeneros.Enabled = true;
+            btnGestionarAutor.Enabled = true;
+            btnGestionarMiembro.Enabled = true;
+            btnGestionLibro.Enabled = true;
+
+            btnGestionGeneros.Visible = true;
+            btnGestionarAutor.Visible = true;
+            btnGestionarMiembro.Visible = true;
+            btnGestionLibro.Visible = true;
+
+            btnListaGeneros.Enabled = true;
+            btnListaAutores.Enabled = true;
+            btnListaMiembros.Enabled = true;
+            btnListaAutores.Enabled = true;
+        }
+        
+        private void UserMode()
+        {
+            btnGestionGeneros.Enabled = false;
+            btnGestionarAutor.Enabled = false;
+            btnGestionarMiembro.Enabled = false;
+            btnGestionLibro.Enabled = false;
+
+            btnGestionGeneros.Visible = false;
+            btnGestionarAutor.Visible = false;
+            btnGestionarMiembro.Visible = false;
+            btnGestionLibro.Visible = false;
+
+            btnListaGeneros.Enabled = true;
+            btnListaAutores.Enabled = true;
+            btnListaMiembros.Enabled = true;
+            btnListaAutores.Enabled = true;
+        }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -177,6 +205,33 @@ namespace Forma_Principal
         private void btnListaMiembros_MouseClick(object sender, MouseEventArgs e)
         {
             FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+        }
+
+        private void cboTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (cboTipoUsuario.Text)
+            {
+                case "Administrador":
+                    this.intern = TipoUsuario.TypeUser.Admin;
+                    Opciones(this.intern);
+                    break;
+
+                case "Manager":
+                    this.intern = TipoUsuario.TypeUser.Maganer;
+                    Opciones(this.intern);
+                    break;
+
+                case "Usuario":
+                    this.intern = TipoUsuario.TypeUser.Usuario;
+                    Opciones(this.intern);
+                    break;
+
+                case "Invitado":
+                    this.intern = TipoUsuario.TypeUser.Invitado;
+                    Opciones(this.intern);
+                    break;
+            }
         }
     }
 }
