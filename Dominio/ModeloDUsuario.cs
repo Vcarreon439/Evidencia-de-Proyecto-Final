@@ -66,5 +66,14 @@ namespace Dominio
             return usuario.InsertarAutor(lista);
         }
 
+        #region  MetodosEliminar
+
+        public bool EliminarTema(string codigo)
+        {
+            return usuario.EliminarTema(codigo);
+        }
+
+        #endregion
+
     }
 }
