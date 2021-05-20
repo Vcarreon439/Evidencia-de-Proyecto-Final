@@ -93,7 +93,30 @@ namespace GestionGeneros
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ModeloDUsuario Obj = new ModeloDUsuario();
 
+                if (txtCodigo.Text != "" && txtDescripcion.Text != "")
+                {
+                    ModeloDUsuario OBJ = new ModeloDUsuario();
+                    if (OBJ.EliminarTema(txtCodigo.Text))
+                        MessageBox.Show("Los cambios se realizaron correctamente");
+                    else
+                        MessageBox.Show("Incorrecto");
+                }
+                else
+                {
+                    MessageBox.Show("Los campos codigo y descripcion no pueden ir vacios", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            ActualizarData();
         }
 
         private void dgvGeneros_CellClick(object sender, DataGridViewCellEventArgs e)
