@@ -158,5 +158,25 @@ namespace Forma_Principal
         {
             FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
         }
+
+        private void btnGestionGeneros_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
+        }
+
+        private void btnGestionarAutores_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
+        }
+
+        private void btnAgregarMiembro_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
+        }
+
+        private void btnListaMiembros_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+        }
     }
 }

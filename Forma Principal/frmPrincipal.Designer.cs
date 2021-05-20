@@ -165,7 +165,7 @@ namespace Forma_Principal
             this.btnListaMiembros.Text = "Lista de miembros";
             this.btnListaMiembros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaMiembros.UseVisualStyleBackColor = false;
-            this.btnListaMiembros.Click += new System.EventHandler(this.btnListaMiembros_Click);
+            this.btnListaMiembros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaMiembros_MouseClick);
             // 
             // btnAgregarMiembro
             // 
@@ -182,7 +182,7 @@ namespace Forma_Principal
             this.btnAgregarMiembro.Text = "Agregar miembro";
             this.btnAgregarMiembro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarMiembro.UseVisualStyleBackColor = false;
-            this.btnAgregarMiembro.Click += new System.EventHandler(this.btnAgregarMiembro_Click);
+            this.btnAgregarMiembro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAgregarMiembro_MouseClick);
             // 
             // btnMiembros
             // 
@@ -232,7 +232,7 @@ namespace Forma_Principal
             this.btnGestionarAutores.Text = "Gestionar Autores";
             this.btnGestionarAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionarAutores.UseVisualStyleBackColor = false;
-            this.btnGestionarAutores.Click += new System.EventHandler(this.btnGestionarAutores_Click);
+            this.btnGestionarAutores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionarAutores_MouseClick);
             // 
             // btnGestionarAutor
             // 
@@ -291,7 +291,7 @@ namespace Forma_Principal
             this.btnGestionGeneros.Text = "Gestionar Generos";
             this.btnGestionGeneros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionGeneros.UseVisualStyleBackColor = false;
-            this.btnGestionGeneros.Click += new System.EventHandler(this.btnGestionGeneros_Click);
+            this.btnGestionGeneros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionGeneros_MouseClick);
             // 
             // btnGeneros
             // 
