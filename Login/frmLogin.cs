@@ -52,14 +52,8 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Inicio Incorrecto");
+                MessageBox.Show("Usuario o contraseña incorrectos");
             }
-        }
-
-        private void pnlFondo_MouseMove(object sender, MouseEventArgs e)
-        {
-            Funcionalidad_Formularios.Arrastre_Formularios.Llama_ReleaseCapture();
-            Funcionalidad_Formularios.Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void btnCerrar_MouseHover(object sender, EventArgs e)
@@ -76,6 +70,23 @@ namespace Login
         {
             this.BackColor = Color.LightSlateGray;
             this.TransparencyKey = Color.LightSlateGray;
+        }
+
+        private void rounded_Panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Funcionalidad_Formularios.Arrastre_Formularios.Llama_ReleaseCapture();
+            Funcionalidad_Formularios.Arrastre_Formularios.Llama_SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void rounded_PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtContra.Focus();
         }
     }
 }
