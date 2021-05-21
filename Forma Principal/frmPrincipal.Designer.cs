@@ -40,6 +40,7 @@ namespace Forma_Principal
             this.btnGestionarMiembro = new System.Windows.Forms.Button();
             this.btnMiembros = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu2 = new System.Windows.Forms.Panel();
+            this.btnListaAutores = new System.Windows.Forms.Button();
             this.btnGestionarAutor = new System.Windows.Forms.Button();
             this.btnAutores = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu1 = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@ namespace Forma_Principal
             this.btnGeneros = new FontAwesome.Sharp.IconButton();
             this.pnlEncabezadoMenu = new System.Windows.Forms.Panel();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.btnListaAutores = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSubMenu4.SuspendLayout();
             this.pnlSubMenu3.SuspendLayout();
@@ -243,6 +243,22 @@ namespace Forma_Principal
             this.pnlSubMenu2.TabIndex = 0;
             this.pnlSubMenu2.Visible = false;
             // 
+            // btnListaAutores
+            // 
+            this.btnListaAutores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
+            this.btnListaAutores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnListaAutores.FlatAppearance.BorderSize = 0;
+            this.btnListaAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaAutores.ForeColor = System.Drawing.Color.White;
+            this.btnListaAutores.Location = new System.Drawing.Point(0, 40);
+            this.btnListaAutores.Name = "btnListaAutores";
+            this.btnListaAutores.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnListaAutores.Size = new System.Drawing.Size(183, 40);
+            this.btnListaAutores.TabIndex = 2;
+            this.btnListaAutores.Text = "Lista Autores";
+            this.btnListaAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListaAutores.UseVisualStyleBackColor = false;
+            // 
             // btnGestionarAutor
             // 
             this.btnGestionarAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
@@ -369,22 +385,6 @@ namespace Forma_Principal
             this.pnlContenedor.TabIndex = 1;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
             // 
-            // btnListaAutores
-            // 
-            this.btnListaAutores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnListaAutores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListaAutores.FlatAppearance.BorderSize = 0;
-            this.btnListaAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListaAutores.ForeColor = System.Drawing.Color.White;
-            this.btnListaAutores.Location = new System.Drawing.Point(0, 40);
-            this.btnListaAutores.Name = "btnListaAutores";
-            this.btnListaAutores.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnListaAutores.Size = new System.Drawing.Size(183, 40);
-            this.btnListaAutores.TabIndex = 2;
-            this.btnListaAutores.Text = "Lista Autores";
-            this.btnListaAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListaAutores.UseVisualStyleBackColor = false;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +395,7 @@ namespace Forma_Principal
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
