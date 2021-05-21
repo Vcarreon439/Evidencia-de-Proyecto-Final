@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonEdit.Designer.cs">
+      <DependentUpon>ButtonEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gender.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -49,6 +55,7 @@
       <DependentUpon>Gender.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsExtension.cs" />
+    <Compile Include="MyRectangle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rounded Panel.cs">
       <SubType>Component</SubType>
@@ -56,6 +63,19 @@
     <Compile Include="Rounded Panel.Designer.cs">
       <DependentUpon>Rounded Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rounded PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rounded PictureBox.Designer.cs">
+      <DependentUpon>Rounded PictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rounded TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rounded TextBox.Designer.cs">
+      <DependentUpon>Rounded TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trans.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rounded Panel.resx">
       <DependentUpon>Rounded Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rounded PictureBox.resx">
+      <DependentUpon>Rounded PictureBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
