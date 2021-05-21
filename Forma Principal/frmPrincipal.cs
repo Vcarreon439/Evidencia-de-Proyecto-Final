@@ -14,9 +14,22 @@ namespace Forma_Principal
 {
     public partial class frmPrincipal : Form
     {
-        TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Invitado;
+        private TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Invitado;
 
-        private void Opciones(TipoUsuario.TypeUser selector) 
+        public frmPrincipal(TipoUsuario.TypeUser type)
+        {
+            InitializeComponent();
+            this.intern = type;
+        }
+
+        public frmPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        #region Metodos Privados
+
+        private void Opciones(TipoUsuario.TypeUser selector)
         {
             switch (selector)
             {
@@ -76,7 +89,7 @@ namespace Forma_Principal
             btnListaMiembros.Enabled = true;
             btnListaAutores.Enabled = true;
         }
-        
+
         private void UserMode()
         {
             btnGestionGeneros.Enabled = false;
@@ -95,6 +108,10 @@ namespace Forma_Principal
             btnListaAutores.Enabled = true;
         }
 
+        #endregion
+
+        #region Eventos
+
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             if (intern == TipoUsuario.TypeUser.Invitado)
@@ -104,17 +121,6 @@ namespace Forma_Principal
             }
 
             Opciones(intern);
-        }
-
-        public frmPrincipal(TipoUsuario.TypeUser type)
-        {
-            InitializeComponent();
-            this.intern = type;
-        }
-        
-        public frmPrincipal()
-        {
-            InitializeComponent();
         }
 
         private void btnGeneros_Click(object sender, EventArgs e)
@@ -233,5 +239,14 @@ namespace Forma_Principal
                     break;
             }
         }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+
+        #endregion
+
     }
 }
