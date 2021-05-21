@@ -42,6 +42,16 @@ namespace GestionGeneros
             {
                 MessageBox.Show(ex.Message);
             }
+
+            VaciarTextBox();
+        }
+
+        private void VaciarTextBox()
+        {
+            txtCodigo.Text = "";
+            txtDescripcion.Text = "";
+            txtCodigo.Focus();
+            txtCodigo.Select();
         }
 
         private void ActualizarData() 
@@ -89,6 +99,7 @@ namespace GestionGeneros
             }
 
             ActualizarData();
+            VaciarTextBox();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -117,6 +128,7 @@ namespace GestionGeneros
             }
 
             ActualizarData();
+            VaciarTextBox();
         }
 
         private void dgvGeneros_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +146,15 @@ namespace GestionGeneros
                 txtCodigo.Text = message[0];
                 txtDescripcion.Text = message[1];
             }
+
+            if (this.dgvGeneros.SelectedCells.Count > 0)
+            {
+                foreach (DataGridViewCell c in this.dgvGeneros.SelectedCells)
+                    c.Selected = false;
+            }
+
+
+            txtCodigo.Focus();
         }
     }
 }
