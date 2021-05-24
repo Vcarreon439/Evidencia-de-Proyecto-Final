@@ -31,6 +31,10 @@ namespace Forma_Principal
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.pnlSubMenu5 = new System.Windows.Forms.Panel();
+            this.btnListaUsuarios = new System.Windows.Forms.Button();
+            this.btnGestionarUsuarios = new System.Windows.Forms.Button();
+            this.btnManagers = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu4 = new System.Windows.Forms.Panel();
             this.btnListaLibros = new System.Windows.Forms.Button();
             this.btnGestionLibro = new System.Windows.Forms.Button();
@@ -50,6 +54,7 @@ namespace Forma_Principal
             this.pnlEncabezadoMenu = new System.Windows.Forms.Panel();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
+            this.pnlSubMenu5.SuspendLayout();
             this.pnlSubMenu4.SuspendLayout();
             this.pnlSubMenu3.SuspendLayout();
             this.pnlSubMenu2.SuspendLayout();
@@ -61,6 +66,8 @@ namespace Forma_Principal
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.pnlMenu.Controls.Add(this.cboTipoUsuario);
+            this.pnlMenu.Controls.Add(this.pnlSubMenu5);
+            this.pnlMenu.Controls.Add(this.btnManagers);
             this.pnlMenu.Controls.Add(this.pnlSubMenu4);
             this.pnlMenu.Controls.Add(this.btnLibros);
             this.pnlMenu.Controls.Add(this.pnlSubMenu3);
@@ -90,12 +97,80 @@ namespace Forma_Principal
             "Manager",
             "Usuario",
             "Invitado"});
-            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 537);
+            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 657);
             this.cboTipoUsuario.Name = "cboTipoUsuario";
             this.cboTipoUsuario.Size = new System.Drawing.Size(183, 28);
             this.cboTipoUsuario.TabIndex = 0;
             this.cboTipoUsuario.Visible = false;
             this.cboTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cboTipoUsuario_SelectedIndexChanged);
+            // 
+            // pnlSubMenu5
+            // 
+            this.pnlSubMenu5.AutoSize = true;
+            this.pnlSubMenu5.Controls.Add(this.btnListaUsuarios);
+            this.pnlSubMenu5.Controls.Add(this.btnGestionarUsuarios);
+            this.pnlSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenu5.Location = new System.Drawing.Point(0, 577);
+            this.pnlSubMenu5.Name = "pnlSubMenu5";
+            this.pnlSubMenu5.Size = new System.Drawing.Size(183, 80);
+            this.pnlSubMenu5.TabIndex = 0;
+            this.pnlSubMenu5.Visible = false;
+            // 
+            // btnListaUsuarios
+            // 
+            this.btnListaUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
+            this.btnListaUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnListaUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnListaUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnListaUsuarios.Location = new System.Drawing.Point(0, 40);
+            this.btnListaUsuarios.Name = "btnListaUsuarios";
+            this.btnListaUsuarios.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnListaUsuarios.Size = new System.Drawing.Size(183, 40);
+            this.btnListaUsuarios.TabIndex = 7;
+            this.btnListaUsuarios.Text = "Lista de Usuarios";
+            this.btnListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListaUsuarios.UseVisualStyleBackColor = false;
+            this.btnListaUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaUsuarios_MouseClick);
+            // 
+            // btnGestionarUsuarios
+            // 
+            this.btnGestionarUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
+            this.btnGestionarUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnGestionarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnGestionarUsuarios.Name = "btnGestionarUsuarios";
+            this.btnGestionarUsuarios.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnGestionarUsuarios.Size = new System.Drawing.Size(183, 40);
+            this.btnGestionarUsuarios.TabIndex = 4;
+            this.btnGestionarUsuarios.Text = "Gestionar Usuarios";
+            this.btnGestionarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarUsuarios.UseVisualStyleBackColor = false;
+            this.btnGestionarUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionarUsuarios_MouseClick);
+            // 
+            // btnManagers
+            // 
+            this.btnManagers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManagers.FlatAppearance.BorderSize = 0;
+            this.btnManagers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManagers.ForeColor = System.Drawing.Color.White;
+            this.btnManagers.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+            this.btnManagers.IconColor = System.Drawing.Color.White;
+            this.btnManagers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnManagers.IconSize = 30;
+            this.btnManagers.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnManagers.Location = new System.Drawing.Point(0, 537);
+            this.btnManagers.Name = "btnManagers";
+            this.btnManagers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnManagers.Size = new System.Drawing.Size(183, 40);
+            this.btnManagers.TabIndex = 4;
+            this.btnManagers.Text = "Usuarios";
+            this.btnManagers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManagers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManagers.UseVisualStyleBackColor = true;
+            this.btnManagers.Click += new System.EventHandler(this.btnManagers_Click);
             // 
             // pnlSubMenu4
             // 
@@ -124,6 +199,7 @@ namespace Forma_Principal
             this.btnListaLibros.Text = "Lista de Libros";
             this.btnListaLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaLibros.UseVisualStyleBackColor = false;
+            this.btnListaLibros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaLibros_MouseClick);
             // 
             // btnGestionLibro
             // 
@@ -140,6 +216,7 @@ namespace Forma_Principal
             this.btnGestionLibro.Text = "Gestion Libros";
             this.btnGestionLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionLibro.UseVisualStyleBackColor = false;
+            this.btnGestionLibro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionLibro_MouseClick);
             // 
             // btnLibros
             // 
@@ -207,7 +284,7 @@ namespace Forma_Principal
             this.btnGestionarMiembro.Text = "Gestionar Miembros";
             this.btnGestionarMiembro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionarMiembro.UseVisualStyleBackColor = false;
-            this.btnGestionarMiembro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAgregarMiembro_MouseClick);
+            this.btnGestionarMiembro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionarMiembro_MouseClick);
             // 
             // btnMiembros
             // 
@@ -258,6 +335,8 @@ namespace Forma_Principal
             this.btnListaAutores.Text = "Lista Autores";
             this.btnListaAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaAutores.UseVisualStyleBackColor = false;
+            this.btnListaAutores.Click += new System.EventHandler(this.btnListaAutores_Click);
+            this.btnListaAutores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaAutores_MouseClick);
             // 
             // btnGestionarAutor
             // 
@@ -325,6 +404,7 @@ namespace Forma_Principal
             this.btnListaGeneros.Text = "Lista Generos";
             this.btnListaGeneros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaGeneros.UseVisualStyleBackColor = false;
+            this.btnListaGeneros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaGeneros_MouseClick);
             // 
             // btnGestionGeneros
             // 
@@ -394,11 +474,12 @@ namespace Forma_Principal
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "   ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            this.pnlSubMenu5.ResumeLayout(false);
             this.pnlSubMenu4.ResumeLayout(false);
             this.pnlSubMenu3.ResumeLayout(false);
             this.pnlSubMenu2.ResumeLayout(false);
@@ -429,6 +510,10 @@ namespace Forma_Principal
         private System.Windows.Forms.ComboBox cboTipoUsuario;
         private System.Windows.Forms.Button btnListaGeneros;
         private System.Windows.Forms.Button btnListaAutores;
+        private System.Windows.Forms.Panel pnlSubMenu5;
+        private System.Windows.Forms.Button btnGestionarUsuarios;
+        private FontAwesome.Sharp.IconButton btnManagers;
+        private System.Windows.Forms.Button btnListaUsuarios;
     }
 }
 
