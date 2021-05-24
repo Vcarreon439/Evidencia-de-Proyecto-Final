@@ -34,7 +34,7 @@ namespace Forma_Principal
             switch (selector)
             {
                 case TipoUsuario.TypeUser.Invitado:
-
+                    ModoInvitado();
                     break;
 
                 case TipoUsuario.TypeUser.Usuario:
@@ -51,6 +51,89 @@ namespace Forma_Principal
             }
         }
 
+        private void ModoInvitado()
+        {
+            btnGestionGeneros.Enabled = true;
+            btnGestionarAutor.Enabled = true;
+            btnGestionarMiembro.Enabled = true;
+            btnGestionLibro.Enabled = true;
+
+            btnGestionGeneros.Visible = true;
+            btnGestionarAutor.Visible = true;
+            btnGestionarMiembro.Visible = true;
+            btnGestionLibro.Visible = true;
+            btnGestionarUsuarios.Enabled = true;
+
+
+            btnListaGeneros.Enabled = true;
+            btnListaAutores.Enabled = true;
+            btnListaMiembros.Enabled = true;
+            btnListaAutores.Enabled = true;
+            btnListaUsuarios.Enabled = true;
+
+            cboTipoUsuario.Enabled = true;
+            cboTipoUsuario.Visible = true;
+        }
+
+        private void EventChanger(bool bandera)
+        {
+            switch (bandera)
+            {
+                case true:
+                    btnGestionLibro.MouseClick -= Mostrar_MouseClick;
+                    btnGestionarUsuarios.MouseClick -= Mostrar_MouseClick;
+                    btnGestionarMiembro.MouseClick -= Mostrar_MouseClick;
+                    btnGestionGeneros.MouseClick -= Mostrar_MouseClick;
+                    btnGestionarAutor.MouseClick -= Mostrar_MouseClick;
+                    btnGestionGeneros.MouseClick += btnGestionGeneros_MouseClick;
+                    btnGestionarAutor.MouseClick += btnGestionarAutores_MouseClick;
+                    btnGestionarMiembro.MouseClick += btnGestionarMiembro_MouseClick;
+                    btnGestionarUsuarios.MouseClick += btnGestionarUsuarios_MouseClick;
+                    btnGestionLibro.MouseClick += btnGestionLibro_MouseClick;
+                    //
+                    btnListaGeneros.MouseClick -= Mostrar_MouseClick;
+                    btnListaAutores.MouseClick -= Mostrar_MouseClick;
+                    btnListaMiembros.MouseClick -= Mostrar_MouseClick;
+                    btnListaUsuarios.MouseClick -= Mostrar_MouseClick;
+                    btnListaLibros.MouseClick -= Mostrar_MouseClick;
+                    btnListaGeneros.MouseClick += btnListaGeneros_MouseClick;
+                    btnListaAutores.MouseClick += btnListaAutores_MouseClick;
+                    btnListaMiembros.MouseClick += btnListaMiembros_MouseClick;
+                    btnListaUsuarios.MouseClick += btnListaUsuarios_MouseClick;
+                    btnListaLibros.MouseClick += btnListaLibros_MouseClick;
+                    break;
+
+                case false:
+                    btnGestionGeneros.MouseClick -= btnGestionGeneros_MouseClick;
+                    btnGestionarMiembro.MouseClick -= btnGestionarMiembro_MouseClick;
+                    btnGestionarAutor.MouseClick -= btnGestionarAutores_MouseClick;
+                    btnGestionarUsuarios.MouseClick -= btnGestionarUsuarios_MouseClick;
+                    btnGestionLibro.MouseClick -= btnGestionLibro_MouseClick;
+                    btnGestionGeneros.MouseClick += Mostrar_MouseClick;
+                    btnGestionarAutor.MouseClick += Mostrar_MouseClick;
+                    btnGestionarMiembro.MouseClick += Mostrar_MouseClick;
+                    btnGestionarUsuarios.MouseClick += Mostrar_MouseClick;
+                    btnGestionLibro.MouseClick += Mostrar_MouseClick;
+                    //
+                    btnListaGeneros.MouseClick -= btnListaGeneros_MouseClick;
+                    btnListaUsuarios.MouseClick -= btnListaUsuarios_MouseClick;
+                    btnListaLibros.MouseClick -= btnListaLibros_MouseClick;
+                    btnListaMiembros.MouseClick -= btnListaMiembros_MouseClick;
+                    btnListaAutores.MouseClick -= btnListaAutores_MouseClick;
+                    btnListaGeneros.MouseClick += Mostrar_MouseClick;
+                    btnListaAutores.MouseClick += Mostrar_MouseClick;
+                    btnListaMiembros.MouseClick += Mostrar_MouseClick;
+                    btnListaUsuarios.MouseClick += Mostrar_MouseClick;
+                    btnListaLibros.MouseClick += Mostrar_MouseClick;
+                    break;
+            }
+        }
+
+        private void Mostrar_MouseClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Usted se encuentra en el modo de prueba", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void AdminMode()
         {
             btnGestionGeneros.Enabled = true;
@@ -62,11 +145,14 @@ namespace Forma_Principal
             btnGestionarAutor.Visible = true;
             btnGestionarMiembro.Visible = true;
             btnGestionLibro.Visible = true;
+            btnGestionarUsuarios.Enabled = true;
+            
 
             btnListaGeneros.Enabled = true;
             btnListaAutores.Enabled = true;
             btnListaMiembros.Enabled = true;
             btnListaAutores.Enabled = true;
+            btnListaUsuarios.Enabled = true;
 
             cboTipoUsuario.Enabled = true;
             cboTipoUsuario.Visible = true;
@@ -83,11 +169,17 @@ namespace Forma_Principal
             btnGestionarAutor.Visible = true;
             btnGestionarMiembro.Visible = true;
             btnGestionLibro.Visible = true;
+            btnGestionarUsuarios.Enabled = true;
 
+            btnManagers.Visible = true;
+            pnlSubMenu5.Visible = true;
+
+            
             btnListaGeneros.Enabled = true;
             btnListaAutores.Enabled = true;
             btnListaMiembros.Enabled = true;
             btnListaAutores.Enabled = true;
+            btnListaUsuarios.Enabled = true;
         }
 
         private void UserMode()
@@ -101,11 +193,16 @@ namespace Forma_Principal
             btnGestionarAutor.Visible = false;
             btnGestionarMiembro.Visible = false;
             btnGestionLibro.Visible = false;
+            btnGestionarUsuarios.Enabled = false;
 
+            btnManagers.Visible = false;
+            pnlSubMenu5.Visible = false;
+            
             btnListaGeneros.Enabled = true;
             btnListaAutores.Enabled = true;
             btnListaMiembros.Enabled = true;
             btnListaAutores.Enabled = true;
+            btnListaUsuarios.Enabled = false;
         }
 
         #endregion
@@ -155,6 +252,14 @@ namespace Forma_Principal
                 pnlSubMenu4.Visible = false;
         }
 
+        private void btnManagers_Click(object sender, EventArgs e)
+        {
+            if (pnlSubMenu5.Visible == false)
+                pnlSubMenu5.Visible = true;
+            else
+                pnlSubMenu5.Visible = false;
+        }
+
         private void btnGestionGeneros_Click(object sender, EventArgs e)
         {
             FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
@@ -188,19 +293,25 @@ namespace Forma_Principal
             FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
         }
 
-        private void btnAgregarMiembro_Click(object sender, EventArgs e)
-        {
-            FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
-        }
-
         private void btnGestionGeneros_MouseClick(object sender, MouseEventArgs e)
         {
             FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+
         }
 
         private void btnGestionarAutores_MouseClick(object sender, MouseEventArgs e)
         {
             FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
         }
 
         private void btnAgregarMiembro_MouseClick(object sender, MouseEventArgs e)
@@ -211,6 +322,11 @@ namespace Forma_Principal
         private void btnListaMiembros_MouseClick(object sender, MouseEventArgs e)
         {
             FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
         }
 
         private void cboTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,21 +337,25 @@ namespace Forma_Principal
                 case "Administrador":
                     this.intern = TipoUsuario.TypeUser.Admin;
                     Opciones(this.intern);
+                    EventChanger(true);
                     break;
 
                 case "Manager":
                     this.intern = TipoUsuario.TypeUser.Maganer;
                     Opciones(this.intern);
+                    EventChanger(true);
                     break;
 
                 case "Usuario":
                     this.intern = TipoUsuario.TypeUser.Usuario;
                     Opciones(this.intern);
+                    EventChanger(true);
                     break;
 
                 case "Invitado":
                     this.intern = TipoUsuario.TypeUser.Invitado;
                     Opciones(this.intern);
+                    EventChanger(false);
                     break;
             }
         }
@@ -248,5 +368,75 @@ namespace Forma_Principal
 
         #endregion
 
+        private void btnListaGeneros_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionGeneros.frmListaGenero>(ref pnlContenedor);
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnListaAutores_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnGestionarMiembro_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+
+        }
+
+        private void btnGestionLibro_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnListaLibros_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnGestionarUsuarios_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnListaUsuarios_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+        }
+
+        private void btnListaAutores_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionAutores.frmListaAutores>(ref pnlContenedor);
+        }
     }
 }
