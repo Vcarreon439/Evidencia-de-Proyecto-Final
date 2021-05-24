@@ -1,12 +1,57 @@
-﻿using System.Data;
+﻿using System;
+using System.Windows.Forms;
+using System.Data;
 using Autenticacion;
 using System.Data.SqlClient;
+using System.Data.Common;
 using System.Collections.Generic;
 
 namespace AccesoADatos
 {
     public class Usuario : ConexionSQL
     {
+        public DataTable MostrarGenerosCant(int cantidad)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("TemaCant", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.Add("@cant", cantidad);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+            }
+
+        }
+
+        public List<string> GenerosCombo(int cant)
+        {
+            List<string> elementos = new List<string>();
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                using (SqlCommand cmd = new SqlCommand("TemaCombo", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@cant", cant);
+                    
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            elementos.Add(reader.GetString(0));
+                    }
+
+                    return elementos;
+                }
+            }
+        }
+
 
         public bool Login(string usuario, string contra)
         {
@@ -30,6 +75,25 @@ namespace AccesoADatos
             }
         }
 
+        public object AutorCant(int cant)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("AutorCant", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.Add("@cant", cant);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+            }
+
+        }
+
         public TipoUsuario.TypeUser Autenticacion(string usuario, string contraseña)
         {
             using (SqlConnection conexion = ObtenerConexion())
@@ -44,7 +108,7 @@ namespace AccesoADatos
                     cmd.Parameters.AddWithValue("@pass", contraseña);
                     cmd.CommandType = CommandType.Text;
 
-                    switch ((string)cmd.ExecuteScalar())
+                    switch ((string) cmd.ExecuteScalar())
                     {
                         case "ADMIN":
                             return TipoUsuario.TypeUser.Admin;
@@ -67,27 +131,39 @@ namespace AccesoADatos
 
         public bool InsertarGenero(string codigo, string definicion)
         {
-            using (SqlConnection conexion = ObtenerConexion())
+            try
             {
-                conexion.Open();
 
-                using (SqlCommand cmd = new SqlCommand("Insercion_Genero", conexion))
+                using (SqlConnection conexion = ObtenerConexion())
                 {
-                    cmd.Connection = conexion;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@cod", codigo));
-                    cmd.Parameters.Add(new SqlParameter("@tipo", definicion));
+                    conexion.Open();
 
-                    if (cmd.ExecuteNonQuery() != 0)
-                        return true;
-                    else
-                        return false;
+                    using (SqlCommand cmd = new SqlCommand("Insercion_Genero", conexion))
+                    {
+                        cmd.Connection = conexion;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@cod", codigo));
+                        cmd.Parameters.Add(new SqlParameter("@tipo", definicion));
+
+                        if (cmd.ExecuteNonQuery() != 0)
+                            return true;
+                        else
+                            return false;
+                    }
                 }
             }
+            catch (SqlException error)
+            {
+                if (error.Number == 2627)
+                    MessageBox.Show("Este registro ya existe en la base de datos",$"Error {error.Number}", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
         }
+    
 
 
-        public bool EliminarTema(string codigo)
+    public bool EliminarTema(string codigo)
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
@@ -216,19 +292,30 @@ namespace AccesoADatos
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
-                conexion.Open();
-
-                using (SqlCommand cmd = new SqlCommand("ActualizarGenero1", conexion))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@cod", cod));
-                    cmd.Parameters.Add(new SqlParameter("@cambio", descripcion));
+                    conexion.Open();
 
-                    if (cmd.ExecuteNonQuery() != 0)
-                        return true;
-                    else
-                        return false;
+                    using (SqlCommand cmd = new SqlCommand("ActualizarGenero1", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@cod", cod));
+                        cmd.Parameters.Add(new SqlParameter("@cambio", descripcion));
+
+                        int valor = cmd.ExecuteNonQuery();
+
+                        if (valor != 0)
+                            return true;
+                    }
                 }
+                catch (SqlException error)
+                {
+                    Console.WriteLine(error.Number);
+                    return false;
+                }
+
+                return false;
+
             }
         }
     }
