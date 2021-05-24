@@ -12,7 +12,12 @@ namespace Dominio
     public class ModeloDUsuario
     {
         Usuario usuario = new Usuario();
-        
+
+        public DataTable MostrarGenerosCant(int cantidad)
+        {
+            return usuario.MostrarGenerosCant(cantidad);
+        }
+
         public bool LoginUsuario(string nombre, string contra) 
         {
             return usuario.Login(nombre, contra);
@@ -33,7 +38,12 @@ namespace Dominio
         {
             return usuario.MostrarGeneros();
         }
-        
+
+        public List<string> GenerosCombo(int cantidad)
+        {
+            return usuario.GenerosCombo(cantidad);
+        }
+
         public DataTable MostrarAutor()
         {
             return usuario.MostrarAutor();
@@ -59,6 +69,11 @@ namespace Dominio
         public bool ActualizarGenero(string cod, string descripcion = null)
         {
             return usuario.ActualizarGenero(cod, descripcion);
+        }
+
+        public object AutorCant(int cant)
+        {
+            return usuario.AutorCant(cant);
         }
 
         public bool InsertarAutor(List<string> lista) 
