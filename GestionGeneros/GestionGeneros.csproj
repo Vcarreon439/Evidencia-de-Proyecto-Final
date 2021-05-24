@@ -52,10 +52,19 @@
     <Compile Include="frmGestionarGeneros.Designer.cs">
       <DependentUpon>frmGestionarGeneros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaGenero.Designer.cs">
+      <DependentUpon>frmListaGenero.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmGestionarGeneros.resx">
       <DependentUpon>frmGestionarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaGenero.resx">
+      <DependentUpon>frmListaGenero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

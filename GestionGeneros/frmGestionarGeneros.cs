@@ -28,8 +28,6 @@ namespace GestionGeneros
                     ModeloDUsuario OBJ = new ModeloDUsuario();
                     if (OBJ.InsercionTema(txtCodigo.Text, txtDescripcion.Text))
                         MessageBox.Show("Correcto");
-                    else
-                        MessageBox.Show("Incorrecto");
                 }
                 else
                 {
@@ -60,6 +58,7 @@ namespace GestionGeneros
             {
                 ModeloDUsuario OBJ = new ModeloDUsuario();
                 dgvGeneros.DataSource = OBJ.MostrarGeneros();
+                dgvGeneros.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -83,15 +82,14 @@ namespace GestionGeneros
                 {
                     ModeloDUsuario OBJ = new ModeloDUsuario();
                     if (OBJ.ActualizarGenero(txtCodigo.Text, txtDescripcion.Text))
-                        MessageBox.Show("Los cambios se realizaron correctamente");
+                        MessageBox.Show("Los cambios se realizaron correctamente","Correcto",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("Incorrecto");
+                        MessageBox.Show("El registro no existe en la base de datos",  "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     MessageBox.Show("Los campos codigo y descripcion no pueden ir vacios", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
             catch (Exception ex)
             {
@@ -114,7 +112,7 @@ namespace GestionGeneros
                     if (OBJ.EliminarTema(txtCodigo.Text))
                         MessageBox.Show("Los cambios se realizaron correctamente");
                     else
-                        MessageBox.Show("Incorrecto");
+                        MessageBox.Show("Este registro no existe en la base de datos","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -155,6 +153,11 @@ namespace GestionGeneros
 
 
             txtCodigo.Focus();
+        }
+
+        private void txtCodigo_Leave(object sender, EventArgs e)
+        {
+            txtCodigo.Text = txtCodigo.Text.ToUpper();
         }
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="frmGestionAutores.Designer.cs">
       <DependentUpon>frmGestionAutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaAutores.Designer.cs">
+      <DependentUpon>frmListaAutores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ObjetoAutor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionAutores.resx">
       <DependentUpon>frmGestionAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaAutores.resx">
+      <DependentUpon>frmListaAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
