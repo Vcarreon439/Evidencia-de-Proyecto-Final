@@ -21,14 +21,16 @@ namespace GestionAutores
             this.Autor = autor;
         }
 
-        private void fichaAutor_Load(object sender, EventArgs e)
+        private void FichaAutor_Load(object sender, EventArgs e)
         {
             this.txtID.Text = Autor.Codigo;
             this.txtNombres.Text = Autor.Nombres;
             this.txtApellidos.Text = Autor.Apellidos;
-            this.txtCiudad.Text = Autor.Apellidos;
+            this.txtCiudad.Text = Autor.Ciudad;
             this.txtComentarios.Text = Autor.Comentarios;
             this.cboPais.SelectedItem = Autor.Pais;
+
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

@@ -29,7 +29,7 @@ namespace GestionAutores
             try
             {
                 ModeloDUsuario OBJ = new ModeloDUsuario();
-                dgvAutores.DataSource = OBJ.MostrarAutor();
+                dgvAutores.DataSource = OBJ.MostrarAutores();
                 dgvAutores.ReadOnly = true;
                 Format();
             }
@@ -87,7 +87,9 @@ namespace GestionAutores
                     message.Add(reciever.Cells[i].Value.ToString());
                 }
 
-                ObjetoAutor Obj = new ObjetoAutor(message);
+                ObjetoAutor Obj = new ObjetoAutor();
+                Obj.Nombres = dgvAutores.SelectedCells[0].Value.ToString();
+                Obj.Apellidos = dgvAutores.SelectedCells[1].Value.ToString();
                 fichaAutor ficha = new fichaAutor(Obj);
                 ficha.ShowDialog();
             }

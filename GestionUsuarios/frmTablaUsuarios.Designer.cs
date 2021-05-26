@@ -39,6 +39,7 @@ namespace GestionUsuarios
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.btnMostrarTodo);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.dgvUsuarios);

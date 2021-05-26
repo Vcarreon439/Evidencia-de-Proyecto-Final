@@ -11,7 +11,8 @@ namespace AccesoADatos
 
         public ConexionSQL() 
         {
-            cadenaConexion = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path.GetFullPath("./LibreriaBD.mdf")};Integrated Security = True";
+            //cadenaConexion = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path.GetFullPath("./LibreriaBD.mdf")};Integrated Security = True";
+            cadenaConexion = $"Data Source=DESKTOP-185RN13\\SQLEXPRESS;Database = LibreriaBD; Integrated Security = True";
         }
 
         protected SqlConnection ObtenerConexion()

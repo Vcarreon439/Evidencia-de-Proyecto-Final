@@ -6,6 +6,7 @@ using System.Text;
 using Autenticacion;
 using System.Threading.Tasks;
 using AccesoADatos;
+using GestionAutores;
 
 namespace Dominio
 {
@@ -44,9 +45,9 @@ namespace Dominio
             return usuario.GenerosCombo(cantidad);
         }
 
-        public DataTable MostrarAutor()
+        public DataTable MostrarAutores()
         {
-            return usuario.MostrarAutor();
+            return usuario.MostrarAutores();
         }
         
         public DataTable MostrarUsuarios()
@@ -55,13 +56,13 @@ namespace Dominio
         }
 
         /// <summary>
-        /// Metodo de acceso a procedimiento almacenado MostrarAutor_5
+        /// Metodo de acceso a procedimiento almacenado MostrarAutores_5
         /// </summary>
         /// <param name="valores">Codigo, nombre, apellidos, pais, ciudad</param>
         /// <returns></returns>
         public DataTable MostrarAutor_5(List<string> valores)
         {
-            return usuario.MostrarAutor_5(valores);
+            return usuario.MostrarAutores_5(valores);
         }
         #endregion
 
@@ -76,9 +77,14 @@ namespace Dominio
             return usuario.AutorCant(cant);
         }
 
-        public bool InsertarAutor(List<string> lista) 
+        public bool InsertarAutor(ObjetoAutor autor) 
         {
-            return usuario.InsertarAutor(lista);
+            return usuario.InsertarAutor(autor);
+        }
+
+        public ObjetoAutor MostrarAutor(string codigo)
+        {
+            return usuario.MostrarAutor(codigo);
         }
 
         #region  MetodosEliminar

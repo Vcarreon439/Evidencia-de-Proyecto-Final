@@ -438,5 +438,25 @@ namespace Forma_Principal
         {
             FormEnPanel.AbrirForm<GestionAutores.frmListaAutores>(ref pnlContenedor);
         }
+
+        private void btnGestionLibro_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionLibros.frmGestionLibros>(ref pnlContenedor);
+        }
+
+        private void btnListaLibros_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionLibros.listaLibros>(ref pnlContenedor);
+        }
+
+        private void btnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionManagers.frmGestionManagers>(ref pnlContenedor);
+        }
+
+        private void btnListaUsuarios_Click(object sender, EventArgs e)
+        {
+            FormEnPanel.AbrirForm<GestionManagers.listaManagers>(ref pnlContenedor);
+        }
     }
 }

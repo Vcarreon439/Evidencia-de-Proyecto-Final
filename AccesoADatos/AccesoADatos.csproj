@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,10 @@
     <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
       <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
       <Name>Autenticacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaDeClases\BibliotecaDeClases.csproj">
+      <Project>{c2d09a6e-6f89-4e32-b2fd-34db16c5cbea}</Project>
+      <Name>BibliotecaDeClases</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

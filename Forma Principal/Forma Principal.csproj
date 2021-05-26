@@ -112,9 +112,17 @@
       <Project>{523a8aed-2a96-42c9-90fc-216e5517384b}</Project>
       <Name>GestionGeneros</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GestionUsuarios\GestionUsuarios.csproj">
+    <ProjectReference Include="..\GestionLibros\GestionLibros.csproj">
+      <Project>{fa3b1d38-88d5-4c98-a3eb-4b31a292cbf8}</Project>
+      <Name>GestionLibros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionManagers\GestionManagers.csproj">
+      <Project>{ec3b69cb-d5ef-4e0c-962d-fa4d92c03837}</Project>
+      <Name>GestionManagers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionUsuarios\GestionMiembros.csproj">
       <Project>{f2002812-3a91-45df-a04a-5dd8288cf47f}</Project>
-      <Name>GestionUsuarios</Name>
+      <Name>GestionMiembros</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

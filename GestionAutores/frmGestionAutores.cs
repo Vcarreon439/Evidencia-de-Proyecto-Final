@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using Dominio;
 using System.IO;
 using Funcionalidad_Formularios;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 
 namespace GestionAutores
 {
@@ -14,12 +18,6 @@ namespace GestionAutores
         public frmGestionAutores()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //fichaAutor frm = new fichaAutor();
-            //frm.Show();
         }
 
         private void chkDesconocido_CheckedChanged(object sender, EventArgs e)
@@ -45,90 +43,46 @@ namespace GestionAutores
             List<string> elementos = new List<string>(7);
         }
 
-        private void btnImagen_Click(object sender, EventArgs e)
-        {
-            using (CommonOpenFileDialog ofl = new CommonOpenFileDialog())
-            {
-                CommonFileDialogStandardFilters.PictureFiles.ShowExtensions = true;
-                
-                ofl.Title = "Seleccione un imagen porfavor.";
-                ofl.IsFolderPicker = false;
-                ofl.Multiselect = false;
-                ofl.Filters.Add(CommonFileDialogStandardFilters.PictureFiles);
-
-                if (ofl.ShowDialog() == CommonFileDialogResult.Ok)
-                    linkLabel1.Text = ofl.FileName;
-            }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(Path.Combine(Application.StartupPath, linkLabel1.Text));
-        }
-
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ModeloDUsuario OBJ = new ModeloDUsuario();
-                if (OBJ.InsertarAutor(CrearLista()))
-                    MessageBox.Show("Correcto");
-                else
-                    MessageBox.Show("Incorrecto");
+            ModeloDUsuario objDUsuario = new ModeloDUsuario();
 
-                ActualizarData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            if (objDUsuario.InsertarAutor(CrearAutor()))
+                MessageBox.Show("Correcto");
         }
 
 
-        private List<string> CrearLista() 
+        private ObjetoAutor CrearAutor()
         {
-            List<string> lista = new List<string>(7);
+            ObjetoAutor obj = new ObjetoAutor();
 
             if (txtID.Text!="")
-                lista.Add(txtID.Text);
+                obj.Codigo = txtID.Text;
 
-            //Nombre
-            if (txtNombre.Text!="")
-                lista.Add(txtNombre.Text);
-            else
-                lista.Add(null);
-            
-            //Apellidos
-            if (txtApellidos.Text!="")
-                lista.Add(txtApellidos.Text);
-            else
-                lista.Add(null);
+            if (txtNombre.Text != "")
+                obj.Nombres = txtNombre.Text;
 
-            //pais
-            if (chkDesconocido.Checked == true)
-                lista.Add("Desconocido");
-            else
-                lista.Add(cboCountry.Text);
+            if (txtApellidos.Text != "")
+                obj.Apellidos = txtApellidos.Text;
 
-            //Ciudad
+            //
+            if (chkDesconocido.CheckState == CheckState.Checked)
+                obj.Pais = "Desconocido";
+            else
+                obj.Pais = cboCountry.Text;
+
+
             if (txtCiudad.Text != "")
-                lista.Add(txtCiudad.Text);
-            else
-                lista.Add(null);
+                obj.Ciudad = txtCiudad.Text;
 
-            //Comentarios
             if (txtComentarios.Text != "")
-                lista.Add(txtComentarios.Text);
-            else
-                lista.Add("");
+                obj.Comentarios = txtComentarios.Text;
 
-            //Foto
-            if (linkLabel1.Text != "")
-                lista.Add(linkLabel1.Text);
-            else
-                lista.Add("");
+            //if (pictureBox1.Image != null)
 
-            return lista;
+            return obj;
+
+            //    obj.Imagen = pictureBox1.Load(linkLabel1.Text);
         }
 
         private void ActualizarData()
@@ -137,12 +91,10 @@ namespace GestionAutores
             {
                 ModeloDUsuario OBJ = new ModeloDUsuario();
 
-                var tabla = OBJ.MostrarAutor();
+                var tabla = OBJ.MostrarAutores();
 
                 if (tabla.Rows.Count!=0)
                     dgvAutores.DataSource = tabla;
-
-                //dgvAutores.Ed
 
             }
             catch (Exception ex)
@@ -154,6 +106,7 @@ namespace GestionAutores
         private void frmGestionAutores_Load(object sender, EventArgs e)
         {
             ActualizarData();
+            dgvAutores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void dgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -174,8 +127,9 @@ namespace GestionAutores
                     message.Add(reciever.Cells[i].Value.ToString());
                 }
 
-                ObjetoAutor Obj = new ObjetoAutor(message);
-                fichaAutor ficha = new fichaAutor(Obj);
+                ModeloDUsuario obj = new ModeloDUsuario();
+                ObjetoAutor Autor = obj.MostrarAutor(dgvAutores.SelectedCells[0].Value.ToString());
+                fichaAutor ficha = new fichaAutor(Autor);
                 ficha.ShowDialog();
             }
         }
@@ -184,6 +138,28 @@ namespace GestionAutores
         {
             Arrastre_Formularios.Llama_ReleaseCapture();
             Arrastre_Formularios.Llama_SendMessage(ParentForm.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                throw new System.NotImplementedException();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
     }
 }

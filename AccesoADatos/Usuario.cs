@@ -1,10 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Data;
-using Autenticacion;
-using System.Data.SqlClient;
-using System.Data.Common;
+﻿using Autenticacion;
+using GestionAutores;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AccesoADatos
 {
@@ -19,7 +19,7 @@ namespace AccesoADatos
                 using (SqlDataAdapter adaptador = new SqlDataAdapter("TemaCant", conexion))
                 {
                     adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    adaptador.SelectCommand.Parameters.Add("@cant", cantidad);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@cant", cantidad);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
 
@@ -61,8 +61,7 @@ namespace AccesoADatos
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conexion;
-                    cmd.CommandText = "select * from Managers where Nombre=@usuario and Contraseña=@pass";
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.CommandText = "select * from Managers where Nombre=@usuario and Contraseña=@pass"; cmd.Parameters.AddWithValue("@usuario", usuario);
                     cmd.Parameters.AddWithValue("@pass", contra);
                     cmd.CommandType = CommandType.Text;
                     SqlDataReader lector = cmd.ExecuteReader();
@@ -84,7 +83,7 @@ namespace AccesoADatos
                 using (SqlDataAdapter adaptador = new SqlDataAdapter("AutorCant", conexion))
                 {
                     adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    adaptador.SelectCommand.Parameters.Add("@cant", cant);
+                    adaptador.SelectCommand.Parameters.AddWithValue("@cant", cant);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
 
@@ -183,7 +182,7 @@ namespace AccesoADatos
         }
 
 
-        public bool InsertarAutor(List<string> informacion)
+        public bool InsertarAutor(ObjetoAutor informacion)
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
@@ -191,18 +190,63 @@ namespace AccesoADatos
 
                 using (SqlCommand cmd = new SqlCommand("InsertarAutor", conexion))
                 {
-                    List<string> param = new List<string>{ "@cod", "@nombre","@apellidos","@pais", "@ciudad", "@comentarios", "@foto"};
-
                     cmd.Connection = conexion;
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    for (int i = 0; i < 7; i++)
-                        cmd.Parameters.Add(param[i], informacion[i]);
+                    cmd.Parameters.AddWithValue("@cod", informacion.Codigo);
+                    cmd.Parameters.AddWithValue("@nombre", informacion.Nombres);
+                    cmd.Parameters.AddWithValue("@apellidos", informacion.Apellidos);
+                    cmd.Parameters.AddWithValue("@pais", informacion.Pais);
+                    cmd.Parameters.AddWithValue("@ciudad", informacion.Ciudad);
+                    cmd.Parameters.AddWithValue("@comentarios", informacion.Comentarios);
+
+                    //if (informacion.Imagen != null)
+                    //    //cmd.Parameters.AddWithValue("@foto", SqlDbType.Image).Value = informacion.Imagen.GetBuffer();
+                    //else
+                    //    cmd.Parameters.AddWithValue("@foto", DBNull.Value);
+
 
                     if (cmd.ExecuteNonQuery() != 0)
                         return true;
                     else
                         return false;
+                }
+            }
+        }
+
+        public ObjetoAutor MostrarAutor(string codigo)
+        {
+            ObjetoAutor autor = new ObjetoAutor();
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("MostrarAutor", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@cod", codigo);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            autor.Codigo = reader["Codigo"].ToString();
+                            autor.Nombres = reader["nombres"].ToString();
+                            autor.Apellidos = reader["apellidos"].ToString();
+                            autor.Pais = reader["paisNac"].ToString();
+                            autor.Ciudad = reader["ciudadNac"].ToString();
+                            autor.Comentarios = reader["comentarios"].ToString();
+
+                            MessageBox.Show($"{reader["foto"].GetType().ToString()}  {reader["foto"].ToString()}");
+
+                            //if (reader["foto"] != null)
+                            //    autor.Imagen = ImagenAutor.ToBytes(reader[6].ToString());
+                            
+                        }
+
+                        return autor;
+                    }
                 }
             }
         }
@@ -223,14 +267,32 @@ namespace AccesoADatos
                 }
             }
         }
-        
-        public DataTable MostrarAutor()
+
+        //public ObjetoAutor MostrarAutor(string codigo)
+        //{
+        //    using (SqlConnection conexion = ObtenerConexion())
+        //    {
+        //        conexion.Open();
+
+        //        SqlCommand cmd = new SqlCommand();
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.Add("@cod", codigo);
+
+        //        using (SqlDataReader reader = cmd.ExecuteReader())
+        //        {
+                    
+        //        }
+
+        //    }
+        //}
+
+        public DataTable MostrarAutores()
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
                 conexion.Open();
 
-                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutor", conexion))
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutores", conexion))
                 {
                     adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
                     DataTable tabla = new DataTable();
@@ -260,17 +322,17 @@ namespace AccesoADatos
 
 
         /// <summary>
-        /// Metodo de acceso a procedimiento almacenado MostrarAutor_5 de la base de datos
+        /// Metodo de acceso a procedimiento almacenado MostrarAutores_5 de la base de datos
         /// </summary>
         /// <param name="elementos">Codigo, nombre, apellidos, pais, ciudad</param>
         /// <returns>Retorna una tabla de los datos (Codigo, nombre, apellidos, pais, ciudad) del autor)</returns>
-        public DataTable MostrarAutor_5(List<string> elementos)
+        public DataTable MostrarAutores_5(List<string> elementos)
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
                 conexion.Open();
 
-                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutor_5", conexion))
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarAutores_5", conexion))
                 {
                     adaptador.SelectCommand.Parameters.AddWithValue("@cod", elementos[0]);
                     adaptador.SelectCommand.Parameters.AddWithValue("@nombre", elementos[1]);

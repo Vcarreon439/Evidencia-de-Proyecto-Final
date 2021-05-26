@@ -430,7 +430,7 @@ namespace GestionAutores
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fichaAutor";
             this.Text = "fichaAutor";
-            this.Load += new System.EventHandler(this.fichaAutor_Load);
+            this.Load += new System.EventHandler(this.FichaAutor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

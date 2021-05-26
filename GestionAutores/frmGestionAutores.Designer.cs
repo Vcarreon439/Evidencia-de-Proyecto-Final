@@ -32,9 +32,8 @@ namespace GestionAutores
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionAutores));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnImagen = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chkDesconocido = new System.Windows.Forms.CheckBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCiudad = new System.Windows.Forms.TextBox();
@@ -52,15 +51,15 @@ namespace GestionAutores
             this.txtID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnImagen);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.chkDesconocido);
-            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtCiudad);
@@ -81,32 +80,24 @@ namespace GestionAutores
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // btnImagen
+            // pictureBox1
             // 
-            this.btnImagen.AutoSize = true;
-            this.btnImagen.FlatAppearance.BorderSize = 0;
-            this.btnImagen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnImagen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImagen.IconChar = FontAwesome.Sharp.IconChar.Image;
-            this.btnImagen.IconColor = System.Drawing.Color.Black;
-            this.btnImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImagen.IconSize = 35;
-            this.btnImagen.Location = new System.Drawing.Point(210, 39);
-            this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(41, 41);
-            this.btnImagen.TabIndex = 22;
-            this.btnImagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnImagen, "Seleccione una Imagen para el Autor");
-            this.btnImagen.UseVisualStyleBackColor = true;
-            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 230);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // chkDesconocido
             // 
             this.chkDesconocido.AutoSize = true;
-            this.chkDesconocido.Location = new System.Drawing.Point(573, 48);
+            this.chkDesconocido.Location = new System.Drawing.Point(573, 117);
             this.chkDesconocido.Name = "chkDesconocido";
             this.chkDesconocido.Size = new System.Drawing.Size(15, 14);
             this.chkDesconocido.TabIndex = 21;
@@ -114,18 +105,10 @@ namespace GestionAutores
             this.chkDesconocido.UseVisualStyleBackColor = true;
             this.chkDesconocido.CheckedChanged += new System.EventHandler(this.chkDesconocido_CheckedChanged);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Location = new System.Drawing.Point(12, 54);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(192, 13);
-            this.linkLabel1.TabIndex = 20;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 257);
+            this.label8.Location = new System.Drawing.Point(15, 320);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 18;
@@ -134,7 +117,7 @@ namespace GestionAutores
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(270, 71);
+            this.label7.Location = new System.Drawing.Point(270, 143);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 17;
@@ -142,7 +125,7 @@ namespace GestionAutores
             // 
             // txtCiudad
             // 
-            this.txtCiudad.Location = new System.Drawing.Point(273, 89);
+            this.txtCiudad.Location = new System.Drawing.Point(273, 164);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(315, 20);
             this.txtCiudad.TabIndex = 16;
@@ -150,7 +133,7 @@ namespace GestionAutores
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(270, 48);
+            this.label6.Location = new System.Drawing.Point(270, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 15;
@@ -399,7 +382,7 @@ namespace GestionAutores
             ((object)(resources.GetObject("cboCountry.Items231"))),
             ((object)(resources.GetObject("cboCountry.Items232"))),
             ((object)(resources.GetObject("cboCountry.Items233")))});
-            this.cboCountry.Location = new System.Drawing.Point(317, 45);
+            this.cboCountry.Location = new System.Drawing.Point(317, 114);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.SelectedRegion = ((System.Globalization.RegionInfo)(resources.GetObject("cboCountry.SelectedRegion")));
             this.cboCountry.Size = new System.Drawing.Size(250, 21);
@@ -409,7 +392,7 @@ namespace GestionAutores
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 119);
+            this.label5.Location = new System.Drawing.Point(270, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 13;
@@ -418,7 +401,7 @@ namespace GestionAutores
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 167);
+            this.label3.Location = new System.Drawing.Point(270, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 11;
@@ -427,7 +410,7 @@ namespace GestionAutores
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 118);
+            this.label2.Location = new System.Drawing.Point(270, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 10;
@@ -436,7 +419,7 @@ namespace GestionAutores
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 92);
+            this.label1.Location = new System.Drawing.Point(121, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 9;
@@ -444,7 +427,7 @@ namespace GestionAutores
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(15, 218);
+            this.btnInsertar.Location = new System.Drawing.Point(173, 310);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(75, 23);
             this.btnInsertar.TabIndex = 6;
@@ -457,38 +440,38 @@ namespace GestionAutores
             this.dgvAutores.AllowUserToAddRows = false;
             this.dgvAutores.AllowUserToDeleteRows = false;
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutores.Location = new System.Drawing.Point(12, 278);
+            this.dgvAutores.Location = new System.Drawing.Point(12, 345);
             this.dgvAutores.Name = "dgvAutores";
-            this.dgvAutores.Size = new System.Drawing.Size(576, 210);
+            this.dgvAutores.Size = new System.Drawing.Size(576, 143);
             this.dgvAutores.TabIndex = 5;
             this.dgvAutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutores_CellClick);
             // 
             // txtComentarios
             // 
-            this.txtComentarios.Location = new System.Drawing.Point(273, 140);
+            this.txtComentarios.Location = new System.Drawing.Point(273, 218);
             this.txtComentarios.Multiline = true;
             this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Size = new System.Drawing.Size(315, 122);
+            this.txtComentarios.Size = new System.Drawing.Size(315, 115);
             this.txtComentarios.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtComentarios, "Comentarios acerca del autor");
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(15, 183);
+            this.txtApellidos.Location = new System.Drawing.Point(273, 76);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(237, 20);
+            this.txtApellidos.Size = new System.Drawing.Size(315, 20);
             this.txtApellidos.TabIndex = 2;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(15, 136);
+            this.txtNombre.Location = new System.Drawing.Point(273, 29);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(237, 20);
+            this.txtNombre.Size = new System.Drawing.Size(315, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(152, 89);
+            this.txtID.Location = new System.Drawing.Point(148, 254);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
@@ -506,6 +489,7 @@ namespace GestionAutores
             this.Load += new System.EventHandler(this.frmGestionAutores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
             this.ResumeLayout(false);
 
@@ -529,10 +513,9 @@ namespace GestionAutores
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox chkDesconocido;
         private System.Windows.Forms.ToolTip toolTip1;
-        private FontAwesome.Sharp.IconButton btnImagen;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

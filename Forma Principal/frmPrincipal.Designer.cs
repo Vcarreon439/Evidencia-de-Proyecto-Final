@@ -131,6 +131,7 @@ namespace Forma_Principal
             this.btnListaUsuarios.Text = "Lista de Usuarios";
             this.btnListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaUsuarios.UseVisualStyleBackColor = false;
+            this.btnListaUsuarios.Click += new System.EventHandler(this.btnListaUsuarios_Click);
             this.btnListaUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaUsuarios_MouseClick);
             // 
             // btnGestionarUsuarios
@@ -148,6 +149,7 @@ namespace Forma_Principal
             this.btnGestionarUsuarios.Text = "Gestionar Usuarios";
             this.btnGestionarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionarUsuarios.UseVisualStyleBackColor = false;
+            this.btnGestionarUsuarios.Click += new System.EventHandler(this.btnGestionarUsuarios_Click);
             this.btnGestionarUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionarUsuarios_MouseClick);
             // 
             // btnManagers
@@ -199,6 +201,7 @@ namespace Forma_Principal
             this.btnListaLibros.Text = "Lista de Libros";
             this.btnListaLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaLibros.UseVisualStyleBackColor = false;
+            this.btnListaLibros.Click += new System.EventHandler(this.btnListaLibros_Click);
             this.btnListaLibros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaLibros_MouseClick);
             // 
             // btnGestionLibro
@@ -216,6 +219,7 @@ namespace Forma_Principal
             this.btnGestionLibro.Text = "Gestion Libros";
             this.btnGestionLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionLibro.UseVisualStyleBackColor = false;
+            this.btnGestionLibro.Click += new System.EventHandler(this.btnGestionLibro_Click);
             this.btnGestionLibro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionLibro_MouseClick);
             // 
             // btnLibros

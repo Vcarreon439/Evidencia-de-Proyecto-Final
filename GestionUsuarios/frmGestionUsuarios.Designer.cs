@@ -111,6 +111,7 @@ namespace GestionUsuarios
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(cURPLabel);
             this.panel1.Controls.Add(this.cURPTextBox);
             this.panel1.Controls.Add(this.btnNuevo);
