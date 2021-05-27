@@ -340,18 +340,34 @@ namespace Forma_Principal
 
         #endregion
 
+        private void SlideBtn()
+        {
+            if (pnlMenu.Size.Width == 60)
+            {
+                pnlMenu.Size = new Size(200, pnlMenu.Height);
+                CambiarBotones();
+                SlideAligment();
+            }
+        }
+
+
         #region ControlDePaneles
 
         private void btnGeneros_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu1.Visible == false)
                 pnlSubMenu1.Visible = true;
             else
                 pnlSubMenu1.Visible = false;
+
         }
 
         private void btnAutores_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu2.Visible == false)
                 pnlSubMenu2.Visible = true;
             else
@@ -360,6 +376,8 @@ namespace Forma_Principal
 
         private void btnMiembros_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu3.Visible == false)
                 pnlSubMenu3.Visible = true;
             else
@@ -368,6 +386,8 @@ namespace Forma_Principal
 
         private void btnLibros_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu4.Visible == false)
                 pnlSubMenu4.Visible = true;
             else
@@ -376,6 +396,8 @@ namespace Forma_Principal
 
         private void btnManagers_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu5.Visible == false)
                 pnlSubMenu5.Visible = true;
             else
@@ -384,6 +406,8 @@ namespace Forma_Principal
 
         private void btnEditorial_Click(object sender, EventArgs e)
         {
+            SlideBtn();
+
             if (pnlSubMenu6.Visible == false)
                 pnlSubMenu6.Visible = true;
             else
@@ -561,6 +585,64 @@ namespace Forma_Principal
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void CambiarBotones()
+        {
+            if (pnlMenu.Size.Width == 60)
+            {
+                btnGeneros.Text = "";
+                btnAutores.Text = "";
+                btnMiembros.Text = "";
+                btnLibros.Text = "";
+                btnManagers.Text = "";
+                btnEditorial.Text = "";
+                lblTitulo.Visible = false;
+            }
+            else
+            {
+                btnGeneros.Text = "Generos";
+                btnAutores.Text = "Autores";
+                btnMiembros.Text = "Miembros";
+                btnLibros.Text = "Libros";
+                btnManagers.Text = "Usuarios";
+                btnEditorial.Text = "Editorial";
+                lblTitulo.Visible = true;
+            }
+        }
+
+        private void SlideAligment()
+        {
+            if (btnSlide.ImageAlign == ContentAlignment.MiddleLeft)
+                btnSlide.ImageAlign = ContentAlignment.MiddleRight;
+            else
+                btnSlide.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+
+        private void CambiarMenu()
+        {
+            if (pnlMenu.Size.Width != 60)
+            {
+                pnlMenu.Size = new Size(60, pnlMenu.Height);
+                CambiarBotones();
+                SlideAligment();
+            }
+            else
+            {
+                pnlMenu.Size = new Size(200, pnlMenu.Height);
+                CambiarBotones();
+                SlideAligment();
+            }
+        }
+
+        private void MostrarMenu()
+        {
+            pnlMenu.Size = new Size(200, pnlMenu.Height);
+        }
+
+        private void btnSlide_Click(object sender, EventArgs e)
+        {
+            CambiarMenu();   
         }
     }
 }

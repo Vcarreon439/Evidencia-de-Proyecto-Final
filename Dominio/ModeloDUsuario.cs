@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -135,6 +136,26 @@ namespace Dominio
         public bool InsertarEditorial(ObjetoEditorial editorial)
         {
             return usuario.InsertarEditorial(editorial);
+        }
+
+        public DataTable MostrarEditoriales()
+        {
+            return usuario.MostrarEditoriales();
+        }
+
+        public DataTable MostrarEditorial(string cod, string nombre)
+        {
+            return usuario.MostrarEditorial(cod, nombre);
+        }
+
+        public bool ActualizarEditorial(ObjetoEditorial editorial)
+        {
+            return usuario.ActualizarEditorial(editorial);
+        }
+
+        public List<string> EditorialesCombo()
+        {
+            return usuario.EditorialesCombo();
         }
     }
 }

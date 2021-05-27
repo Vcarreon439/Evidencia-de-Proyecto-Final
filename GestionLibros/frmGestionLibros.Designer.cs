@@ -49,6 +49,8 @@ namespace GestionLibros
             this.cboEditorial = new System.Windows.Forms.ComboBox();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.txtAño = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).BeginInit();
@@ -59,6 +61,8 @@ namespace GestionLibros
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnInsertar);
             this.panel1.Controls.Add(this.dgvLibros);
             this.panel1.Controls.Add(this.label8);
@@ -119,6 +123,7 @@ namespace GestionLibros
             this.cboTema.Name = "cboTema";
             this.cboTema.Size = new System.Drawing.Size(121, 21);
             this.cboTema.TabIndex = 15;
+            this.cboTema.Enter += new System.EventHandler(this.cboTema_Enter);
             // 
             // label7
             // 
@@ -227,6 +232,7 @@ namespace GestionLibros
             this.cboEditorial.Name = "cboEditorial";
             this.cboEditorial.Size = new System.Drawing.Size(121, 21);
             this.cboEditorial.TabIndex = 2;
+            this.cboEditorial.Enter += new System.EventHandler(this.cboEditorial_Enter);
             // 
             // txtLugar
             // 
@@ -241,6 +247,22 @@ namespace GestionLibros
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(92, 20);
             this.txtAño.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(495, 204);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(92, 20);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(394, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Codgio de Autor:";
             // 
             // frmGestionLibros
             // 
@@ -284,6 +306,8 @@ namespace GestionLibros
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboTema;
         private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

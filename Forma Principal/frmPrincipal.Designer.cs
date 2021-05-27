@@ -54,7 +54,10 @@ namespace Forma_Principal
             this.btnGeneros = new FontAwesome.Sharp.IconButton();
             this.pnlEncabezadoMenu = new System.Windows.Forms.Panel();
             this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.btnSlide = new FontAwesome.Sharp.IconButton();
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnIconoTitulo = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlSubMenu6.SuspendLayout();
             this.pnlSubMenu5.SuspendLayout();
@@ -62,6 +65,7 @@ namespace Forma_Principal
             this.pnlSubMenu3.SuspendLayout();
             this.pnlSubMenu2.SuspendLayout();
             this.pnlSubMenu1.SuspendLayout();
+            this.pnlEncabezadoMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -82,6 +86,7 @@ namespace Forma_Principal
             this.pnlMenu.Controls.Add(this.btnGeneros);
             this.pnlMenu.Controls.Add(this.pnlEncabezadoMenu);
             this.pnlMenu.Controls.Add(this.cboTipoUsuario);
+            this.pnlMenu.Controls.Add(this.btnSlide);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
@@ -94,7 +99,7 @@ namespace Forma_Principal
             this.pnlSubMenu6.AutoSize = true;
             this.pnlSubMenu6.Controls.Add(this.btnGestionarEditoriales);
             this.pnlSubMenu6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu6.Location = new System.Drawing.Point(0, 685);
+            this.pnlSubMenu6.Location = new System.Drawing.Point(0, 725);
             this.pnlSubMenu6.Name = "pnlSubMenu6";
             this.pnlSubMenu6.Size = new System.Drawing.Size(183, 40);
             this.pnlSubMenu6.TabIndex = 0;
@@ -128,7 +133,7 @@ namespace Forma_Principal
             this.btnEditorial.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditorial.IconSize = 30;
             this.btnEditorial.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEditorial.Location = new System.Drawing.Point(0, 645);
+            this.btnEditorial.Location = new System.Drawing.Point(0, 685);
             this.btnEditorial.Name = "btnEditorial";
             this.btnEditorial.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEditorial.Size = new System.Drawing.Size(183, 40);
@@ -144,7 +149,7 @@ namespace Forma_Principal
             this.pnlSubMenu5.AutoSize = true;
             this.pnlSubMenu5.Controls.Add(this.btnGestionarUsuarios);
             this.pnlSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu5.Location = new System.Drawing.Point(0, 605);
+            this.pnlSubMenu5.Location = new System.Drawing.Point(0, 645);
             this.pnlSubMenu5.Name = "pnlSubMenu5";
             this.pnlSubMenu5.Size = new System.Drawing.Size(183, 40);
             this.pnlSubMenu5.TabIndex = 0;
@@ -178,7 +183,7 @@ namespace Forma_Principal
             this.btnManagers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnManagers.IconSize = 30;
             this.btnManagers.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnManagers.Location = new System.Drawing.Point(0, 565);
+            this.btnManagers.Location = new System.Drawing.Point(0, 605);
             this.btnManagers.Name = "btnManagers";
             this.btnManagers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnManagers.Size = new System.Drawing.Size(183, 40);
@@ -195,7 +200,7 @@ namespace Forma_Principal
             this.pnlSubMenu4.Controls.Add(this.btnListaLibros);
             this.pnlSubMenu4.Controls.Add(this.btnGestionLibro);
             this.pnlSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 485);
+            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 525);
             this.pnlSubMenu4.Name = "pnlSubMenu4";
             this.pnlSubMenu4.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu4.TabIndex = 0;
@@ -246,7 +251,7 @@ namespace Forma_Principal
             this.btnLibros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLibros.IconSize = 30;
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnLibros.Location = new System.Drawing.Point(0, 445);
+            this.btnLibros.Location = new System.Drawing.Point(0, 485);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLibros.Size = new System.Drawing.Size(183, 40);
@@ -263,7 +268,7 @@ namespace Forma_Principal
             this.pnlSubMenu3.Controls.Add(this.btnListaMiembros);
             this.pnlSubMenu3.Controls.Add(this.btnGestionarMiembro);
             this.pnlSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu3.Location = new System.Drawing.Point(0, 365);
+            this.pnlSubMenu3.Location = new System.Drawing.Point(0, 405);
             this.pnlSubMenu3.Name = "pnlSubMenu3";
             this.pnlSubMenu3.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu3.TabIndex = 0;
@@ -314,7 +319,7 @@ namespace Forma_Principal
             this.btnMiembros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMiembros.IconSize = 30;
             this.btnMiembros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMiembros.Location = new System.Drawing.Point(0, 325);
+            this.btnMiembros.Location = new System.Drawing.Point(0, 365);
             this.btnMiembros.Name = "btnMiembros";
             this.btnMiembros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMiembros.Size = new System.Drawing.Size(183, 40);
@@ -331,7 +336,7 @@ namespace Forma_Principal
             this.pnlSubMenu2.Controls.Add(this.btnListaAutores);
             this.pnlSubMenu2.Controls.Add(this.btnGestionarAutor);
             this.pnlSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu2.Location = new System.Drawing.Point(0, 245);
+            this.pnlSubMenu2.Location = new System.Drawing.Point(0, 285);
             this.pnlSubMenu2.Name = "pnlSubMenu2";
             this.pnlSubMenu2.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu2.TabIndex = 0;
@@ -382,7 +387,7 @@ namespace Forma_Principal
             this.btnAutores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAutores.IconSize = 30;
             this.btnAutores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAutores.Location = new System.Drawing.Point(0, 205);
+            this.btnAutores.Location = new System.Drawing.Point(0, 245);
             this.btnAutores.Name = "btnAutores";
             this.btnAutores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAutores.Size = new System.Drawing.Size(183, 40);
@@ -399,7 +404,7 @@ namespace Forma_Principal
             this.pnlSubMenu1.Controls.Add(this.btnListaGeneros);
             this.pnlSubMenu1.Controls.Add(this.btnGestionGeneros);
             this.pnlSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu1.Location = new System.Drawing.Point(0, 125);
+            this.pnlSubMenu1.Location = new System.Drawing.Point(0, 165);
             this.pnlSubMenu1.Name = "pnlSubMenu1";
             this.pnlSubMenu1.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu1.TabIndex = 0;
@@ -450,7 +455,7 @@ namespace Forma_Principal
             this.btnGeneros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGeneros.IconSize = 30;
             this.btnGeneros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneros.Location = new System.Drawing.Point(0, 85);
+            this.btnGeneros.Location = new System.Drawing.Point(0, 125);
             this.btnGeneros.Name = "btnGeneros";
             this.btnGeneros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGeneros.Size = new System.Drawing.Size(183, 40);
@@ -464,8 +469,10 @@ namespace Forma_Principal
             // pnlEncabezadoMenu
             // 
             this.pnlEncabezadoMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(71)))));
+            this.pnlEncabezadoMenu.Controls.Add(this.btnIconoTitulo);
+            this.pnlEncabezadoMenu.Controls.Add(this.lblTitulo);
             this.pnlEncabezadoMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEncabezadoMenu.Location = new System.Drawing.Point(0, 28);
+            this.pnlEncabezadoMenu.Location = new System.Drawing.Point(0, 68);
             this.pnlEncabezadoMenu.Name = "pnlEncabezadoMenu";
             this.pnlEncabezadoMenu.Size = new System.Drawing.Size(183, 57);
             this.pnlEncabezadoMenu.TabIndex = 1;
@@ -484,15 +491,36 @@ namespace Forma_Principal
             "Manager",
             "Usuario",
             "Invitado"});
-            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 0);
+            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 40);
             this.cboTipoUsuario.Name = "cboTipoUsuario";
             this.cboTipoUsuario.Size = new System.Drawing.Size(183, 28);
             this.cboTipoUsuario.TabIndex = 0;
             this.cboTipoUsuario.Visible = false;
             this.cboTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cboTipoUsuario_SelectedIndexChanged);
             // 
+            // btnSlide
+            // 
+            this.btnSlide.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSlide.FlatAppearance.BorderSize = 0;
+            this.btnSlide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSlide.ForeColor = System.Drawing.Color.White;
+            this.btnSlide.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnSlide.IconColor = System.Drawing.Color.White;
+            this.btnSlide.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSlide.IconSize = 25;
+            this.btnSlide.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSlide.Location = new System.Drawing.Point(0, 0);
+            this.btnSlide.Name = "btnSlide";
+            this.btnSlide.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSlide.Size = new System.Drawing.Size(183, 40);
+            this.btnSlide.TabIndex = 6;
+            this.btnSlide.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSlide.UseVisualStyleBackColor = true;
+            this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
+            // 
             // pnlContenedor
             // 
+            this.pnlContenedor.AutoSize = true;
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(200, 0);
@@ -500,6 +528,35 @@ namespace Forma_Principal
             this.pnlContenedor.Size = new System.Drawing.Size(600, 500);
             this.pnlContenedor.TabIndex = 1;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(123, 57);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Biblioteca";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnIconoTitulo
+            // 
+            this.btnIconoTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIconoTitulo.FlatAppearance.BorderSize = 0;
+            this.btnIconoTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIconoTitulo.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.btnIconoTitulo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.btnIconoTitulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnIconoTitulo.IconSize = 40;
+            this.btnIconoTitulo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIconoTitulo.Location = new System.Drawing.Point(123, 0);
+            this.btnIconoTitulo.Name = "btnIconoTitulo";
+            this.btnIconoTitulo.Size = new System.Drawing.Size(60, 57);
+            this.btnIconoTitulo.TabIndex = 0;
+            this.btnIconoTitulo.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -521,7 +578,9 @@ namespace Forma_Principal
             this.pnlSubMenu3.ResumeLayout(false);
             this.pnlSubMenu2.ResumeLayout(false);
             this.pnlSubMenu1.ResumeLayout(false);
+            this.pnlEncabezadoMenu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -553,6 +612,9 @@ namespace Forma_Principal
         private System.Windows.Forms.Panel pnlSubMenu6;
         private System.Windows.Forms.Button btnGestionarEditoriales;
         private FontAwesome.Sharp.IconButton btnEditorial;
+        private FontAwesome.Sharp.IconButton btnSlide;
+        private System.Windows.Forms.Label lblTitulo;
+        private FontAwesome.Sharp.IconButton btnIconoTitulo;
     }
 }
 

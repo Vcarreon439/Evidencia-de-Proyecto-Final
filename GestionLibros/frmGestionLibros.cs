@@ -37,6 +37,29 @@ namespace GestionLibros
             foreach (var VARIABLE in model.TemaCombo())
                 cboTema.Items.Add(VARIABLE);
 
+            foreach (var VARIABLE in model.EditorialesCombo())
+                cboEditorial.Items.Add(VARIABLE);
+
+        }
+
+        private void cboTema_Enter(object sender, EventArgs e)
+        {
+            cboTema.Items.Clear();
+
+            ModeloDUsuario model = new ModeloDUsuario();
+
+            foreach (var VARIABLE in model.TemaCombo())
+                cboTema.Items.Add(VARIABLE);
+        }
+
+        private void cboEditorial_Enter(object sender, EventArgs e)
+        {
+            cboEditorial.Items.Clear();
+
+            ModeloDUsuario model = new ModeloDUsuario();
+
+            foreach (var VARIABLE in model.EditorialesCombo())
+                cboEditorial.Items.Add(VARIABLE);
         }
     }
 }

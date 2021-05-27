@@ -43,6 +43,7 @@ namespace GestionGeneros
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.numUpDnCantidad);
             this.panel1.Controls.Add(this.btnShowAll);
@@ -58,6 +59,7 @@ namespace GestionGeneros
             // 
             // numUpDnCantidad
             // 
+            this.numUpDnCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numUpDnCantidad.Location = new System.Drawing.Point(520, 42);
             this.numUpDnCantidad.Name = "numUpDnCantidad";
             this.numUpDnCantidad.Size = new System.Drawing.Size(54, 20);
@@ -82,6 +84,7 @@ namespace GestionGeneros
             // 
             // btnMostrar
             // 
+            this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.Location = new System.Drawing.Point(401, 39);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(113, 23);
@@ -92,6 +95,8 @@ namespace GestionGeneros
             // 
             // dgvGenero
             // 
+            this.dgvGenero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGenero.Location = new System.Drawing.Point(23, 85);
             this.dgvGenero.Name = "dgvGenero";
@@ -102,6 +107,8 @@ namespace GestionGeneros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(600, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -111,6 +118,7 @@ namespace GestionGeneros
             ((System.ComponentModel.ISupportInitialize)(this.numUpDnCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGenero)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

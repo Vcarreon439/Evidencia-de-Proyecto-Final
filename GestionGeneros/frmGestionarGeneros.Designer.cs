@@ -44,6 +44,7 @@ namespace GestionGeneros
             // 
             // pnlContenedor
             // 
+            this.pnlContenedor.AutoSize = true;
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.pnlContenedor.Controls.Add(this.btnEliminar);
             this.pnlContenedor.Controls.Add(this.btnEditar);
@@ -110,6 +111,9 @@ namespace GestionGeneros
             // 
             // dgvGeneros
             // 
+            this.dgvGeneros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGeneros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGeneros.Location = new System.Drawing.Point(200, 12);
             this.dgvGeneros.Name = "dgvGeneros";
@@ -148,6 +152,7 @@ namespace GestionGeneros
             this.pnlContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

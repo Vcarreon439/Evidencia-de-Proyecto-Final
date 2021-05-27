@@ -41,7 +41,10 @@ namespace GestionAutores
             ModeloDUsuario objDUsuario = new ModeloDUsuario();
 
             if (objDUsuario.InsertarAutor(CrearAutor(imgLocation)))
-                MessageBox.Show("Correcto");
+                MessageBox.Show("El resgitro fue completado exitosamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("El resgitro no fue completado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             ActualizarData();
             Vaciar();

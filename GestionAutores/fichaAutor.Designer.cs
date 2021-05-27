@@ -45,13 +45,16 @@ namespace GestionAutores
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnEditar);
@@ -439,6 +442,20 @@ namespace GestionAutores
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 10;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Red;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Red;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.Location = new System.Drawing.Point(265, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(32, 32);
+            this.btnCerrar.TabIndex = 25;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // fichaAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +469,7 @@ namespace GestionAutores
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,5 +490,6 @@ namespace GestionAutores
         private System.Windows.Forms.TextBox txtComentarios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEliminar;
+        private FontAwesome.Sharp.IconPictureBox btnCerrar;
     }
 }

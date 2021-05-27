@@ -329,6 +329,40 @@ namespace AccesoADatos
             }
         }
 
+        public DataTable MostrarEditoriales()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarEditoriales", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+        public DataTable MostrarEditorial(string cod, string nombre)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarEditorial", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.Add("@cod", cod);
+                    adaptador.SelectCommand.Parameters.Add("@nombre", nombre);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
         #endregion
 
         #region Actualizar
@@ -432,6 +466,43 @@ namespace AccesoADatos
             }
         }
 
+        public bool ActualizarEditorial(ObjetoEditorial editorial)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                try
+                {
+                    conexion.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("ActualizarEditorial", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        
+                        cmd.Parameters.Add(new SqlParameter("@cod", editorial.Codigo));
+                        cmd.Parameters.Add(new SqlParameter("@nombre", editorial.Nombre));
+                        cmd.Parameters.Add(new SqlParameter("@telefono", editorial.Telefono));
+                        cmd.Parameters.Add(new SqlParameter("@correo", editorial.Correo));
+                        cmd.Parameters.Add(new SqlParameter("@direccion", editorial.Direccion));
+
+                        int valor = cmd.ExecuteNonQuery();
+
+                        if (valor != 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                catch (SqlException error)
+                {
+                    Console.WriteLine(error.Number);
+                    return false;
+                }
+
+                return false;
+
+            }
+        }
+
         #endregion
 
         #region Insertar
@@ -469,33 +540,71 @@ namespace AccesoADatos
 
         public bool InsertarAutor(ObjetoAutor informacion)
         {
-            using (SqlConnection conexion = ObtenerConexion())
+            try
             {
-                conexion.Open();
-
-                using (SqlCommand cmd = new SqlCommand("InsertarAutor", conexion))
+                using (SqlConnection conexion = ObtenerConexion())
                 {
-                    cmd.Connection = conexion;
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
 
-                    cmd.Parameters.AddWithValue("@cod", informacion.Codigo);
-                    cmd.Parameters.AddWithValue("@nombre", informacion.Nombres);
-                    cmd.Parameters.AddWithValue("@apellidos", informacion.Apellidos);
-                    cmd.Parameters.AddWithValue("@pais", informacion.Pais);
-                    cmd.Parameters.AddWithValue("@ciudad", informacion.Ciudad);
-                    cmd.Parameters.AddWithValue("@comentarios", informacion.Comentarios);
+                    using (SqlCommand cmd = new SqlCommand("InsertarAutor", conexion))
+                    {
+                        cmd.Connection = conexion;
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    if (informacion.Imagen != null)
-                        cmd.Parameters.AddWithValue("@foto", informacion.Imagen);
-                    else
-                        cmd.Parameters.AddWithValue("@foto", DBNull.Value);
+                        //
+                        if (informacion.Codigo != "")
+                            cmd.Parameters.AddWithValue("@cod", informacion.Codigo);
+                        else
+                            cmd.Parameters.AddWithValue("@cod", DBNull.Value);
+
+                        //
+                        if (informacion.Nombres != "")
+                            cmd.Parameters.AddWithValue("@nombre", informacion.Nombres);
+                        else
+                            cmd.Parameters.AddWithValue("@nombre", DBNull.Value);
+
+                        //
+                        if (informacion.Apellidos != "")
+                            cmd.Parameters.AddWithValue("@apellidos", informacion.Apellidos);
+                        else
+                            cmd.Parameters.AddWithValue("@apellidos", DBNull.Value);
+
+                        //
+                        if (informacion.Pais != "")
+                            cmd.Parameters.AddWithValue("@pais", informacion.Pais);
+                        else
+                            cmd.Parameters.AddWithValue("@pais", DBNull.Value);
+
+                        //
+                        if (informacion.Ciudad != "")
+                            cmd.Parameters.AddWithValue("@ciudad", informacion.Ciudad);
+                        else
+                            cmd.Parameters.AddWithValue("@ciudad", DBNull.Value);
+
+                        //
+                        if (informacion.Comentarios != "")
+                            cmd.Parameters.AddWithValue("@comentarios", informacion.Comentarios);
+                        else
+                            cmd.Parameters.AddWithValue("@comentarios", DBNull.Value);
+
+                        //
+                        if (informacion.Imagen != null)
+                            cmd.Parameters.AddWithValue("@foto", informacion.Imagen);
+                        else
+                            cmd.Parameters.AddWithValue("@foto", DBNull.Value);
 
 
-                    if (cmd.ExecuteNonQuery() != 0)
-                        return true;
-                    else
-                        return false;
+                        if (cmd.ExecuteNonQuery() != 0)
+                            return true;
+                        else
+                            return false;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
 
@@ -603,44 +712,82 @@ namespace AccesoADatos
 
         public bool InsertarEditorial(ObjetoEditorial editorial)
         {
-            using (SqlConnection conexion = ObtenerConexion())
+            try
             {
-                conexion.Open();
-
-                using (SqlCommand cmd = new SqlCommand("InsertarEditorial", conexion))
+                using (SqlConnection conexion = ObtenerConexion())
                 {
-                    cmd.Connection = conexion;
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
 
-                    cmd.Parameters.AddWithValue("@cod", editorial.Codigo);
-                    cmd.Parameters.AddWithValue("@nombre", editorial.Nombre);
+                    using (SqlCommand cmd = new SqlCommand("InsertarEditorial", conexion))
+                    {
+                        cmd.Connection = conexion;
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    if (editorial.Telefono != "")
-                        cmd.Parameters.AddWithValue("@telefono", editorial.Telefono);
-                    else
-                        cmd.Parameters.AddWithValue("@telefono", DBNull.Value);
-
-                    if (editorial.Correo != "")
-                        cmd.Parameters.AddWithValue("@correo", editorial.Correo);
-                    else
-                        cmd.Parameters.AddWithValue("@correo", DBNull.Value);
+                        if (editorial.Codigo != "")
+                            cmd.Parameters.AddWithValue("@cod", editorial.Codigo);
+                        else
+                            cmd.Parameters.AddWithValue("@cod", DBNull.Value);
 
 
-                    if (editorial.Direccion != "")
-                        cmd.Parameters.AddWithValue("@direccion", editorial.Direccion);
-                    else
-                        cmd.Parameters.AddWithValue("@direccion", DBNull.Value);
+                        if (editorial.Nombre != "")
+                            cmd.Parameters.AddWithValue("@nombre", editorial.Nombre);
+                        else
+                            cmd.Parameters.AddWithValue("@nombre", DBNull.Value);
+
+                        if (editorial.Telefono != "")
+                            cmd.Parameters.AddWithValue("@telefono", editorial.Telefono);
+                        else
+                            cmd.Parameters.AddWithValue("@telefono", DBNull.Value);
+
+                        if (editorial.Correo != "")
+                            cmd.Parameters.AddWithValue("@correo", editorial.Correo);
+                        else
+                            cmd.Parameters.AddWithValue("@correo", DBNull.Value);
 
 
-                    if (cmd.ExecuteNonQuery() != 0)
-                        return true;
-                    else
-                        return false;
+                        if (editorial.Direccion != "")
+                            cmd.Parameters.AddWithValue("@direccion", editorial.Direccion);
+                        else
+                            cmd.Parameters.AddWithValue("@direccion", DBNull.Value);
+
+
+                        if (cmd.ExecuteNonQuery() != 0)
+                            return true;
+                        else
+                            return false;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
 
 
         #endregion
+
+        public List<string> EditorialesCombo()
+        {
+            List<string> elementos = new List<string>();
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                using (SqlCommand cmd = new SqlCommand("EditorialesCombo", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            elementos.Add(reader.GetString(0));
+                    }
+
+                    return elementos;
+                }
+            }
+        }
     }
 }

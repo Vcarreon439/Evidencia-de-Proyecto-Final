@@ -113,5 +113,10 @@ namespace GestionAutores
         {
             e.Effect = DragDropEffects.Copy;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
