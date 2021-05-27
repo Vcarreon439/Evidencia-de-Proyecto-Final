@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionLibros", "GestionLib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionManagers", "GestionManagers\GestionManagers.csproj", "{EC3B69CB-D5EF-4E0C-962D-FA4D92C03837}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionEditorial", "GestionEditorial\GestionEditorial.csproj", "{E603CE8F-9555-4DB0-AAA7-118963B3F075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{EC3B69CB-D5EF-4E0C-962D-FA4D92C03837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC3B69CB-D5EF-4E0C-962D-FA4D92C03837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC3B69CB-D5EF-4E0C-962D-FA4D92C03837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E603CE8F-9555-4DB0-AAA7-118963B3F075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E603CE8F-9555-4DB0-AAA7-118963B3F075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E603CE8F-9555-4DB0-AAA7-118963B3F075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E603CE8F-9555-4DB0-AAA7-118963B3F075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

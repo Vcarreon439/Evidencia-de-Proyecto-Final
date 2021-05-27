@@ -137,6 +137,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\585e4beacb11b227491c3399.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <Content Include="LibreriaBD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -144,10 +148,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LibreriaBD.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\585e4beacb11b227491c3399.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

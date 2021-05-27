@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using BibliotecaDeClases;
 
 namespace AccesoADatos
 {
@@ -29,7 +30,43 @@ namespace AccesoADatos
 
         }
 
-        public List<string> GenerosCombo(int cant)
+        public bool ActualizarAutor(ObjetoAutor autor)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                try
+                {
+                    conexion.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("ActualizarAutor", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@cod", autor.Codigo));
+                        cmd.Parameters.Add(new SqlParameter("@nombres", autor.Nombres));
+                        cmd.Parameters.Add(new SqlParameter("@apellidos", autor.Apellidos));
+                        cmd.Parameters.Add(new SqlParameter("@pais", autor.Pais));
+                        cmd.Parameters.Add(new SqlParameter("@ciudad", autor.Ciudad));
+                        cmd.Parameters.Add(new SqlParameter("@comentarios", autor.Comentarios));
+                        cmd.Parameters.Add(new SqlParameter("@foto", autor.Imagen));
+
+                        int valor = cmd.ExecuteNonQuery();
+
+                        if (valor != 0)
+                            return true;
+                    }
+                }
+                catch (SqlException error)
+                {
+                    Console.WriteLine(error.Number);
+                    return false;
+                }
+
+                return false;
+
+            }
+        }
+
+        public List<string> TemaCombo()
         {
             List<string> elementos = new List<string>();
 
@@ -39,7 +76,6 @@ namespace AccesoADatos
                 using (SqlCommand cmd = new SqlCommand("TemaCombo", conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@cant", cant);
                     
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -200,11 +236,11 @@ namespace AccesoADatos
                     cmd.Parameters.AddWithValue("@ciudad", informacion.Ciudad);
                     cmd.Parameters.AddWithValue("@comentarios", informacion.Comentarios);
 
-                    //if (informacion.Imagen != null)
-                    //    //cmd.Parameters.AddWithValue("@foto", SqlDbType.Image).Value = informacion.Imagen.GetBuffer();
-                    //else
-                    //    cmd.Parameters.AddWithValue("@foto", DBNull.Value);
-
+                    if (informacion.Imagen!=null)
+                        cmd.Parameters.AddWithValue("@foto", informacion.Imagen);
+                    else
+                        cmd.Parameters.AddWithValue("@foto", DBNull.Value);
+                    
 
                     if (cmd.ExecuteNonQuery() != 0)
                         return true;
@@ -237,14 +273,8 @@ namespace AccesoADatos
                             autor.Pais = reader["paisNac"].ToString();
                             autor.Ciudad = reader["ciudadNac"].ToString();
                             autor.Comentarios = reader["comentarios"].ToString();
-
-                            MessageBox.Show($"{reader["foto"].GetType().ToString()}  {reader["foto"].ToString()}");
-
-                            //if (reader["foto"] != null)
-                            //    autor.Imagen = ImagenAutor.ToBytes(reader[6].ToString());
-                            
+                            autor.Imagen = reader["foto"].ToString();
                         }
-
                         return autor;
                     }
                 }
@@ -267,24 +297,6 @@ namespace AccesoADatos
                 }
             }
         }
-
-        //public ObjetoAutor MostrarAutor(string codigo)
-        //{
-        //    using (SqlConnection conexion = ObtenerConexion())
-        //    {
-        //        conexion.Open();
-
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.Add("@cod", codigo);
-
-        //        using (SqlDataReader reader = cmd.ExecuteReader())
-        //        {
-                    
-        //        }
-
-        //    }
-        //}
 
         public DataTable MostrarAutores()
         {
@@ -378,6 +390,156 @@ namespace AccesoADatos
 
                 return false;
 
+            }
+        }
+
+        public bool InsertarMiembro(ObjetoMiembro miembro)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("InsertarMiembro", conexion))
+                {
+                    cmd.Connection = conexion;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@curp", miembro.CURP);
+                    cmd.Parameters.AddWithValue("@nombre", miembro.Nombres);
+                    cmd.Parameters.AddWithValue("@apellidos", miembro.Apellidos);
+                    cmd.Parameters.AddWithValue("@entidad", miembro.Entidad);
+                    cmd.Parameters.AddWithValue("@sexo", miembro.Sexo);
+                    cmd.Parameters.AddWithValue("@domicilio", miembro.Domicilio);
+                    cmd.Parameters.AddWithValue("@fecha", miembro.FechaNac);
+
+                    if (miembro.Imagen != null)
+                        cmd.Parameters.AddWithValue("@imagen", miembro.Imagen);
+                    else
+                        cmd.Parameters.AddWithValue("@imagen", DBNull.Value);
+
+
+                    if (cmd.ExecuteNonQuery() != 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public DataTable UsuariosCant(int cantidad)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("UsuariosCant", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("@cant", cantidad);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+        public DataTable MostrarManagers()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlDataAdapter adaptador = new SqlDataAdapter("MostrarManagers", conexion))
+                {
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    return tabla;
+                }
+            }
+        }
+
+        public bool InsertarManager(string nombre, string contra, string rol)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("InsertarManager", conexion))
+                {
+                    cmd.Connection = conexion;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@contra", contra);
+                    cmd.Parameters.AddWithValue("@rol", rol);
+
+                    if (cmd.ExecuteNonQuery() != 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public ObjectManager MostrarManager(string codigo)
+        {
+            ObjectManager mana = new ObjectManager();
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("MostrarManager", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@cod", codigo);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            mana.Codigo = reader["Id"].ToString();
+                            mana.Nombre = reader["Nombre"].ToString();
+                            mana.Contraseña = reader["Contraseña"].ToString();
+                            mana.Rol = reader["Rol"].ToString();
+                        }
+
+                        return mana;
+                    }
+                }
+            }
+        }
+
+        public bool ActualizarManager(ObjectManager manager)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                try
+                {
+                    conexion.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("ActualizarManager", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@cod", manager.Codigo));
+                        cmd.Parameters.Add(new SqlParameter("@nombre", manager.Nombre));
+                        cmd.Parameters.Add(new SqlParameter("@contra", manager.Contraseña));
+                        cmd.Parameters.Add(new SqlParameter("@rol", manager.Rol));
+
+                        int valor = cmd.ExecuteNonQuery();
+
+                        if (valor != 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                catch (SqlException error)
+                {
+                    Console.WriteLine(error.Number);
+                    return false;
+                }
             }
         }
     }

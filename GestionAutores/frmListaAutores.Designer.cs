@@ -32,11 +32,11 @@ namespace GestionAutores
             this.numUpDnCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.dgvAutores = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvAutores = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDnCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.SuspendLayout();
             // 
             // numUpDnCantidad
@@ -71,21 +71,12 @@ namespace GestionAutores
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // dgvAutores
-            // 
-            this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutores.Location = new System.Drawing.Point(12, 94);
-            this.dgvAutores.Name = "dgvAutores";
-            this.dgvAutores.Size = new System.Drawing.Size(576, 394);
-            this.dgvAutores.TabIndex = 5;
-            this.dgvAutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutores_CellClick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.dgvAutores);
             this.panel1.Controls.Add(this.numUpDnCantidad);
             this.panel1.Controls.Add(this.btnMostrar);
-            this.panel1.Controls.Add(this.dgvAutores);
             this.panel1.Controls.Add(this.btnShowAll);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -93,6 +84,17 @@ namespace GestionAutores
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 9;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // dgvAutores
+            // 
+            this.dgvAutores.AllowUserToAddRows = false;
+            this.dgvAutores.AllowUserToDeleteRows = false;
+            this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAutores.Location = new System.Drawing.Point(12, 94);
+            this.dgvAutores.Name = "dgvAutores";
+            this.dgvAutores.Size = new System.Drawing.Size(576, 394);
+            this.dgvAutores.TabIndex = 9;
+            this.dgvAutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutores_CellClick);
             // 
             // frmListaAutores
             // 
@@ -104,8 +106,8 @@ namespace GestionAutores
             this.Name = "frmListaAutores";
             this.Text = "frmListaAutores";
             ((System.ComponentModel.ISupportInitialize)(this.numUpDnCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,7 +117,7 @@ namespace GestionAutores
         private System.Windows.Forms.NumericUpDown numUpDnCantidad;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.DataGridView dgvAutores;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvAutores;
     }
 }

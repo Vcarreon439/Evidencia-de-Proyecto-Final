@@ -32,7 +32,7 @@ namespace GestionAutores
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionAutores));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctAutor = new System.Windows.Forms.PictureBox();
             this.chkDesconocido = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,15 +50,17 @@ namespace GestionAutores
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAgregarFoto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctAutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnAgregarFoto);
+            this.panel1.Controls.Add(this.pctAutor);
             this.panel1.Controls.Add(this.chkDesconocido);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -80,19 +82,19 @@ namespace GestionAutores
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // pictureBox1
+            // pctAutor
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 230);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.pctAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctAutor.Location = new System.Drawing.Point(18, 18);
+            this.pctAutor.Name = "pctAutor";
+            this.pctAutor.Size = new System.Drawing.Size(230, 230);
+            this.pctAutor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctAutor.TabIndex = 23;
+            this.pctAutor.TabStop = false;
+            this.pctAutor.DragDrop += new System.Windows.Forms.DragEventHandler(this.pctAutor_DragDrop);
+            this.pctAutor.DragEnter += new System.Windows.Forms.DragEventHandler(this.pctAutor_DragEnter);
             // 
             // chkDesconocido
             // 
@@ -419,7 +421,7 @@ namespace GestionAutores
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 261);
+            this.label1.Location = new System.Drawing.Point(121, 266);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 9;
@@ -471,10 +473,20 @@ namespace GestionAutores
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(148, 254);
+            this.txtID.Location = new System.Drawing.Point(148, 263);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
+            // 
+            // btnAgregarFoto
+            // 
+            this.btnAgregarFoto.Location = new System.Drawing.Point(18, 261);
+            this.btnAgregarFoto.Name = "btnAgregarFoto";
+            this.btnAgregarFoto.Size = new System.Drawing.Size(97, 23);
+            this.btnAgregarFoto.TabIndex = 24;
+            this.btnAgregarFoto.Text = "Agregar Foto";
+            this.btnAgregarFoto.UseVisualStyleBackColor = true;
+            this.btnAgregarFoto.Click += new System.EventHandler(this.btnAgregarFoto_Click);
             // 
             // frmGestionAutores
             // 
@@ -489,7 +501,7 @@ namespace GestionAutores
             this.Load += new System.EventHandler(this.frmGestionAutores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctAutor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
             this.ResumeLayout(false);
 
@@ -515,7 +527,8 @@ namespace GestionAutores
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkDesconocido;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctAutor;
+        private System.Windows.Forms.Button btnAgregarFoto;
     }
 }
 

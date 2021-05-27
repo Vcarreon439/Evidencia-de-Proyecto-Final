@@ -17,6 +17,7 @@ namespace GestionAutores
         public frmListaAutores()
         {
             InitializeComponent();
+            dgvAutores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
@@ -78,20 +79,24 @@ namespace GestionAutores
         {
             if (e.RowIndex != -1)
             {
-                List<string> message = new List<string>(5);
+                ModeloDUsuario obj = new ModeloDUsuario();
+                ObjetoAutor Autor = obj.MostrarAutor(dgvAutores.SelectedCells[0].Value.ToString());
+                fichaAutor ficha = new fichaAutor(Autor);
 
-                DataGridViewRow reciever = dgvAutores.Rows[e.RowIndex];
-
-                for (int i = 0; i < 5; i++)
+                switch (ficha.ShowDialog())
                 {
-                    message.Add(reciever.Cells[i].Value.ToString());
-                }
+                    case DialogResult.Cancel:
+                        MostrarCant(10);
+                        break;
 
-                ObjetoAutor Obj = new ObjetoAutor();
-                Obj.Nombres = dgvAutores.SelectedCells[0].Value.ToString();
-                Obj.Apellidos = dgvAutores.SelectedCells[1].Value.ToString();
-                fichaAutor ficha = new fichaAutor(Obj);
-                ficha.ShowDialog();
+                    case DialogResult.Yes:
+                        MostrarCant(10);
+                        break;
+
+                    case DialogResult.No:
+                        MostrarCant(10);
+                        break;
+                }
             }
         }
     }

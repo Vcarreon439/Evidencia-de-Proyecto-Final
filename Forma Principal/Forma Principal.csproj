@@ -108,6 +108,10 @@
       <Project>{e5bd4f30-a24b-49b7-ad47-abdc01663af9}</Project>
       <Name>GestionAutores</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GestionEditorial\GestionEditorial.csproj">
+      <Project>{e603ce8f-9555-4db0-aaa7-118963b3f075}</Project>
+      <Name>GestionEditorial</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionGeneros\GestionGeneros.csproj">
       <Project>{523a8aed-2a96-42c9-90fc-216e5517384b}</Project>
       <Name>GestionGeneros</Name>

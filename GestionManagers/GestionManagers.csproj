@@ -52,19 +52,10 @@
     <Compile Include="frmGestionManagers.Designer.cs">
       <DependentUpon>frmGestionManagers.cs</DependentUpon>
     </Compile>
-    <Compile Include="listaManagers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="listaManagers.Designer.cs">
-      <DependentUpon>listaManagers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmGestionManagers.resx">
       <DependentUpon>frmGestionManagers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="listaManagers.resx">
-      <DependentUpon>listaManagers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +83,18 @@
     <ProjectReference Include="..\..\Proyecto_Contabilidad\Funcionalidad_Formularios\Funcionalidad_Formularios\Funcionalidad_Formularios.csproj">
       <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
       <Name>Funcionalidad_Formularios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticacion\Autenticacion.csproj">
+      <Project>{cb0e25f9-d419-4fb2-8c69-4b537806b89a}</Project>
+      <Name>Autenticacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaDeClases\BibliotecaDeClases.csproj">
+      <Project>{c2d09a6e-6f89-4e32-b2fd-34db16c5cbea}</Project>
+      <Name>BibliotecaDeClases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{c59ba085-8b56-44ca-83f0-91fe93037f79}</Project>
+      <Name>Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

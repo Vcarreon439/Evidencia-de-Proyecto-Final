@@ -31,8 +31,9 @@ namespace GestionAutores
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fichaAutor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtComentarios = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,8 +52,9 @@ namespace GestionAutores
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtComentarios);
             this.panel1.Controls.Add(this.label7);
@@ -71,8 +73,20 @@ namespace GestionAutores
             this.panel1.TabIndex = 1;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnEliminar.Location = new System.Drawing.Point(194, 480);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::GestionAutores.Properties.Resources.predeterminada;
             this.pictureBox1.Location = new System.Drawing.Point(86, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -80,15 +94,19 @@ namespace GestionAutores
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop);
+            this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
             // 
-            // button1
+            // btnEditar
             // 
-            this.button1.Location = new System.Drawing.Point(115, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnEditar.Location = new System.Drawing.Point(115, 480);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 22;
+            this.btnEditar.Text = "Guardar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // label5
             // 
@@ -449,9 +467,10 @@ namespace GestionAutores
         private FlagsISO.ComboBoxCountrySelect cboPais;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCiudad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtComentarios;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -23,7 +23,7 @@ namespace GestionAutores
         private string pais;
         private string ciudad;
         private string comentarios;
-        private Bitmap imagen;
+        private string imagen;
 
         public string Codigo { get => codigo; set => codigo = value; }
         public string Nombres { get => nombres; set => nombres = value; }
@@ -31,6 +31,6 @@ namespace GestionAutores
         public string Pais { get => pais; set => pais = value; }
         public string Ciudad { get => ciudad; set => ciudad = value; }
         public string Comentarios { get => comentarios; set => comentarios = value; }
-        public Bitmap Imagen { get => imagen; set => imagen = value; }
+        public string Imagen { get => imagen; set => imagen = value; }
     }
 }

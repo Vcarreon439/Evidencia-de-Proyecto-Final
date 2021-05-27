@@ -35,12 +35,9 @@ namespace GestionUsuarios
             {
                 ModeloDUsuario Obj = new ModeloDUsuario();
                 DataTable tabla = Obj.MostrarUsuarios();
+                dgvUsuarios.DataSource = tabla;
+                dgvUsuarios.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                if (tabla.Rows.Count != 0)
-                {
-                    tabla.Columns[7].Caption = "Situacion";
-                    dgvUsuarios.DataSource = tabla;
-                }
             }
             catch (Exception ex)
             {
@@ -53,6 +50,14 @@ namespace GestionUsuarios
         {
             Arrastre_Formularios.Llama_ReleaseCapture();
             Arrastre_Formularios.Llama_SendMessage(ParentForm.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            ModeloDUsuario Obj = new ModeloDUsuario();
+            DataTable tabla = Obj.UsuariosCant(Convert.ToInt32(numUpDnCantidad.Value));
+            dgvUsuarios.DataSource = tabla;
+            dgvUsuarios.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

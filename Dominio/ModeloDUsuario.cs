@@ -6,6 +6,7 @@ using System.Text;
 using Autenticacion;
 using System.Threading.Tasks;
 using AccesoADatos;
+using BibliotecaDeClases;
 using GestionAutores;
 
 namespace Dominio
@@ -13,6 +14,16 @@ namespace Dominio
     public class ModeloDUsuario
     {
         Usuario usuario = new Usuario();
+
+        public bool InsertarMiembro(ObjetoMiembro miembro)
+        {
+            return usuario.InsertarMiembro(miembro);
+        }
+
+        public bool ActualizarAutor(ObjetoAutor autor)
+        {
+            return usuario.ActualizarAutor(autor);
+        }
 
         public DataTable MostrarGenerosCant(int cantidad)
         {
@@ -40,9 +51,9 @@ namespace Dominio
             return usuario.MostrarGeneros();
         }
 
-        public List<string> GenerosCombo(int cantidad)
+        public List<string> TemaCombo()
         {
-            return usuario.GenerosCombo(cantidad);
+            return usuario.TemaCombo();
         }
 
         public DataTable MostrarAutores()
@@ -96,5 +107,29 @@ namespace Dominio
 
         #endregion
 
+        public DataTable UsuariosCant(int cantidad)
+        {
+            return usuario.UsuariosCant(cantidad);
+        }
+
+        public DataTable MostrarManagers()
+        {
+            return usuario.MostrarManagers();
+        }
+
+        public bool InsertarManager(string nombre, string contra, string rol)
+        {
+            return usuario.InsertarManager(nombre,contra,rol);
+        }
+
+        public ObjectManager MostrarManager(string codigo)
+        {
+            return usuario.MostrarManager(codigo);
+        }
+
+        public bool ActualizarManager(ObjectManager manager)
+        {
+            return usuario.ActualizarManager(manager);
+        }
     }
 }

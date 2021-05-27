@@ -30,9 +30,10 @@ namespace Forma_Principal
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.pnlSubMenu6 = new System.Windows.Forms.Panel();
+            this.btnGestionarEditoriales = new System.Windows.Forms.Button();
+            this.btnEditorial = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu5 = new System.Windows.Forms.Panel();
-            this.btnListaUsuarios = new System.Windows.Forms.Button();
             this.btnGestionarUsuarios = new System.Windows.Forms.Button();
             this.btnManagers = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu4 = new System.Windows.Forms.Panel();
@@ -52,8 +53,10 @@ namespace Forma_Principal
             this.btnGestionGeneros = new System.Windows.Forms.Button();
             this.btnGeneros = new FontAwesome.Sharp.IconButton();
             this.pnlEncabezadoMenu = new System.Windows.Forms.Panel();
+            this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
+            this.pnlSubMenu6.SuspendLayout();
             this.pnlSubMenu5.SuspendLayout();
             this.pnlSubMenu4.SuspendLayout();
             this.pnlSubMenu3.SuspendLayout();
@@ -65,7 +68,8 @@ namespace Forma_Principal
             // 
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.pnlMenu.Controls.Add(this.cboTipoUsuario);
+            this.pnlMenu.Controls.Add(this.pnlSubMenu6);
+            this.pnlMenu.Controls.Add(this.btnEditorial);
             this.pnlMenu.Controls.Add(this.pnlSubMenu5);
             this.pnlMenu.Controls.Add(this.btnManagers);
             this.pnlMenu.Controls.Add(this.pnlSubMenu4);
@@ -77,6 +81,7 @@ namespace Forma_Principal
             this.pnlMenu.Controls.Add(this.pnlSubMenu1);
             this.pnlMenu.Controls.Add(this.btnGeneros);
             this.pnlMenu.Controls.Add(this.pnlEncabezadoMenu);
+            this.pnlMenu.Controls.Add(this.cboTipoUsuario);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
@@ -84,55 +89,66 @@ namespace Forma_Principal
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMenu_MouseMove);
             // 
-            // cboTipoUsuario
+            // pnlSubMenu6
             // 
-            this.cboTipoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
-            this.cboTipoUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoUsuario.ForeColor = System.Drawing.Color.White;
-            this.cboTipoUsuario.FormattingEnabled = true;
-            this.cboTipoUsuario.Items.AddRange(new object[] {
-            "Administrador",
-            "Manager",
-            "Usuario",
-            "Invitado"});
-            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 657);
-            this.cboTipoUsuario.Name = "cboTipoUsuario";
-            this.cboTipoUsuario.Size = new System.Drawing.Size(183, 28);
-            this.cboTipoUsuario.TabIndex = 0;
-            this.cboTipoUsuario.Visible = false;
-            this.cboTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cboTipoUsuario_SelectedIndexChanged);
+            this.pnlSubMenu6.AutoSize = true;
+            this.pnlSubMenu6.Controls.Add(this.btnGestionarEditoriales);
+            this.pnlSubMenu6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenu6.Location = new System.Drawing.Point(0, 685);
+            this.pnlSubMenu6.Name = "pnlSubMenu6";
+            this.pnlSubMenu6.Size = new System.Drawing.Size(183, 40);
+            this.pnlSubMenu6.TabIndex = 0;
+            this.pnlSubMenu6.Visible = false;
+            // 
+            // btnGestionarEditoriales
+            // 
+            this.btnGestionarEditoriales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
+            this.btnGestionarEditoriales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarEditoriales.FlatAppearance.BorderSize = 0;
+            this.btnGestionarEditoriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarEditoriales.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarEditoriales.Location = new System.Drawing.Point(0, 0);
+            this.btnGestionarEditoriales.Name = "btnGestionarEditoriales";
+            this.btnGestionarEditoriales.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnGestionarEditoriales.Size = new System.Drawing.Size(183, 40);
+            this.btnGestionarEditoriales.TabIndex = 5;
+            this.btnGestionarEditoriales.Text = "Gestionar Editoriales";
+            this.btnGestionarEditoriales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarEditoriales.UseVisualStyleBackColor = false;
+            this.btnGestionarEditoriales.Click += new System.EventHandler(this.btnGestionarEditoriales_Click);
+            // 
+            // btnEditorial
+            // 
+            this.btnEditorial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditorial.FlatAppearance.BorderSize = 0;
+            this.btnEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditorial.ForeColor = System.Drawing.Color.White;
+            this.btnEditorial.IconChar = FontAwesome.Sharp.IconChar.Underline;
+            this.btnEditorial.IconColor = System.Drawing.Color.White;
+            this.btnEditorial.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditorial.IconSize = 30;
+            this.btnEditorial.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEditorial.Location = new System.Drawing.Point(0, 645);
+            this.btnEditorial.Name = "btnEditorial";
+            this.btnEditorial.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditorial.Size = new System.Drawing.Size(183, 40);
+            this.btnEditorial.TabIndex = 5;
+            this.btnEditorial.Text = "Editorial";
+            this.btnEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditorial.UseVisualStyleBackColor = true;
+            this.btnEditorial.Click += new System.EventHandler(this.btnEditorial_Click);
             // 
             // pnlSubMenu5
             // 
             this.pnlSubMenu5.AutoSize = true;
-            this.pnlSubMenu5.Controls.Add(this.btnListaUsuarios);
             this.pnlSubMenu5.Controls.Add(this.btnGestionarUsuarios);
             this.pnlSubMenu5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu5.Location = new System.Drawing.Point(0, 577);
+            this.pnlSubMenu5.Location = new System.Drawing.Point(0, 605);
             this.pnlSubMenu5.Name = "pnlSubMenu5";
-            this.pnlSubMenu5.Size = new System.Drawing.Size(183, 80);
+            this.pnlSubMenu5.Size = new System.Drawing.Size(183, 40);
             this.pnlSubMenu5.TabIndex = 0;
             this.pnlSubMenu5.Visible = false;
-            // 
-            // btnListaUsuarios
-            // 
-            this.btnListaUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(81)))));
-            this.btnListaUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListaUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnListaUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListaUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnListaUsuarios.Location = new System.Drawing.Point(0, 40);
-            this.btnListaUsuarios.Name = "btnListaUsuarios";
-            this.btnListaUsuarios.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnListaUsuarios.Size = new System.Drawing.Size(183, 40);
-            this.btnListaUsuarios.TabIndex = 7;
-            this.btnListaUsuarios.Text = "Lista de Usuarios";
-            this.btnListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListaUsuarios.UseVisualStyleBackColor = false;
-            this.btnListaUsuarios.Click += new System.EventHandler(this.btnListaUsuarios_Click);
-            this.btnListaUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaUsuarios_MouseClick);
             // 
             // btnGestionarUsuarios
             // 
@@ -150,7 +166,6 @@ namespace Forma_Principal
             this.btnGestionarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionarUsuarios.UseVisualStyleBackColor = false;
             this.btnGestionarUsuarios.Click += new System.EventHandler(this.btnGestionarUsuarios_Click);
-            this.btnGestionarUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionarUsuarios_MouseClick);
             // 
             // btnManagers
             // 
@@ -163,7 +178,7 @@ namespace Forma_Principal
             this.btnManagers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnManagers.IconSize = 30;
             this.btnManagers.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnManagers.Location = new System.Drawing.Point(0, 537);
+            this.btnManagers.Location = new System.Drawing.Point(0, 565);
             this.btnManagers.Name = "btnManagers";
             this.btnManagers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnManagers.Size = new System.Drawing.Size(183, 40);
@@ -180,7 +195,7 @@ namespace Forma_Principal
             this.pnlSubMenu4.Controls.Add(this.btnListaLibros);
             this.pnlSubMenu4.Controls.Add(this.btnGestionLibro);
             this.pnlSubMenu4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 457);
+            this.pnlSubMenu4.Location = new System.Drawing.Point(0, 485);
             this.pnlSubMenu4.Name = "pnlSubMenu4";
             this.pnlSubMenu4.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu4.TabIndex = 0;
@@ -202,7 +217,6 @@ namespace Forma_Principal
             this.btnListaLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaLibros.UseVisualStyleBackColor = false;
             this.btnListaLibros.Click += new System.EventHandler(this.btnListaLibros_Click);
-            this.btnListaLibros.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaLibros_MouseClick);
             // 
             // btnGestionLibro
             // 
@@ -220,7 +234,6 @@ namespace Forma_Principal
             this.btnGestionLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionLibro.UseVisualStyleBackColor = false;
             this.btnGestionLibro.Click += new System.EventHandler(this.btnGestionLibro_Click);
-            this.btnGestionLibro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGestionLibro_MouseClick);
             // 
             // btnLibros
             // 
@@ -233,7 +246,7 @@ namespace Forma_Principal
             this.btnLibros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLibros.IconSize = 30;
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnLibros.Location = new System.Drawing.Point(0, 417);
+            this.btnLibros.Location = new System.Drawing.Point(0, 445);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLibros.Size = new System.Drawing.Size(183, 40);
@@ -250,7 +263,7 @@ namespace Forma_Principal
             this.pnlSubMenu3.Controls.Add(this.btnListaMiembros);
             this.pnlSubMenu3.Controls.Add(this.btnGestionarMiembro);
             this.pnlSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu3.Location = new System.Drawing.Point(0, 337);
+            this.pnlSubMenu3.Location = new System.Drawing.Point(0, 365);
             this.pnlSubMenu3.Name = "pnlSubMenu3";
             this.pnlSubMenu3.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu3.TabIndex = 0;
@@ -301,7 +314,7 @@ namespace Forma_Principal
             this.btnMiembros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMiembros.IconSize = 30;
             this.btnMiembros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMiembros.Location = new System.Drawing.Point(0, 297);
+            this.btnMiembros.Location = new System.Drawing.Point(0, 325);
             this.btnMiembros.Name = "btnMiembros";
             this.btnMiembros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMiembros.Size = new System.Drawing.Size(183, 40);
@@ -318,7 +331,7 @@ namespace Forma_Principal
             this.pnlSubMenu2.Controls.Add(this.btnListaAutores);
             this.pnlSubMenu2.Controls.Add(this.btnGestionarAutor);
             this.pnlSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu2.Location = new System.Drawing.Point(0, 217);
+            this.pnlSubMenu2.Location = new System.Drawing.Point(0, 245);
             this.pnlSubMenu2.Name = "pnlSubMenu2";
             this.pnlSubMenu2.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu2.TabIndex = 0;
@@ -340,7 +353,6 @@ namespace Forma_Principal
             this.btnListaAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListaAutores.UseVisualStyleBackColor = false;
             this.btnListaAutores.Click += new System.EventHandler(this.btnListaAutores_Click);
-            this.btnListaAutores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnListaAutores_MouseClick);
             // 
             // btnGestionarAutor
             // 
@@ -370,7 +382,7 @@ namespace Forma_Principal
             this.btnAutores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAutores.IconSize = 30;
             this.btnAutores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAutores.Location = new System.Drawing.Point(0, 177);
+            this.btnAutores.Location = new System.Drawing.Point(0, 205);
             this.btnAutores.Name = "btnAutores";
             this.btnAutores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAutores.Size = new System.Drawing.Size(183, 40);
@@ -387,7 +399,7 @@ namespace Forma_Principal
             this.pnlSubMenu1.Controls.Add(this.btnListaGeneros);
             this.pnlSubMenu1.Controls.Add(this.btnGestionGeneros);
             this.pnlSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenu1.Location = new System.Drawing.Point(0, 97);
+            this.pnlSubMenu1.Location = new System.Drawing.Point(0, 125);
             this.pnlSubMenu1.Name = "pnlSubMenu1";
             this.pnlSubMenu1.Size = new System.Drawing.Size(183, 80);
             this.pnlSubMenu1.TabIndex = 0;
@@ -438,7 +450,7 @@ namespace Forma_Principal
             this.btnGeneros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGeneros.IconSize = 30;
             this.btnGeneros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneros.Location = new System.Drawing.Point(0, 57);
+            this.btnGeneros.Location = new System.Drawing.Point(0, 85);
             this.btnGeneros.Name = "btnGeneros";
             this.btnGeneros.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGeneros.Size = new System.Drawing.Size(183, 40);
@@ -453,11 +465,31 @@ namespace Forma_Principal
             // 
             this.pnlEncabezadoMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(71)))));
             this.pnlEncabezadoMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEncabezadoMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncabezadoMenu.Location = new System.Drawing.Point(0, 28);
             this.pnlEncabezadoMenu.Name = "pnlEncabezadoMenu";
             this.pnlEncabezadoMenu.Size = new System.Drawing.Size(183, 57);
             this.pnlEncabezadoMenu.TabIndex = 1;
             this.pnlEncabezadoMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlEncabezadoMenu_MouseMove);
+            // 
+            // cboTipoUsuario
+            // 
+            this.cboTipoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.cboTipoUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoUsuario.ForeColor = System.Drawing.Color.White;
+            this.cboTipoUsuario.FormattingEnabled = true;
+            this.cboTipoUsuario.Items.AddRange(new object[] {
+            "Administrador",
+            "Manager",
+            "Usuario",
+            "Invitado"});
+            this.cboTipoUsuario.Location = new System.Drawing.Point(0, 0);
+            this.cboTipoUsuario.Name = "cboTipoUsuario";
+            this.cboTipoUsuario.Size = new System.Drawing.Size(183, 28);
+            this.cboTipoUsuario.TabIndex = 0;
+            this.cboTipoUsuario.Visible = false;
+            this.cboTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cboTipoUsuario_SelectedIndexChanged);
             // 
             // pnlContenedor
             // 
@@ -483,6 +515,7 @@ namespace Forma_Principal
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            this.pnlSubMenu6.ResumeLayout(false);
             this.pnlSubMenu5.ResumeLayout(false);
             this.pnlSubMenu4.ResumeLayout(false);
             this.pnlSubMenu3.ResumeLayout(false);
@@ -517,7 +550,9 @@ namespace Forma_Principal
         private System.Windows.Forms.Panel pnlSubMenu5;
         private System.Windows.Forms.Button btnGestionarUsuarios;
         private FontAwesome.Sharp.IconButton btnManagers;
-        private System.Windows.Forms.Button btnListaUsuarios;
+        private System.Windows.Forms.Panel pnlSubMenu6;
+        private System.Windows.Forms.Button btnGestionarEditoriales;
+        private FontAwesome.Sharp.IconButton btnEditorial;
     }
 }
 

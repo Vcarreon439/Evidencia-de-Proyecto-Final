@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using System.Drawing;
 using Dominio;
+using BibliotecaDeClases;
 using System.IO;
 using Funcionalidad_Formularios;
 using Microsoft.WindowsAPICodePack.Dialogs;
-using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.Windows.Forms.VisualStyles;
 
 namespace GestionAutores
 {
     public partial class frmGestionAutores : Form
     {
+        private string imgLocation;
+
         public frmGestionAutores()
         {
             InitializeComponent();
@@ -33,26 +36,28 @@ namespace GestionAutores
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtApellidos.Text = cboCountry.Text;
-        }
-
-        private void dgvAutores_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            List<string> elementos = new List<string>(7);
-        }
-
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             ModeloDUsuario objDUsuario = new ModeloDUsuario();
 
-            if (objDUsuario.InsertarAutor(CrearAutor()))
+            if (objDUsuario.InsertarAutor(CrearAutor(imgLocation)))
                 MessageBox.Show("Correcto");
+
+            ActualizarData();
+            Vaciar();
         }
 
+        private void Vaciar()
+        {
+            pctAutor.Image = null;
+            txtApellidos.Text = "";
+            txtID.Text = "";
+            txtCiudad.Text = "";
+            txtComentarios.Text = "";
+            txtNombre.Text = "";
+        }
 
-        private ObjetoAutor CrearAutor()
+        private ObjetoAutor CrearAutor(string location)
         {
             ObjetoAutor obj = new ObjetoAutor();
 
@@ -65,7 +70,6 @@ namespace GestionAutores
             if (txtApellidos.Text != "")
                 obj.Apellidos = txtApellidos.Text;
 
-            //
             if (chkDesconocido.CheckState == CheckState.Checked)
                 obj.Pais = "Desconocido";
             else
@@ -78,11 +82,12 @@ namespace GestionAutores
             if (txtComentarios.Text != "")
                 obj.Comentarios = txtComentarios.Text;
 
-            //if (pictureBox1.Image != null)
+            if (pctAutor.Image != null)
+                obj.Imagen = ImagenAutor.ImageToBase64(pctAutor.Image, ImageFormat.Jpeg);
+            else
+                obj.Imagen = null;
 
             return obj;
-
-            //    obj.Imagen = pictureBox1.Load(linkLabel1.Text);
         }
 
         private void ActualizarData()
@@ -107,31 +112,22 @@ namespace GestionAutores
         {
             ActualizarData();
             dgvAutores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void dgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show("Hola");
+            pctAutor.AllowDrop = true;
         }
 
         private void dgvAutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex!=-1)
             {
-                List<string> message = new List<string>(5);
-
-                DataGridViewRow reciever = dgvAutores.Rows[e.RowIndex];
-
-                for (int i = 0; i < 5; i++)
-                {
-                    message.Add(reciever.Cells[i].Value.ToString());
-                }
-
                 ModeloDUsuario obj = new ModeloDUsuario();
-                ObjetoAutor Autor = obj.MostrarAutor(dgvAutores.SelectedCells[0].Value.ToString());
-                fichaAutor ficha = new fichaAutor(Autor);
-                ficha.ShowDialog();
+                LlenarCampos(obj.MostrarManager(dgvAutores.SelectedCells[0].Value.ToString()));
             }
+        }
+
+        private void LlenarCampos(ObjectManager manager)
+        {
+
+
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -140,25 +136,36 @@ namespace GestionAutores
             Arrastre_Formularios.Llama_SendMessage(ParentForm.Handle, 0x112, 0xf012, 0);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void pctAutor_DragDrop(object sender, DragEventArgs e)
         {
+            var data = e.Data.GetData(DataFormats.FileDrop);
+            string[] fileList = (string[]) e.Data.GetData(DataFormats.FileDrop, false);
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
+            if (data != null)
             {
-                throw new System.NotImplementedException();
+                var filename = data as string[];
+
+                if (filename.Length > 0)
+                {
+                    pctAutor.Image = Image.FromFile((filename[0]));
+                    imgLocation = fileList[0];
+                }
             }
-            catch (Exception exception)
+        }
+
+        private void pctAutor_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btnAgregarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
             {
-                Console.WriteLine(exception.Message);
+                pctAutor.Image = new Bitmap(open.FileName);
+                imgLocation = open.FileName;
             }
         }
     }

@@ -30,30 +30,30 @@ namespace GestionLibros
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtAño = new System.Windows.Forms.TextBox();
-            this.txtLugar = new System.Windows.Forms.TextBox();
-            this.cboEditorial = new System.Windows.Forms.ComboBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtISBN = new System.Windows.Forms.TextBox();
-            this.numCopias = new System.Windows.Forms.NumericUpDown();
-            this.numEdicion = new System.Windows.Forms.NumericUpDown();
-            this.pctImgLibro = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboTema = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.dgvLibros = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboTema = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pctImgLibro = new System.Windows.Forms.PictureBox();
+            this.numEdicion = new System.Windows.Forms.NumericUpDown();
+            this.numCopias = new System.Windows.Forms.NumericUpDown();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.cboEditorial = new System.Windows.Forms.ComboBox();
+            this.txtLugar = new System.Windows.Forms.TextBox();
+            this.txtAño = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCopias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdicion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdicion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopias)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,135 +85,23 @@ namespace GestionLibros
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // txtAño
+            // btnInsertar
             // 
-            this.txtAño.Location = new System.Drawing.Point(307, 121);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(92, 20);
-            this.txtAño.TabIndex = 0;
+            this.btnInsertar.Location = new System.Drawing.Point(482, 241);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(106, 23);
+            this.btnInsertar.TabIndex = 18;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
             // 
-            // txtLugar
+            // dgvLibros
             // 
-            this.txtLugar.Location = new System.Drawing.Point(226, 244);
-            this.txtLugar.Name = "txtLugar";
-            this.txtLugar.Size = new System.Drawing.Size(234, 20);
-            this.txtLugar.TabIndex = 1;
-            // 
-            // cboEditorial
-            // 
-            this.cboEditorial.FormattingEnabled = true;
-            this.cboEditorial.Location = new System.Drawing.Point(278, 79);
-            this.cboEditorial.Name = "cboEditorial";
-            this.cboEditorial.Size = new System.Drawing.Size(121, 21);
-            this.cboEditorial.TabIndex = 2;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(226, 41);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(362, 20);
-            this.txtTitulo.TabIndex = 3;
-            // 
-            // txtISBN
-            // 
-            this.txtISBN.Location = new System.Drawing.Point(451, 79);
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(137, 20);
-            this.txtISBN.TabIndex = 4;
-            // 
-            // numCopias
-            // 
-            this.numCopias.Location = new System.Drawing.Point(456, 121);
-            this.numCopias.Name = "numCopias";
-            this.numCopias.Size = new System.Drawing.Size(132, 20);
-            this.numCopias.TabIndex = 5;
-            // 
-            // numEdicion
-            // 
-            this.numEdicion.Location = new System.Drawing.Point(456, 168);
-            this.numEdicion.Name = "numEdicion";
-            this.numEdicion.Size = new System.Drawing.Size(132, 20);
-            this.numEdicion.TabIndex = 6;
-            // 
-            // pctImgLibro
-            // 
-            this.pctImgLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctImgLibro.Location = new System.Drawing.Point(14, 14);
-            this.pctImgLibro.Name = "pctImgLibro";
-            this.pctImgLibro.Size = new System.Drawing.Size(189, 250);
-            this.pctImgLibro.TabIndex = 7;
-            this.pctImgLibro.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(411, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "ISBN";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Titulo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Editorial";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(223, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Año de edicion";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(223, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Tema";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(223, 222);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Lugar de edición";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(411, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Copias";
-            // 
-            // cboTema
-            // 
-            this.cboTema.FormattingEnabled = true;
-            this.cboTema.Location = new System.Drawing.Point(278, 165);
-            this.cboTema.Name = "cboTema";
-            this.cboTema.Size = new System.Drawing.Size(121, 21);
-            this.cboTema.TabIndex = 15;
+            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.Location = new System.Drawing.Point(12, 286);
+            this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.Size = new System.Drawing.Size(576, 202);
+            this.dgvLibros.TabIndex = 17;
+            this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
             // 
             // label8
             // 
@@ -224,22 +112,135 @@ namespace GestionLibros
             this.label8.TabIndex = 16;
             this.label8.Text = "Numero de edicion";
             // 
-            // dgvLibros
+            // cboTema
             // 
-            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibros.Location = new System.Drawing.Point(12, 286);
-            this.dgvLibros.Name = "dgvLibros";
-            this.dgvLibros.Size = new System.Drawing.Size(576, 202);
-            this.dgvLibros.TabIndex = 17;
+            this.cboTema.FormattingEnabled = true;
+            this.cboTema.Location = new System.Drawing.Point(278, 165);
+            this.cboTema.Name = "cboTema";
+            this.cboTema.Size = new System.Drawing.Size(121, 21);
+            this.cboTema.TabIndex = 15;
             // 
-            // btnInsertar
+            // label7
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(482, 241);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(106, 23);
-            this.btnInsertar.TabIndex = 18;
-            this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(411, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Copias";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(223, 222);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Lugar de edición";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(223, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tema";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(223, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Año de edicion";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(223, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Editorial";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(223, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Titulo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(411, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "ISBN";
+            // 
+            // pctImgLibro
+            // 
+            this.pctImgLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctImgLibro.Location = new System.Drawing.Point(14, 14);
+            this.pctImgLibro.Name = "pctImgLibro";
+            this.pctImgLibro.Size = new System.Drawing.Size(189, 250);
+            this.pctImgLibro.TabIndex = 7;
+            this.pctImgLibro.TabStop = false;
+            // 
+            // numEdicion
+            // 
+            this.numEdicion.Location = new System.Drawing.Point(456, 168);
+            this.numEdicion.Name = "numEdicion";
+            this.numEdicion.Size = new System.Drawing.Size(132, 20);
+            this.numEdicion.TabIndex = 6;
+            // 
+            // numCopias
+            // 
+            this.numCopias.Location = new System.Drawing.Point(456, 121);
+            this.numCopias.Name = "numCopias";
+            this.numCopias.Size = new System.Drawing.Size(132, 20);
+            this.numCopias.TabIndex = 5;
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(451, 79);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(137, 20);
+            this.txtISBN.TabIndex = 4;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(226, 41);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(362, 20);
+            this.txtTitulo.TabIndex = 3;
+            // 
+            // cboEditorial
+            // 
+            this.cboEditorial.FormattingEnabled = true;
+            this.cboEditorial.Location = new System.Drawing.Point(278, 79);
+            this.cboEditorial.Name = "cboEditorial";
+            this.cboEditorial.Size = new System.Drawing.Size(121, 21);
+            this.cboEditorial.TabIndex = 2;
+            // 
+            // txtLugar
+            // 
+            this.txtLugar.Location = new System.Drawing.Point(226, 244);
+            this.txtLugar.Name = "txtLugar";
+            this.txtLugar.Size = new System.Drawing.Size(234, 20);
+            this.txtLugar.TabIndex = 1;
+            // 
+            // txtAño
+            // 
+            this.txtAño.Location = new System.Drawing.Point(307, 121);
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(92, 20);
+            this.txtAño.TabIndex = 0;
             // 
             // frmGestionLibros
             // 
@@ -250,12 +251,13 @@ namespace GestionLibros
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionLibros";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmGestionLibros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCopias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdicion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdicion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopias)).EndInit();
             this.ResumeLayout(false);
 
         }
