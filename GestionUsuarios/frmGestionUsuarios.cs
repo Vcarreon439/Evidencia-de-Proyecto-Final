@@ -81,40 +81,61 @@ namespace GestionUsuarios
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            ModeloDUsuario Obj = new ModeloDUsuario();
 
-            if (Obj.InsertarMiembro(crearMiembro()))
-                MessageBox.Show($"Se ha ingresado al miembro {nombreTextBox.Text} correctamente", "Registro Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            ModeloDUsuario Obj = new ModeloDUsuario();
+            ObjetoMiembro miembro = crearMiembro();
+
+            if (miembro!=null)
+            {
+                if (Obj.InsertarMiembro(miembro))
+                    MessageBox.Show($"Se ha ingresado al miembro {nombreTextBox.Text} correctamente", "Registro Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show($"No se ha ingresado al miembro {nombreTextBox.Text}", "Registro Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private ObjetoMiembro crearMiembro()
         {
             ObjetoMiembro miembro = new ObjetoMiembro();
-            miembro.CURP = cURPTextBox.Text;
-            miembro.Nombres = nombreTextBox.Text;
-            miembro.Apellidos = apellidosTextBox.Text;
-            miembro.Entidad = entidadComboBox.SelectedItem.ToString();
-            miembro.Sexo = cboSexo.SelectedIndex.ToString();
-            miembro.Domicilio = domicilioTextBox.Text;
 
-            if (pctUsuario.Image != null)
-                miembro.Imagen = ImagenAutor.ImageToBase64(pctUsuario.Image, ImageFormat.Jpeg);
-            else
-                miembro.Imagen = null;
-
-            if (nacimientoDateTimePicker.Value == DateTime.Today)
-                MessageBox.Show("Atencion!", "Por favor seleccione una fecha");
-            else
+            try
             {
-                DateTime fechaNac = nacimientoDateTimePicker.Value;
-                string fecha = ($"{fechaNac.Month.ToString()}-{fechaNac.Day.ToString()}-{fechaNac.Year.ToString()}");
-                miembro.FechaNac = fecha;
+                miembro.CURP = cURPTextBox.Text;
+                miembro.Nombres = nombreTextBox.Text;
+                miembro.Apellidos = apellidosTextBox.Text;
+                miembro.Entidad = entidadComboBox.Text;
+                miembro.Sexo = cboSexo.Text;
+                miembro.Domicilio = domicilioTextBox.Text;
+
+                if (pctUsuario.Image != null)
+                    miembro.Imagen = ImagenAutor.ImageToBase64(pctUsuario.Image, ImageFormat.Jpeg);
+                else
+                    miembro.Imagen = null;
+
+                if (nacimientoDateTimePicker.Value == DateTime.Today)
+                    MessageBox.Show("Atencion!", "Por favor seleccione una fecha");
+                else
+                {
+                    DateTime fechaNac = nacimientoDateTimePicker.Value;
+                    string fecha =
+                        ($"{fechaNac.Month.ToString()}-{fechaNac.Day.ToString()}-{fechaNac.Year.ToString()}");
+                    miembro.FechaNac = fecha;
+                }
+
+                return miembro;
             }
-
-
-            return miembro;
+            catch (System.NullReferenceException exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
+
 
         private void btnLista_Click(object sender, EventArgs e)
         {

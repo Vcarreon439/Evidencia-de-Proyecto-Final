@@ -174,17 +174,17 @@ namespace Forma_Principal
             btnGestionarEditoriales.Visible = true;
             btnGestionarEditoriales.Enabled = true;
 
-            pnlSubMenu1.Visible = true;
+            pnlSubMenu1.Visible = false;
             pnlSubMenu1.Enabled = true;
-            pnlSubMenu2.Visible = true;
+            pnlSubMenu2.Visible = false;
             pnlSubMenu2.Enabled = true;
-            pnlSubMenu3.Visible = true;
+            pnlSubMenu3.Visible = false;
             pnlSubMenu3.Enabled = true;
-            pnlSubMenu4.Visible = true;
+            pnlSubMenu4.Visible = false;
             pnlSubMenu4.Enabled = true;
-            pnlSubMenu5.Visible = true;
+            pnlSubMenu5.Visible = false;
             pnlSubMenu5.Enabled = true;
-            pnlSubMenu6.Visible = true;
+            pnlSubMenu6.Visible = false;
             pnlSubMenu6.Enabled = true;
 
             cboTipoUsuario.Visible = true;
@@ -235,17 +235,17 @@ namespace Forma_Principal
             btnGestionarEditoriales.Visible = true;
             btnGestionarEditoriales.Enabled = true;
 
-            pnlSubMenu1.Visible = true;
+            pnlSubMenu1.Visible = false;
             pnlSubMenu1.Enabled = true;
-            pnlSubMenu2.Visible = true;
+            pnlSubMenu2.Visible = false;
             pnlSubMenu2.Enabled = true;
-            pnlSubMenu3.Visible = true;
+            pnlSubMenu3.Visible = false;
             pnlSubMenu3.Enabled = true;
-            pnlSubMenu4.Visible = true;
+            pnlSubMenu4.Visible = false;
             pnlSubMenu4.Enabled = true;
-            pnlSubMenu5.Visible = true;
+            pnlSubMenu5.Visible = false;
             pnlSubMenu5.Enabled = true;
-            pnlSubMenu6.Visible = true;
+            pnlSubMenu6.Visible = false;
             pnlSubMenu6.Enabled = true;
 
             cboTipoUsuario.Visible = false;
@@ -296,13 +296,13 @@ namespace Forma_Principal
             btnGestionarEditoriales.Visible = true;
             btnGestionarEditoriales.Enabled = true;
 
-            pnlSubMenu1.Visible = true;
+            pnlSubMenu1.Visible = false;
             pnlSubMenu1.Enabled = true;
-            pnlSubMenu2.Visible = true;
+            pnlSubMenu2.Visible = false;
             pnlSubMenu2.Enabled = true;
             pnlSubMenu3.Visible = false;
             pnlSubMenu3.Enabled = false;
-            pnlSubMenu4.Visible = true;
+            pnlSubMenu4.Visible = false;
             pnlSubMenu4.Enabled = true;
             pnlSubMenu5.Visible = false;
             pnlSubMenu5.Enabled = false;
@@ -433,9 +433,12 @@ namespace Forma_Principal
 
         private void btnGestionarMiembro_MouseClick(object sender, MouseEventArgs e)
         {
-            if (FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor, 0) == DialogResult.Yes)
-                FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+            FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
 
+            if (FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor, 0) == DialogResult.Yes)
+            {
+                FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+            }
 
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;

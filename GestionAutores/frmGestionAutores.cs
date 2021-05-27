@@ -120,14 +120,11 @@ namespace GestionAutores
             if (e.RowIndex!=-1)
             {
                 ModeloDUsuario obj = new ModeloDUsuario();
-                LlenarCampos(obj.MostrarManager(dgvAutores.SelectedCells[0].Value.ToString()));
+                fichaAutor forma = new fichaAutor(obj.MostrarAutor(dgvAutores.SelectedCells[0].Value.ToString()));
+
+                if (forma.ShowDialog()==DialogResult.Yes)
+                    ActualizarData();
             }
-        }
-
-        private void LlenarCampos(ObjectManager manager)
-        {
-
-
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
