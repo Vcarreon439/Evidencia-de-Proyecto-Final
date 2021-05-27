@@ -131,5 +131,10 @@ namespace Dominio
         {
             return usuario.ActualizarManager(manager);
         }
+
+        public bool InsertarEditorial(ObjetoEditorial editorial)
+        {
+            return usuario.InsertarEditorial(editorial);
+        }
     }
 }
