@@ -40,22 +40,30 @@ namespace Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ModeloDUsuario usuario = new ModeloDUsuario();
+            try
+            {
+                ModeloDUsuario usuario = new ModeloDUsuario();
 
-            if (usuario.LoginUsuario(txtUsuario.Text, txtContra.Text))
-            {
-                MessageBox.Show("Inicio Correcto");
-                frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text, txtContra.Text));
-                this.Hide();
-                txtContra.Text = "";
-                txtUsuario.Text = "";
-                obj.ShowDialog();
-                this.Show();
+                if (usuario.LoginUsuario(txtUsuario.Text, txtContra.Text))
+                {
+                    MessageBox.Show("Inicio Correcto");
+                    frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text, txtContra.Text));
+                    this.Hide();
+                    txtContra.Text = "";
+                    txtUsuario.Text = "";
+                    obj.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    txtContra.Text = "";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
-                txtContra.Text = "";
+                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 

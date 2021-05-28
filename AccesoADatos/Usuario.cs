@@ -64,7 +64,7 @@ namespace AccesoADatos
                             return TipoUsuario.TypeUser.Invitado;
 
                         default:
-                            return TipoUsuario.TypeUser.Invitado;
+                            return TipoUsuario.TypeUser.Ninguno;
                     }
                 }
             }
