@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Login
 {
     partial class frmLogin
@@ -29,10 +31,13 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
+            
+
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.rounded_PictureBox1 = new CustomControls.Rounded_PictureBox(this.components);
             this.rounded_Panel1 = new CustomControls.Rounded_Panel(this.components);
+            this.btnMostrarContra = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtContra = new CustomControls.Rounded_TextBox();
             this.txtUsuario = new CustomControls.Rounded_TextBox();
@@ -42,6 +47,7 @@ namespace Login
             this.lblTittle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rounded_PictureBox1)).BeginInit();
             this.rounded_Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarContra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +71,7 @@ namespace Login
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rounded_Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.rounded_Panel1.Controls.Add(this.btnMostrarContra);
             this.rounded_Panel1.Controls.Add(this.label2);
             this.rounded_Panel1.Controls.Add(this.txtContra);
             this.rounded_Panel1.Controls.Add(this.txtUsuario);
@@ -79,6 +86,21 @@ namespace Login
             this.rounded_Panel1.Size = new System.Drawing.Size(517, 288);
             this.rounded_Panel1.TabIndex = 10;
             this.rounded_Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rounded_Panel1_MouseMove);
+            // 
+            // btnMostrarContra
+            // 
+            this.btnMostrarContra.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarContra.ForeColor = System.Drawing.Color.Navy;
+            this.btnMostrarContra.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnMostrarContra.IconColor = System.Drawing.Color.Navy;
+            this.btnMostrarContra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMostrarContra.Location = new System.Drawing.Point(468, 243);
+            this.btnMostrarContra.Name = "btnMostrarContra";
+            this.btnMostrarContra.Size = new System.Drawing.Size(32, 32);
+            this.btnMostrarContra.TabIndex = 7;
+            this.btnMostrarContra.TabStop = false;
+            this.btnMostrarContra.MouseUp += BtnMostrarContra_MouseUp;
+            this.btnMostrarContra.MouseDown += BtnMostrarContra_MouseDown;
             // 
             // label2
             // 
@@ -102,12 +124,11 @@ namespace Login
             this.txtContra.ForeColor = System.Drawing.Color.Black;
             this.txtContra.Location = new System.Drawing.Point(17, 194);
             this.txtContra.Name = "txtContra";
-            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(483, 33);
             this.txtContra.TabIndex = 2;
             this.txtContra.TabStop = false;
             this.txtContra.textboxRadius = 15;
-            this.txtContra.UseSystemPasswordChar = false;
+            this.txtContra.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
@@ -206,9 +227,27 @@ namespace Login
             ((System.ComponentModel.ISupportInitialize)(this.rounded_PictureBox1)).EndInit();
             this.rounded_Panel1.ResumeLayout(false);
             this.rounded_Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarContra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
+        }
 
+        private void BtnMostrarContra_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtContra.UseSystemPasswordChar = true;
+                txtContra.textbox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void BtnMostrarContra_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtContra.UseSystemPasswordChar = false;
+                txtContra.textbox.UseSystemPasswordChar = false;
+            }
         }
 
         #endregion
@@ -222,6 +261,7 @@ namespace Login
         private System.Windows.Forms.Label label2;
         private CustomControls.Rounded_TextBox txtContra;
         private CustomControls.Rounded_TextBox txtUsuario;
+        private FontAwesome.Sharp.IconPictureBox btnMostrarContra;
     }
 }
 

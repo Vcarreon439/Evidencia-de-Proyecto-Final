@@ -108,6 +108,7 @@ namespace GestionAutores
             // 
             // chkDesconocido
             // 
+            this.chkDesconocido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkDesconocido.AutoSize = true;
             this.chkDesconocido.Location = new System.Drawing.Point(573, 117);
             this.chkDesconocido.Name = "chkDesconocido";
@@ -128,6 +129,8 @@ namespace GestionAutores
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(270, 143);
             this.label7.Name = "label7";
@@ -137,6 +140,8 @@ namespace GestionAutores
             // 
             // txtCiudad
             // 
+            this.txtCiudad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCiudad.Location = new System.Drawing.Point(273, 164);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(315, 20);
@@ -144,6 +149,8 @@ namespace GestionAutores
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(270, 117);
             this.label6.Name = "label6";
@@ -153,6 +160,8 @@ namespace GestionAutores
             // 
             // cboCountry
             // 
+            this.cboCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCountry.DontGetShiny = false;
             this.cboCountry.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -403,6 +412,8 @@ namespace GestionAutores
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(270, 193);
             this.label5.Name = "label5";
@@ -412,6 +423,8 @@ namespace GestionAutores
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(270, 60);
             this.label3.Name = "label3";
@@ -421,6 +434,8 @@ namespace GestionAutores
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(270, 11);
             this.label2.Name = "label2";
@@ -451,6 +466,8 @@ namespace GestionAutores
             // 
             this.dgvAutores.AllowUserToAddRows = false;
             this.dgvAutores.AllowUserToDeleteRows = false;
+            this.dgvAutores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAutores.Location = new System.Drawing.Point(12, 345);
             this.dgvAutores.Name = "dgvAutores";
@@ -460,6 +477,8 @@ namespace GestionAutores
             // 
             // txtComentarios
             // 
+            this.txtComentarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComentarios.Location = new System.Drawing.Point(273, 218);
             this.txtComentarios.Multiline = true;
             this.txtComentarios.Name = "txtComentarios";
@@ -469,6 +488,8 @@ namespace GestionAutores
             // 
             // txtApellidos
             // 
+            this.txtApellidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellidos.Location = new System.Drawing.Point(273, 76);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(315, 20);
@@ -476,6 +497,8 @@ namespace GestionAutores
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Location = new System.Drawing.Point(273, 29);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(315, 20);

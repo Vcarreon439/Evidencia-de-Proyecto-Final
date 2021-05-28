@@ -14,7 +14,6 @@ namespace Login
     {
         private SqlConnection interno;
 
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -56,6 +55,7 @@ namespace Login
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos");
+                txtContra.Text = "";
             }
         }
 

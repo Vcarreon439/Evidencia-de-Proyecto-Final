@@ -103,6 +103,8 @@ namespace GestionLibros
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(394, 207);
             this.label9.Name = "label9";
@@ -112,6 +114,8 @@ namespace GestionLibros
             // 
             // txtCodAutor
             // 
+            this.txtCodAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodAutor.Location = new System.Drawing.Point(495, 204);
             this.txtCodAutor.MaxLength = 20;
             this.txtCodAutor.Name = "txtCodAutor";
@@ -120,6 +124,7 @@ namespace GestionLibros
             // 
             // btnInsertar
             // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsertar.Location = new System.Drawing.Point(482, 241);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(106, 23);
@@ -143,6 +148,7 @@ namespace GestionLibros
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(453, 150);
             this.label8.Name = "label8";
@@ -152,6 +158,8 @@ namespace GestionLibros
             // 
             // cboTema
             // 
+            this.cboTema.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTema.FormattingEnabled = true;
             this.cboTema.Location = new System.Drawing.Point(278, 165);
             this.cboTema.Name = "cboTema";
@@ -161,6 +169,7 @@ namespace GestionLibros
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(411, 123);
             this.label7.Name = "label7";
@@ -170,6 +179,8 @@ namespace GestionLibros
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(223, 222);
             this.label6.Name = "label6";
@@ -179,6 +190,8 @@ namespace GestionLibros
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(223, 168);
             this.label5.Name = "label5";
@@ -188,6 +201,8 @@ namespace GestionLibros
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(223, 124);
             this.label4.Name = "label4";
@@ -197,6 +212,8 @@ namespace GestionLibros
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(223, 82);
             this.label3.Name = "label3";
@@ -206,6 +223,8 @@ namespace GestionLibros
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(223, 20);
             this.label2.Name = "label2";
@@ -215,6 +234,7 @@ namespace GestionLibros
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(411, 82);
             this.label1.Name = "label1";
@@ -235,6 +255,7 @@ namespace GestionLibros
             // 
             // numEdicion
             // 
+            this.numEdicion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numEdicion.Location = new System.Drawing.Point(456, 168);
             this.numEdicion.Minimum = new decimal(new int[] {
             1,
@@ -252,6 +273,7 @@ namespace GestionLibros
             // 
             // numCopias
             // 
+            this.numCopias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numCopias.Location = new System.Drawing.Point(456, 121);
             this.numCopias.Minimum = new decimal(new int[] {
             1,
@@ -269,6 +291,7 @@ namespace GestionLibros
             // 
             // txtISBN
             // 
+            this.txtISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtISBN.Location = new System.Drawing.Point(451, 79);
             this.txtISBN.MaxLength = 15;
             this.txtISBN.Name = "txtISBN";
@@ -277,6 +300,8 @@ namespace GestionLibros
             // 
             // txtTitulo
             // 
+            this.txtTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitulo.Location = new System.Drawing.Point(226, 41);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(362, 20);
@@ -284,6 +309,8 @@ namespace GestionLibros
             // 
             // cboEditorial
             // 
+            this.cboEditorial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEditorial.FormattingEnabled = true;
             this.cboEditorial.Location = new System.Drawing.Point(278, 79);
             this.cboEditorial.Name = "cboEditorial";
@@ -293,6 +320,8 @@ namespace GestionLibros
             // 
             // txtLugar
             // 
+            this.txtLugar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLugar.Location = new System.Drawing.Point(226, 244);
             this.txtLugar.Name = "txtLugar";
             this.txtLugar.Size = new System.Drawing.Size(234, 20);
@@ -300,6 +329,8 @@ namespace GestionLibros
             // 
             // txtAño
             // 
+            this.txtAño.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAño.Location = new System.Drawing.Point(307, 121);
             this.txtAño.MaxLength = 4;
             this.txtAño.Name = "txtAño";

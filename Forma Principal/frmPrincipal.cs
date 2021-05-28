@@ -441,7 +441,10 @@ namespace Forma_Principal
 
         private void btnListaGeneros_MouseClick(object sender, MouseEventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionGeneros.frmListaGenero>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionGeneros.frmListaGenero>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -452,38 +455,34 @@ namespace Forma_Principal
 
         private void btnGestionGeneros_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
         }
 
         private void btnGestionarMiembro_MouseClick(object sender, MouseEventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
 
-            if (FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor, 0) == DialogResult.Yes)
-            {
-                FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
-            }
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
 
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
             pnlSubMenu4.Visible = false;
             pnlSubMenu5.Visible = false;
+            pnlSubMenu6.Visible = false;
 
-        }
-
-        private void btnListaUsuarios_MouseClick(object sender, MouseEventArgs e)
-        {
-            pnlSubMenu1.Visible = false;
-            pnlSubMenu2.Visible = false;
-            pnlSubMenu3.Visible = false;
-            pnlSubMenu4.Visible = false;
-            pnlSubMenu5.Visible = false;
         }
 
         private void btnListaAutores_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionAutores.frmListaAutores>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionAutores.frmListaAutores>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -494,7 +493,10 @@ namespace Forma_Principal
 
         private void btnGestionLibro_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionLibros.frmGestionLibros>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionLibros.frmGestionLibros>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -505,7 +507,10 @@ namespace Forma_Principal
 
         private void btnListaLibros_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionLibros.listaLibros>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionLibros.listaLibros>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -516,7 +521,10 @@ namespace Forma_Principal
 
         private void btnGestionarUsuarios_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionManagers.frmGestionManagers>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionManagers.frmGestionManagers>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -527,7 +535,10 @@ namespace Forma_Principal
 
         private void btnGestionarEditoriales_Click(object sender, EventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionEditorial.frmGestionarEditoriales>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionEditorial.frmGestionarEditoriales>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -536,14 +547,14 @@ namespace Forma_Principal
             pnlSubMenu6.Visible = false;
         }
 
-        private void btnGestionarAutores_Click(object sender, EventArgs e)
-        {
-            FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
-        }
+        private Form FormularioAbierto = null;
 
         private void btnGestionGeneros_MouseClick(object sender, MouseEventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
+            if (FormularioAbierto!=null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormularioAbierto = FormEnPanel.AbrirForm<GestionGeneros.frmGestionarGeneros>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -554,7 +565,10 @@ namespace Forma_Principal
 
         private void btnGestionarAutores_MouseClick(object sender, MouseEventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionAutores.frmGestionAutores>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -563,14 +577,12 @@ namespace Forma_Principal
             pnlSubMenu6.Visible = false;
         }
 
-        private void btnAgregarMiembro_MouseClick(object sender, MouseEventArgs e)
-        {
-            FormEnPanel.AbrirForm<GestionUsuarios.frmGestionUsuarios>(ref pnlContenedor);
-        }
-
         private void btnListaMiembros_MouseClick(object sender, MouseEventArgs e)
         {
-            FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
+            if (FormularioAbierto != null)
+                FormularioAbierto.Close();
+
+            FormularioAbierto = FormEnPanel.AbrirForm<GestionUsuarios.frmTablaUsuarios>(ref pnlContenedor);
             pnlSubMenu1.Visible = false;
             pnlSubMenu2.Visible = false;
             pnlSubMenu3.Visible = false;
@@ -584,7 +596,7 @@ namespace Forma_Principal
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Environment.Exit(0);
+
         }
 
         private void CambiarBotones()
@@ -645,10 +657,10 @@ namespace Forma_Principal
             }
         }
 
-        private void MostrarMenu()
-        {
-            pnlMenu.Size = new Size(200, pnlMenu.Height);
-        }
+        //private void MostrarMenu()
+        //{
+        //    pnlMenu.Size = new Size(200, pnlMenu.Height);
+        //}
 
         private void btnSlide_Click(object sender, EventArgs e)
         {

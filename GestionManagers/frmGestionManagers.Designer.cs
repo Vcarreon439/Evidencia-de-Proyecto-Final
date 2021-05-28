@@ -86,6 +86,7 @@ namespace GestionManagers
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Location = new System.Drawing.Point(513, 139);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -96,6 +97,7 @@ namespace GestionManagers
             // 
             // btnModificar
             // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.Location = new System.Drawing.Point(432, 139);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
@@ -106,6 +108,7 @@ namespace GestionManagers
             // 
             // btnInsertar
             // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsertar.Location = new System.Drawing.Point(351, 139);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(75, 23);
@@ -116,6 +119,8 @@ namespace GestionManagers
             // 
             // dgvManagers
             // 
+            this.dgvManagers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvManagers.Location = new System.Drawing.Point(12, 168);
             this.dgvManagers.MultiSelect = false;
@@ -127,6 +132,8 @@ namespace GestionManagers
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(403, 29);
             this.label3.Name = "label3";
@@ -154,6 +161,8 @@ namespace GestionManagers
             // 
             // cboRol
             // 
+            this.cboRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboRol.FormattingEnabled = true;
             this.cboRol.Items.AddRange(new object[] {
             "Gestor",

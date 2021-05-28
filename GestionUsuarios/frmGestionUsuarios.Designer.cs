@@ -37,7 +37,6 @@ namespace GestionUsuarios
             System.Windows.Forms.Label cURPLabel;
             System.Windows.Forms.Label label1;
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLista = new System.Windows.Forms.Button();
             this.cboSexo = new System.Windows.Forms.ComboBox();
             this.btnAddFoto = new System.Windows.Forms.Button();
             this.cURPTextBox = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@ namespace GestionUsuarios
             this.entidadComboBox = new System.Windows.Forms.ComboBox();
             this.nacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.btnLista = new System.Windows.Forms.Button();
             apellidosLabel = new System.Windows.Forms.Label();
             domicilioLabel = new System.Windows.Forms.Label();
             entidadLabel = new System.Windows.Forms.Label();
@@ -61,6 +61,8 @@ namespace GestionUsuarios
             // 
             // apellidosLabel
             // 
+            apellidosLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             apellidosLabel.AutoSize = true;
             apellidosLabel.Location = new System.Drawing.Point(262, 170);
             apellidosLabel.Name = "apellidosLabel";
@@ -70,6 +72,7 @@ namespace GestionUsuarios
             // 
             // domicilioLabel
             // 
+            domicilioLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             domicilioLabel.AutoSize = true;
             domicilioLabel.Location = new System.Drawing.Point(527, 277);
             domicilioLabel.Name = "domicilioLabel";
@@ -79,6 +82,8 @@ namespace GestionUsuarios
             // 
             // entidadLabel
             // 
+            entidadLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             entidadLabel.AutoSize = true;
             entidadLabel.Location = new System.Drawing.Point(346, 68);
             entidadLabel.Name = "entidadLabel";
@@ -88,6 +93,8 @@ namespace GestionUsuarios
             // 
             // nacimientoLabel
             // 
+            nacimientoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             nacimientoLabel.AutoSize = true;
             nacimientoLabel.Location = new System.Drawing.Point(262, 240);
             nacimientoLabel.Name = "nacimientoLabel";
@@ -97,6 +104,8 @@ namespace GestionUsuarios
             // 
             // nombreLabel
             // 
+            nombreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             nombreLabel.AutoSize = true;
             nombreLabel.Location = new System.Drawing.Point(262, 115);
             nombreLabel.Name = "nombreLabel";
@@ -106,6 +115,8 @@ namespace GestionUsuarios
             // 
             // cURPLabel
             // 
+            cURPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             cURPLabel.AutoSize = true;
             cURPLabel.Location = new System.Drawing.Point(433, 35);
             cURPLabel.Name = "cURPLabel";
@@ -115,6 +126,8 @@ namespace GestionUsuarios
             // 
             // label1
             // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(346, 95);
             label1.Name = "label1";
@@ -150,19 +163,10 @@ namespace GestionUsuarios
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // btnLista
-            // 
-            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnLista.Location = new System.Drawing.Point(12, 395);
-            this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(132, 45);
-            this.btnLista.TabIndex = 25;
-            this.btnLista.Text = "Mostrar Lista";
-            this.btnLista.UseVisualStyleBackColor = true;
-            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
-            // 
             // cboSexo
             // 
+            this.cboSexo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSexo.FormattingEnabled = true;
             this.cboSexo.Items.AddRange(new object[] {
             "Masculino",
@@ -174,6 +178,7 @@ namespace GestionUsuarios
             // 
             // btnAddFoto
             // 
+            this.btnAddFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddFoto.Location = new System.Drawing.Point(12, 293);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(132, 45);
@@ -184,6 +189,8 @@ namespace GestionUsuarios
             // 
             // cURPTextBox
             // 
+            this.cURPTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cURPTextBox.Location = new System.Drawing.Point(479, 32);
             this.cURPTextBox.MaxLength = 18;
             this.cURPTextBox.Name = "cURPTextBox";
@@ -192,6 +199,7 @@ namespace GestionUsuarios
             // 
             // btnInsertar
             // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnInsertar.Location = new System.Drawing.Point(12, 344);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(132, 45);
@@ -214,6 +222,8 @@ namespace GestionUsuarios
             // 
             // apellidosTextBox
             // 
+            this.apellidosTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.apellidosTextBox.Location = new System.Drawing.Point(265, 192);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(314, 20);
@@ -221,6 +231,8 @@ namespace GestionUsuarios
             // 
             // domicilioTextBox
             // 
+            this.domicilioTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.domicilioTextBox.Location = new System.Drawing.Point(150, 293);
             this.domicilioTextBox.Multiline = true;
             this.domicilioTextBox.Name = "domicilioTextBox";
@@ -229,6 +241,8 @@ namespace GestionUsuarios
             // 
             // entidadComboBox
             // 
+            this.entidadComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.entidadComboBox.FormattingEnabled = true;
             this.entidadComboBox.Items.AddRange(new object[] {
             "Coahuila de Zaragoza",
@@ -240,6 +254,8 @@ namespace GestionUsuarios
             // 
             // nacimientoDateTimePicker
             // 
+            this.nacimientoDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nacimientoDateTimePicker.Location = new System.Drawing.Point(379, 234);
             this.nacimientoDateTimePicker.Name = "nacimientoDateTimePicker";
             this.nacimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -247,10 +263,24 @@ namespace GestionUsuarios
             // 
             // nombreTextBox
             // 
+            this.nombreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreTextBox.Location = new System.Drawing.Point(265, 136);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(314, 20);
             this.nombreTextBox.TabIndex = 11;
+            // 
+            // btnLista
+            // 
+            this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnLista.Location = new System.Drawing.Point(12, 395);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(132, 45);
+            this.btnLista.TabIndex = 25;
+            this.btnLista.Text = "Mostrar Lista";
+            this.btnLista.UseVisualStyleBackColor = true;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // frmGestionUsuarios
             // 

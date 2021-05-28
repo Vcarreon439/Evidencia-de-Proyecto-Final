@@ -55,6 +55,7 @@ namespace GestionUsuarios
             // 
             // numUpDnCantidad
             // 
+            this.numUpDnCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numUpDnCantidad.Location = new System.Drawing.Point(534, 12);
             this.numUpDnCantidad.Name = "numUpDnCantidad";
             this.numUpDnCantidad.Size = new System.Drawing.Size(54, 20);
@@ -67,6 +68,7 @@ namespace GestionUsuarios
             // 
             // btnMostrar
             // 
+            this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.Location = new System.Drawing.Point(410, 12);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(113, 23);
@@ -89,6 +91,8 @@ namespace GestionUsuarios
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 54);
             this.dgvUsuarios.Name = "dgvUsuarios";

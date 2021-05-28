@@ -92,6 +92,9 @@ namespace GestionEditorial
             // 
             // dvgEditoriales
             // 
+            this.dvgEditoriales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgEditoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgEditoriales.Location = new System.Drawing.Point(310, 16);
             this.dvgEditoriales.MultiSelect = false;

@@ -6,25 +6,27 @@ namespace Funcionalidad_Formularios
 {
     public class FormEnPanel
     {
-        static public void AbrirForm<MiFomr>(ref Panel pnlFormularios) where MiFomr : Form, new()
+        static public Form AbrirForm<MiForm>(ref Panel pnlFormularios) where MiForm : Form, new()
         {
             Form formulario;
-            formulario = pnlFormularios.Controls.OfType<MiFomr>().FirstOrDefault(); //Busca formulario en coleccion
+            formulario = pnlFormularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca formulario en coleccion
             if (formulario == null)
             {
-                formulario = new MiFomr();
+                formulario = new MiForm();
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
                 pnlFormularios.Controls.Add(formulario);
                 pnlFormularios.Tag = formulario;
                 formulario.Show();
+                return formulario;
             }
             //En caso de ya estar abierto
             else
             {
                 formulario.BringToFront();
                 formulario.WindowState = FormWindowState.Maximized;
+                return null;
             }
         }
 

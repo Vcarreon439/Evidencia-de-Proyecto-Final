@@ -30,13 +30,13 @@ namespace GestionLibros
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.numUpDnCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDnCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,14 +52,6 @@ namespace GestionLibros
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // dgvLibros
-            // 
-            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibros.Location = new System.Drawing.Point(12, 74);
-            this.dgvLibros.Name = "dgvLibros";
-            this.dgvLibros.Size = new System.Drawing.Size(576, 414);
-            this.dgvLibros.TabIndex = 0;
             // 
             // numUpDnCantidad
             // 
@@ -95,6 +87,16 @@ namespace GestionLibros
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
+            // dgvLibros
+            // 
+            this.dgvLibros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibros.Location = new System.Drawing.Point(12, 74);
+            this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.Size = new System.Drawing.Size(576, 414);
+            this.dgvLibros.TabIndex = 0;
+            // 
             // listaLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,8 +107,8 @@ namespace GestionLibros
             this.Name = "listaLibros";
             this.Text = "listaLibros";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDnCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
             this.ResumeLayout(false);
 
         }

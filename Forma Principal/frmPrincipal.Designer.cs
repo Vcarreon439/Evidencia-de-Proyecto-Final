@@ -31,6 +31,7 @@ namespace Forma_Principal
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.pnlSubMenu6 = new System.Windows.Forms.Panel();
             this.btnGestionarEditoriales = new System.Windows.Forms.Button();
             this.btnEditorial = new FontAwesome.Sharp.IconButton();
@@ -59,7 +60,6 @@ namespace Forma_Principal
             this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
             this.btnSlide = new FontAwesome.Sharp.IconButton();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlSubMenu6.SuspendLayout();
             this.pnlSubMenu5.SuspendLayout();
@@ -96,6 +96,28 @@ namespace Forma_Principal
             this.pnlMenu.Size = new System.Drawing.Size(200, 500);
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMenu_MouseMove);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSesion.IconSize = 30;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 765);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(183, 40);
+            this.btnCerrarSesion.TabIndex = 7;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // pnlSubMenu6
             // 
@@ -553,6 +575,7 @@ namespace Forma_Principal
             // pnlContenedor
             // 
             this.pnlContenedor.AutoSize = true;
+            this.pnlContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(200, 0);
@@ -560,28 +583,6 @@ namespace Forma_Principal
             this.pnlContenedor.Size = new System.Drawing.Size(600, 500);
             this.pnlContenedor.TabIndex = 1;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarSesion.IconSize = 30;
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 765);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCerrarSesion.Size = new System.Drawing.Size(183, 40);
-            this.btnCerrarSesion.TabIndex = 7;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // frmPrincipal
             // 
