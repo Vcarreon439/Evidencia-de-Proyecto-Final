@@ -29,6 +29,7 @@ namespace Forma_Principal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlSubMenu6 = new System.Windows.Forms.Panel();
             this.btnGestionarEditoriales = new System.Windows.Forms.Button();
@@ -53,11 +54,11 @@ namespace Forma_Principal
             this.btnGestionGeneros = new System.Windows.Forms.Button();
             this.btnGeneros = new FontAwesome.Sharp.IconButton();
             this.pnlEncabezadoMenu = new System.Windows.Forms.Panel();
+            this.btnIconoTitulo = new FontAwesome.Sharp.IconButton();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
             this.btnSlide = new FontAwesome.Sharp.IconButton();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnIconoTitulo = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlSubMenu6.SuspendLayout();
             this.pnlSubMenu5.SuspendLayout();
@@ -478,6 +479,35 @@ namespace Forma_Principal
             this.pnlEncabezadoMenu.TabIndex = 1;
             this.pnlEncabezadoMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlEncabezadoMenu_MouseMove);
             // 
+            // btnIconoTitulo
+            // 
+            this.btnIconoTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIconoTitulo.FlatAppearance.BorderSize = 0;
+            this.btnIconoTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIconoTitulo.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.btnIconoTitulo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.btnIconoTitulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnIconoTitulo.IconSize = 40;
+            this.btnIconoTitulo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIconoTitulo.Location = new System.Drawing.Point(123, 0);
+            this.btnIconoTitulo.Name = "btnIconoTitulo";
+            this.btnIconoTitulo.Size = new System.Drawing.Size(60, 57);
+            this.btnIconoTitulo.TabIndex = 0;
+            this.btnIconoTitulo.UseVisualStyleBackColor = true;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(123, 57);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Biblioteca";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cboTipoUsuario
             // 
             this.cboTipoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
@@ -529,35 +559,6 @@ namespace Forma_Principal
             this.pnlContenedor.TabIndex = 1;
             this.pnlContenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlContenedor_MouseMove);
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblTitulo.Size = new System.Drawing.Size(123, 57);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Biblioteca";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnIconoTitulo
-            // 
-            this.btnIconoTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnIconoTitulo.FlatAppearance.BorderSize = 0;
-            this.btnIconoTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIconoTitulo.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.btnIconoTitulo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.btnIconoTitulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIconoTitulo.IconSize = 40;
-            this.btnIconoTitulo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnIconoTitulo.Location = new System.Drawing.Point(123, 0);
-            this.btnIconoTitulo.Name = "btnIconoTitulo";
-            this.btnIconoTitulo.Size = new System.Drawing.Size(60, 57);
-            this.btnIconoTitulo.TabIndex = 0;
-            this.btnIconoTitulo.UseVisualStyleBackColor = true;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,8 +567,9 @@ namespace Forma_Principal
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
-            this.Text = "   ";
+            this.Text = "Gestion Biblioteca";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);

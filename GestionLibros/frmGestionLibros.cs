@@ -34,6 +34,8 @@ namespace GestionLibros
 
         private void frmGestionLibros_Load(object sender, EventArgs e)
         {
+            FillData();
+
             pctImgLibro.AllowDrop = true;
 
             ModeloDUsuario model = new ModeloDUsuario();
@@ -101,6 +103,21 @@ namespace GestionLibros
             }
         }
 
+        private void FillData()
+        {
+            try
+            {
+                ModeloDUsuario Obj = new ModeloDUsuario();
+                dgvLibros.DataSource = Obj.MostrarLibros();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             try
@@ -115,7 +132,7 @@ namespace GestionLibros
                         MessageBox.Show($"No se pudo insertar el libro {libro.Titulo}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 VaciarCampos();
-
+                FillData();
             }
             catch (Exception exception)
             {

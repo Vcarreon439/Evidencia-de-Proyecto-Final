@@ -113,6 +113,7 @@ namespace GestionLibros
             // txtCodAutor
             // 
             this.txtCodAutor.Location = new System.Drawing.Point(495, 204);
+            this.txtCodAutor.MaxLength = 20;
             this.txtCodAutor.Name = "txtCodAutor";
             this.txtCodAutor.Size = new System.Drawing.Size(92, 20);
             this.txtCodAutor.TabIndex = 19;
@@ -129,9 +130,13 @@ namespace GestionLibros
             // 
             // dgvLibros
             // 
+            this.dgvLibros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLibros.Location = new System.Drawing.Point(12, 286);
+            this.dgvLibros.MultiSelect = false;
             this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.ReadOnly = true;
             this.dgvLibros.Size = new System.Drawing.Size(576, 202);
             this.dgvLibros.TabIndex = 17;
             this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
@@ -265,6 +270,7 @@ namespace GestionLibros
             // txtISBN
             // 
             this.txtISBN.Location = new System.Drawing.Point(451, 79);
+            this.txtISBN.MaxLength = 15;
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(137, 20);
             this.txtISBN.TabIndex = 4;
@@ -295,6 +301,7 @@ namespace GestionLibros
             // txtAño
             // 
             this.txtAño.Location = new System.Drawing.Point(307, 121);
+            this.txtAño.MaxLength = 4;
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(92, 20);
             this.txtAño.TabIndex = 0;

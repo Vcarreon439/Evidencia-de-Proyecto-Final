@@ -14,7 +14,7 @@ namespace Forma_Principal
 {
     public partial class frmPrincipal : Form
     {
-        private TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Invitado;
+        private TipoUsuario.TypeUser intern = TipoUsuario.TypeUser.Ninguno;
 
         #region ControlDeAcceso
 
@@ -318,7 +318,7 @@ namespace Forma_Principal
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            if (intern == TipoUsuario.TypeUser.Invitado)
+            if (intern == TipoUsuario.TypeUser.Ninguno)
             {
                 MessageBox.Show("Usted no tiene permiso de abrir este formulario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
@@ -621,6 +621,14 @@ namespace Forma_Principal
 
         private void CambiarMenu()
         {
+            pnlSubMenu1.Visible = false;
+            pnlSubMenu2.Visible = false;
+            pnlSubMenu3.Visible = false;
+            pnlSubMenu4.Visible = false;
+            pnlSubMenu5.Visible = false;
+            pnlSubMenu6.Visible = false;
+
+
             if (pnlMenu.Size.Width != 60)
             {
                 pnlMenu.Size = new Size(60, pnlMenu.Height);

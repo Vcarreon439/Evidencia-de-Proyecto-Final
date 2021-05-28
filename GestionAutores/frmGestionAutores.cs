@@ -5,7 +5,6 @@ using Dominio;
 using BibliotecaDeClases;
 using System.IO;
 using Funcionalidad_Formularios;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Data;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -98,12 +97,7 @@ namespace GestionAutores
             try
             {
                 ModeloDUsuario OBJ = new ModeloDUsuario();
-
-                var tabla = OBJ.MostrarAutores();
-
-                if (tabla.Rows.Count!=0)
-                    dgvAutores.DataSource = tabla;
-
+                dgvAutores.DataSource = OBJ.MostrarAutores();
             }
             catch (Exception ex)
             {
@@ -125,8 +119,20 @@ namespace GestionAutores
                 ModeloDUsuario obj = new ModeloDUsuario();
                 fichaAutor forma = new fichaAutor(obj.MostrarAutor(dgvAutores.SelectedCells[0].Value.ToString()));
 
-                if (forma.ShowDialog()==DialogResult.Yes)
-                    ActualizarData();
+                switch (forma.ShowDialog())
+                {
+                    case DialogResult.Yes:
+                        ActualizarData();
+                        break;
+                    
+                    case DialogResult.No:
+                        ActualizarData();
+                        break;
+
+                    default:
+                        ActualizarData();
+                        break;
+                }
             }
         }
 

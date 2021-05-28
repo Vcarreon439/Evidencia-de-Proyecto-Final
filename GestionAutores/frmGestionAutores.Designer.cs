@@ -32,6 +32,7 @@ namespace GestionAutores
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionAutores));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAgregarFoto = new System.Windows.Forms.Button();
             this.pctAutor = new System.Windows.Forms.PictureBox();
             this.chkDesconocido = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace GestionAutores
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAgregarFoto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctAutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
@@ -83,6 +83,16 @@ namespace GestionAutores
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // btnAgregarFoto
+            // 
+            this.btnAgregarFoto.Location = new System.Drawing.Point(18, 261);
+            this.btnAgregarFoto.Name = "btnAgregarFoto";
+            this.btnAgregarFoto.Size = new System.Drawing.Size(97, 23);
+            this.btnAgregarFoto.TabIndex = 24;
+            this.btnAgregarFoto.Text = "Agregar Foto";
+            this.btnAgregarFoto.UseVisualStyleBackColor = true;
+            this.btnAgregarFoto.Click += new System.EventHandler(this.btnAgregarFoto_Click);
             // 
             // pctAutor
             // 
@@ -474,19 +484,10 @@ namespace GestionAutores
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(148, 263);
+            this.txtID.MaxLength = 20;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
-            // 
-            // btnAgregarFoto
-            // 
-            this.btnAgregarFoto.Location = new System.Drawing.Point(18, 261);
-            this.btnAgregarFoto.Name = "btnAgregarFoto";
-            this.btnAgregarFoto.Size = new System.Drawing.Size(97, 23);
-            this.btnAgregarFoto.TabIndex = 24;
-            this.btnAgregarFoto.Text = "Agregar Foto";
-            this.btnAgregarFoto.UseVisualStyleBackColor = true;
-            this.btnAgregarFoto.Click += new System.EventHandler(this.btnAgregarFoto_Click);
             // 
             // frmGestionAutores
             // 

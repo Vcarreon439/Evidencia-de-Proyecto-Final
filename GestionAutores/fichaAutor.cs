@@ -88,7 +88,19 @@ namespace GestionAutores
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            ModeloDUsuario OBJ = new ModeloDUsuario();
+            ObjetoAutor temp = CrearAutor();
 
+            if (OBJ.EliminarAutor(temp))
+            {
+                MessageBox.Show($"El autor {temp.Nombres} ha sido eliminado correctamente","Cambio Realizado",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.No;
+                this.Close();
+            }
+            else
+                MessageBox.Show($"El autor {temp.Nombres} no ha podido ser eliminado", "Cambio Invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+            
         }
 
         private string imgLocation;

@@ -16,6 +16,11 @@ namespace Dominio
     {
         Usuario usuario = new Usuario();
 
+        public bool EliminarAutor(ObjetoAutor autor)
+        {
+            return usuario.EliminarAutor(autor);
+        }
+
         public bool InsertarMiembro(ObjetoMiembro miembro)
         {
             return usuario.InsertarMiembro(miembro);
@@ -161,6 +166,16 @@ namespace Dominio
         public bool InsertarLibro(ObjetoLibro libro)
         {
             return usuario.InsertarLibro(libro);
+        }
+
+        public DataTable MostrarLibros()
+        {
+            return usuario.MostrarLibros();
+        }
+
+        public DataTable MostrarLibrosCant(int cantidad)
+        {
+            return usuario.MostrarLibrosCant(cantidad);
         }
     }
 }

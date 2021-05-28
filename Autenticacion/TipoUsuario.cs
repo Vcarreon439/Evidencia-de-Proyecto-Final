@@ -9,7 +9,8 @@ namespace Autenticacion
             Invitado,
             Usuario,
             Maganer,
-            Admin
+            Admin,
+            Ninguno
         }
     }
 }

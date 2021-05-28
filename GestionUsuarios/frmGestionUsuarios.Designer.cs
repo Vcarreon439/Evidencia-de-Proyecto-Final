@@ -37,6 +37,7 @@ namespace GestionUsuarios
             System.Windows.Forms.Label cURPLabel;
             System.Windows.Forms.Label label1;
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLista = new System.Windows.Forms.Button();
             this.cboSexo = new System.Windows.Forms.ComboBox();
             this.btnAddFoto = new System.Windows.Forms.Button();
             this.cURPTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace GestionUsuarios
             this.entidadComboBox = new System.Windows.Forms.ComboBox();
             this.nacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.btnLista = new System.Windows.Forms.Button();
             apellidosLabel = new System.Windows.Forms.Label();
             domicilioLabel = new System.Windows.Forms.Label();
             entidadLabel = new System.Windows.Forms.Label();
@@ -150,6 +150,17 @@ namespace GestionUsuarios
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // btnLista
+            // 
+            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnLista.Location = new System.Drawing.Point(12, 395);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(132, 45);
+            this.btnLista.TabIndex = 25;
+            this.btnLista.Text = "Mostrar Lista";
+            this.btnLista.UseVisualStyleBackColor = true;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
+            // 
             // cboSexo
             // 
             this.cboSexo.FormattingEnabled = true;
@@ -174,6 +185,7 @@ namespace GestionUsuarios
             // cURPTextBox
             // 
             this.cURPTextBox.Location = new System.Drawing.Point(479, 32);
+            this.cURPTextBox.MaxLength = 18;
             this.cURPTextBox.Name = "cURPTextBox";
             this.cURPTextBox.Size = new System.Drawing.Size(100, 20);
             this.cURPTextBox.TabIndex = 20;
@@ -239,17 +251,6 @@ namespace GestionUsuarios
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(314, 20);
             this.nombreTextBox.TabIndex = 11;
-            // 
-            // btnLista
-            // 
-            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnLista.Location = new System.Drawing.Point(12, 395);
-            this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(132, 45);
-            this.btnLista.TabIndex = 25;
-            this.btnLista.Text = "Mostrar Lista";
-            this.btnLista.UseVisualStyleBackColor = true;
-            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // frmGestionUsuarios
             // 
