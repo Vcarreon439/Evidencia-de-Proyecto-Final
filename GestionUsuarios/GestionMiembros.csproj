@@ -93,10 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Proyecto_Contabilidad\Funcionalidad_Formularios\Funcionalidad_Formularios\Funcionalidad_Formularios.csproj">
-      <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
-      <Name>Funcionalidad_Formularios</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BibliotecaDeClases\BibliotecaDeClases.csproj">
       <Project>{c2d09a6e-6f89-4e32-b2fd-34db16c5cbea}</Project>
       <Name>BibliotecaDeClases</Name>
@@ -108,6 +104,10 @@
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{c59ba085-8b56-44ca-83f0-91fe93037f79}</Project>
       <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funcionalidad_Formularios\Funcionalidad_Formularios\Funcionalidad_Formularios.csproj">
+      <Project>{9d2e35bf-622b-4992-8335-6011af47e8b4}</Project>
+      <Name>Funcionalidad_Formularios</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
