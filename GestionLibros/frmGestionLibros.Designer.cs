@@ -30,6 +30,8 @@ namespace GestionLibros
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,8 +51,7 @@ namespace GestionLibros
             this.cboEditorial = new System.Windows.Forms.ComboBox();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.txtAño = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).BeginInit();
@@ -61,6 +62,7 @@ namespace GestionLibros
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnInsertar);
@@ -88,6 +90,22 @@ namespace GestionLibros
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(394, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Codgio de Autor:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(495, 204);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(92, 20);
+            this.textBox1.TabIndex = 19;
             // 
             // btnInsertar
             // 
@@ -193,23 +211,45 @@ namespace GestionLibros
             this.pctImgLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctImgLibro.Location = new System.Drawing.Point(14, 14);
             this.pctImgLibro.Name = "pctImgLibro";
-            this.pctImgLibro.Size = new System.Drawing.Size(189, 250);
+            this.pctImgLibro.Size = new System.Drawing.Size(189, 221);
             this.pctImgLibro.TabIndex = 7;
             this.pctImgLibro.TabStop = false;
+            this.pctImgLibro.DragDrop += new System.Windows.Forms.DragEventHandler(this.pctImgLibro_DragDrop);
+            this.pctImgLibro.DragEnter += new System.Windows.Forms.DragEventHandler(this.pctImgLibro_DragEnter);
             // 
             // numEdicion
             // 
             this.numEdicion.Location = new System.Drawing.Point(456, 168);
+            this.numEdicion.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numEdicion.Name = "numEdicion";
             this.numEdicion.Size = new System.Drawing.Size(132, 20);
             this.numEdicion.TabIndex = 6;
+            this.numEdicion.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numCopias
             // 
             this.numCopias.Location = new System.Drawing.Point(456, 121);
+            this.numCopias.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numCopias.Name = "numCopias";
             this.numCopias.Size = new System.Drawing.Size(132, 20);
             this.numCopias.TabIndex = 5;
+            this.numCopias.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txtISBN
             // 
@@ -248,21 +288,15 @@ namespace GestionLibros
             this.txtAño.Size = new System.Drawing.Size(92, 20);
             this.txtAño.TabIndex = 0;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(495, 204);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(92, 20);
-            this.textBox1.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(394, 207);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Codgio de Autor:";
+            this.button1.Location = new System.Drawing.Point(14, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Agregar Foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmGestionLibros
             // 
@@ -308,6 +342,7 @@ namespace GestionLibros
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
