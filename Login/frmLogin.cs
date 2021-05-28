@@ -48,7 +48,10 @@ namespace Login
                 MessageBox.Show("Inicio Correcto");
                 frmPrincipal obj = new frmPrincipal(usuario.Autenticacion(txtUsuario.Text, txtContra.Text));
                 this.Hide();
+                txtContra.Text = "";
+                txtUsuario.Text = "";
                 obj.ShowDialog();
+                this.Show();
             }
             else
             {

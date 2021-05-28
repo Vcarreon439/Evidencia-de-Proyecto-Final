@@ -27,6 +27,7 @@ namespace CustomControls
         public Rounded_Panel()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         public Rounded_Panel(IContainer container)

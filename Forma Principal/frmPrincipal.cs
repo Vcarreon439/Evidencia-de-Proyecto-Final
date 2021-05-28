@@ -584,7 +584,7 @@ namespace Forma_Principal
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
 
         private void CambiarBotones()
@@ -597,6 +597,7 @@ namespace Forma_Principal
                 btnLibros.Text = "";
                 btnManagers.Text = "";
                 btnEditorial.Text = "";
+                btnCerrarSesion.Text = "";
                 lblTitulo.Visible = false;
             }
             else
@@ -607,6 +608,7 @@ namespace Forma_Principal
                 btnLibros.Text = "Libros";
                 btnManagers.Text = "Usuarios";
                 btnEditorial.Text = "Editorial";
+                btnCerrarSesion.Text = "Cerrar Sesion";
                 lblTitulo.Visible = true;
             }
         }
@@ -651,6 +653,11 @@ namespace Forma_Principal
         private void btnSlide_Click(object sender, EventArgs e)
         {
             CambiarMenu();   
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

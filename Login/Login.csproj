@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconoLibros.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net48\FontAwesome.Sharp.dll</HintPath>
@@ -141,6 +144,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="iconoLibros.ico" />
     <Content Include="LibreriaBD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

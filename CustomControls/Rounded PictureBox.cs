@@ -29,6 +29,7 @@ namespace CustomControls
         public Rounded_PictureBox()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         public Rounded_PictureBox(IContainer container)
