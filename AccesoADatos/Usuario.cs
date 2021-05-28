@@ -329,6 +329,28 @@ namespace AccesoADatos
             }
         }
 
+        public List<string> EditorialesCombo()
+        {
+            List<string> elementos = new List<string>();
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                using (SqlCommand cmd = new SqlCommand("EditorialesCombo", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            elementos.Add(reader.GetString(0));
+                    }
+
+                    return elementos;
+                }
+            }
+        }
+
         public DataTable MostrarEditoriales()
         {
             using (SqlConnection conexion = ObtenerConexion())
@@ -768,25 +790,85 @@ namespace AccesoADatos
 
         #endregion
 
-        public List<string> EditorialesCombo()
+
+
+        public bool InsertarLibro(ObjetoLibro libro)
         {
-            List<string> elementos = new List<string>();
-
-            using (SqlConnection conexion = ObtenerConexion())
+            try
             {
-                conexion.Open();
-                using (SqlCommand cmd = new SqlCommand("EditorialesCombo", conexion))
+                using (SqlConnection conexion = ObtenerConexion())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand("InsertarLibro", conexion))
                     {
-                        while (reader.Read())
-                            elementos.Add(reader.GetString(0));
-                    }
+                        cmd.Connection = conexion;
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    return elementos;
+                        //
+                        if (libro.ISBN!="")
+                            cmd.Parameters.Add(new SqlParameter("@isbn", libro.ISBN));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@isbn", DBNull.Value));
+
+                        //
+                        if (libro.Titulo != "")
+                            cmd.Parameters.Add(new SqlParameter("@titulo", libro.Titulo));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@titulo", DBNull.Value));
+
+                        //
+                        if (libro.Autor != "")
+                            cmd.Parameters.Add(new SqlParameter("@codAutor", libro.Autor));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@codAutor", DBNull.Value));
+
+                        //
+                        if (libro.Año != "")
+                            cmd.Parameters.Add(new SqlParameter("@añoEdicion", libro.Año));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@añoEdicion", DBNull.Value));
+
+                        //
+                        if (libro.Lugar != "")
+                            cmd.Parameters.Add(new SqlParameter("@lugEdicion", libro.Lugar));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@lugEdicion", DBNull.Value));
+                        
+                        //
+                        cmd.Parameters.Add(new SqlParameter("@numEdicion", libro.Numero));
+                        cmd.Parameters.Add(new SqlParameter("@copias", libro.Copias));
+
+                        //
+                        if (libro.Editorial!="")
+                            cmd.Parameters.Add(new SqlParameter("@nomEditorial", libro.Editorial));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@nomEditorial", DBNull.Value));
+
+                        //
+                        if (libro.Tema!="")
+                            cmd.Parameters.Add(new SqlParameter("@nomTema", libro.Tema));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@nomTema", DBNull.Value));
+
+                        if (libro.Imagen!=null)
+                            cmd.Parameters.Add(new SqlParameter("@imagen", libro.Imagen));
+                        else
+                            cmd.Parameters.Add(new SqlParameter("@imagen", DBNull.Value));
+
+
+                    return cmd.ExecuteNonQuery() != 0;
+                    }
                 }
+            }
+            catch (SqlException error)
+            {
+                if (error.Number == 2627)
+                    MessageBox.Show("Este registro ya existe en la base de datos", $"Error {error.Number}", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show(error.Message);
+
+                return false;
             }
         }
     }

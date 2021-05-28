@@ -157,5 +157,10 @@ namespace Dominio
         {
             return usuario.EditorialesCombo();
         }
+
+        public bool InsertarLibro(ObjetoLibro libro)
+        {
+            return usuario.InsertarLibro(libro);
+        }
     }
 }

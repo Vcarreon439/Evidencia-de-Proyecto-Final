@@ -30,8 +30,9 @@ namespace GestionLibros
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodAutor = new System.Windows.Forms.TextBox();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace GestionLibros
             this.cboEditorial = new System.Windows.Forms.ComboBox();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.txtAño = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImgLibro)).BeginInit();
@@ -64,7 +64,7 @@ namespace GestionLibros
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtCodAutor);
             this.panel1.Controls.Add(this.btnInsertar);
             this.panel1.Controls.Add(this.dgvLibros);
             this.panel1.Controls.Add(this.label8);
@@ -91,6 +91,16 @@ namespace GestionLibros
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(14, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Agregar Foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -100,12 +110,12 @@ namespace GestionLibros
             this.label9.TabIndex = 20;
             this.label9.Text = "Codgio de Autor:";
             // 
-            // textBox1
+            // txtCodAutor
             // 
-            this.textBox1.Location = new System.Drawing.Point(495, 204);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(92, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtCodAutor.Location = new System.Drawing.Point(495, 204);
+            this.txtCodAutor.Name = "txtCodAutor";
+            this.txtCodAutor.Size = new System.Drawing.Size(92, 20);
+            this.txtCodAutor.TabIndex = 19;
             // 
             // btnInsertar
             // 
@@ -115,6 +125,7 @@ namespace GestionLibros
             this.btnInsertar.TabIndex = 18;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // dgvLibros
             // 
@@ -288,16 +299,6 @@ namespace GestionLibros
             this.txtAño.Size = new System.Drawing.Size(92, 20);
             this.txtAño.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(14, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Agregar Foto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmGestionLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +342,7 @@ namespace GestionLibros
         private System.Windows.Forms.ComboBox cboTema;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodAutor;
         private System.Windows.Forms.Button button1;
     }
 }

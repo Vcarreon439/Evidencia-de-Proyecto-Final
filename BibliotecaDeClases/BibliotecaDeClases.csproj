@@ -47,6 +47,7 @@
     <Compile Include="ObjectManager.cs" />
     <Compile Include="ObjetoAutor.cs" />
     <Compile Include="ObjetoEditorial.cs" />
+    <Compile Include="ObjetoLibro.cs" />
     <Compile Include="ObjetoMiembro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
