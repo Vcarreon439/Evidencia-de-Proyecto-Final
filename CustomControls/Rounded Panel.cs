@@ -33,7 +33,6 @@ namespace CustomControls
         public Rounded_Panel(IContainer container)
         {
             container.Add(this);
-
             InitializeComponent();
         }
     }
